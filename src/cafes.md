@@ -5,7 +5,7 @@ layout: layouts/base.njk
 
 > **Aksarben**
 
-### Roast Coffeehouse (Aksarben Village + 114th & Blondo) 🚻
+### Roast Coffeehouse 🚻
 
 Great people, coffee and pastries. Aksarben location has limited seating. [Website](https://www.roastcoffeehouse.com/)
 
