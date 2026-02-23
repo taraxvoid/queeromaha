@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "eleventy",
     "serve": "eleventy --serve",
-    "approve":"netlify dev:exec -- scripts/approve-maker.mjs",
+    "approve": "netlify dev:exec -- scripts/approve-maker.mjs",
+    "unapprove": "netlify dev:exec -- scripts/unapprove-maker.mjs",
+    "add-maker": "netlify dev:exec -- node scripts/add-maker.mjs",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "netlify dev:exec -- drizzle-kit migrate",
     "db:studio": "netlify dev:exec -- drizzle-kit studio",
@@ -21,6 +23,7 @@
     "drizzle-kit": "^0.31.9"
   },
   "dependencies": {
+    "@netlify/functions": "^5.1.2",
     "@netlify/neon": "^0.1.2",
     "drizzle-orm": "^0.45.1"
   }

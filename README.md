@@ -24,7 +24,7 @@ The place for queer spaces in omaha
 ◦  Netlify form still captures all fields; backend insertion now sets approved=false.
 ◦  Added success banner after submit: redirects to /makers/?submitted=1 and shows “will appear once approved.”
 •  Event function
-◦  netlify/functions/submission-created.js now:
+◦  netlify/functions/create-maker.mjs now:
 ▪  Requires human_name only.
 ▪  Inserts approved=false.
 ▪  Declared as an event handler with export const config = { event: 'submission-created' } so Netlify runs it on form submissions.

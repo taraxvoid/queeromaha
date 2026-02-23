@@ -19,9 +19,70 @@ layout: layouts/base.njk
 </style>
 
 
+<h2 style="margin-bottom: 1.5rem;">Featured Makers</h2>
+
+<div class="makers-intro">
+Here are the makerz
+</div>
+
+<div id="makers-container" class="makers-grid">
+  <div class="makers-loading">Loading makers...</div>
+</div>
+
+<script>
+async function loadMakers() {
+  const container = document.getElementById('makers-container');
+  try {
+    const response = await fetch('/api/makers');
+    if (!response.ok) throw new Error('Failed to fetch makers');
+    
+    const makers = await response.json();
+    
+    if (makers.length === 0) {
+      container.innerHTML = '<div class="makers-empty">No makers yet. Be the first to submit!</div>';
+      return;
+    }
+    
+    container.innerHTML = makers.map(maker => `
+      <div class="maker-card">
+        <div class="maker-biz">${maker.biz_name || maker.human_name}</div>
+        <div class="maker-human">${maker.biz_name ? '– ' + maker.human_name : ''}</div>
+        ${maker.description ? `<div class="maker-desc">${escapeHtml(maker.description)}</div>` : ''}
+        <div class="maker-links">
+          ${maker.website ? `<a href="${ensureUrl(maker.website)}" target="_blank" rel="noopener noreferrer">Website</a>` : ''}
+          ${maker.instagram ? `<a href="${ensureUrl(maker.instagram, 'https://instagram.com/')}" target="_blank" rel="noopener noreferrer">Instagram</a>` : ''}
+          ${maker.facebook ? `<a href="${ensureUrl(maker.facebook, 'https://facebook.com/')}" target="_blank" rel="noopener noreferrer">Facebook</a>` : ''}
+        </div>
+      </div>
+    `).join('');
+  } catch (error) {
+    console.error('Error loading makers:', error);
+    container.innerHTML = '<div class="makers-error">Unable to load makers. Please try again later.</div>';
+  }
+}
+
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+function ensureUrl(url, defaultProtocol = 'https://') {
+  if (!url) return '';
+  if (url.startsWith('http://') || url.startsWith('https://')) return url;
+  if (url.startsWith('@')) return 'https://instagram.com/' + url.substring(1);
+  return defaultProtocol + url;
+}
+
+// Load makers after DOMContentLoaded to ensure base layout finishes processing first
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(loadMakers, 100);
+});
+</script>
+
 <hr style="margin: 1.5rem 0; border: none; border-top: 3px dashed #6d28d9;" />
 
-<h3 style="margin-top: 0;">Add a maker!</h3></brs>
+<h3 style="margin-top: 0;">Add a maker!</h3>
 
 <form id="maker-form" name="maker" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/makers/">
   <input type="hidden" name="form-name" value="maker" />
