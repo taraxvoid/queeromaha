@@ -25,7 +25,7 @@ export default async function handler(request) {
     (hasMakerFields && !hasContactFields);
 
   if (!isMaker) {
-    console.log('submission-created: ignored', { formName, hasMakerFields, hasContactFields, payloadKeys: payload ? Object.keys(payload) : [], dataKeys: dataObj ? Object.keys(dataObj) : [] });
+    console.log('create-maker: ignored', { formName, hasMakerFields, hasContactFields, payloadKeys: payload ? Object.keys(payload) : [], dataKeys: dataObj ? Object.keys(dataObj) : [] });
     return new Response('ignored', { status: 200 });
   }
   const toStr = (v) => (v == null ? '' : String(v));
@@ -62,7 +62,7 @@ export default async function handler(request) {
     `;
     return new Response('ok', { status: 200 });
   } catch (e) {
-    console.error('submission-created error', e);
+    console.error('create-maker error', e);
     return new Response('db error', { status: 500 });
   }
 }
