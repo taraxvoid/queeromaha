@@ -84,12 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <h3 style="margin-top: 0;">Add a maker!</h3>
 
-<form id="maker-form" name="maker" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/makers/">
-  <input type="hidden" name="form-name" value="maker" />
-  <p style="display:none;">
-    <label>Don’t fill this out: <input name="bot-field" /></label>
-  </p>
-
+<form id="maker-form" method="POST" onsubmit="return handleMakerSubmit(event)">
 <p>
     <label for="human_name">Name (required)</label><br />
     <input id="human_name" name="human_name" required aria-required="true" placeholder="Your Real Human Name" maxlength="100" style="width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ddd; border-radius:4px;" />
@@ -133,4 +128,63 @@ document.addEventListener('DOMContentLoaded', () => {
 
   <p style="font-size:0.85rem; color:#555;">Submissions are moderated before posting.</p>
 </form>
+
+<script>
+async function handleMakerSubmit(event) {
+  event.preventDefault();
+  
+  const form = document.getElementById('maker-form');
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const originalText = submitBtn.textContent;
+  
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Processing...';
+  submitBtn.style.background = '#6d28d9';
+  
+  try {
+    const formData = new FormData(form);
+    const params = new URLSearchParams(formData);
+    
+    const response = await fetch('/.netlify/functions/submission-created', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: params.toString()
+    });
+    
+    if (!response.ok) {
+      const error = await response.json().catch(() => ({ error: 'Unknown error' }));
+      throw new Error(error.error || 'Submission failed');
+    }
+    
+    await new Promise(resolve => setTimeout(resolve, 800));
+    
+    submitBtn.textContent = 'Success!';
+    submitBtn.style.background = '#890a8d';
+    
+    setTimeout(() => {
+      form.style.display = 'none';
+      document.getElementById('submission-success').style.display = 'block';
+    }, 600);
+    
+  } catch (error) {
+    submitBtn.textContent = 'Error - Try Again';
+    submitBtn.style.background = '#5a2671';
+    submitBtn.disabled = false;
+    
+    setTimeout(() => {
+      submitBtn.textContent = originalText;
+      submitBtn.style.background = '#6d28d9';
+      submitBtn.disabled = false;
+    }, 3000);
+  }
+  
+  return false;
+}
+</script>
+
+<div id="submission-success" style="display: none; padding: 1.5rem; background: #f0fdf4; border: 2px solid #16a34a; border-radius: 6px; color: #15803d; text-align: center;">
+  <div style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">Thanks for submitting a maker!</div>
+  <p style="margin: 0; font-size: 0.95rem;">Your submission has been received and will be reviewed soon.</p>
+</div>
+
 <hr style="margin: 1.5rem 0; border: none; border-top: 3px dashed #6d28d9;" />
