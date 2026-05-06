@@ -2,13 +2,15 @@
 
 ## Project Overview
 
-**queeromaha.com** is a static site + dynamic API platform for the queer community in Omaha. It's built with Eleventy (static site generator) for the frontend and Netlify Functions for the backend API, with a PostgreSQL database (Neon) managed via Drizzle ORM.
+**queeromaha.com** is a static site + dynamic API platform for the queer community in Omaha. It's built with Eleventy (static site generator) for the frontend and Netlify Functions for the backend API, with a PostgreSQL database (Neon) managed via Prisma ORM.
+
+It uses bun. Do NOT use npm. Prefer bun as interpreter instead of 'node' directly.
 
 ### Core Architecture
 
 - **Frontend**: Eleventy static site generator (Nunjucks templates in `src/_includes/layouts/`, Markdown pages in `src/`)
 - **Backend**: Netlify serverless functions in `netlify/functions/`
-- **Database**: PostgreSQL on Neon, managed via Drizzle ORM with schema in `db/schema.ts` and migrations in `migrations/`
+- **Database**: PostgreSQL on Neon, managed via Prisma ORM with schema in `db/schema.ts` and migrations in `migrations/`
 - **Build**: `bun run build` generates the static site to `_site/`
 - **Dev server**: `bun run serve` runs Eleventy with live reload
 
@@ -27,7 +29,7 @@ netlify dev
 # Database operations
 bun run db:generate    # Generate migrations from schema changes
 bun run db:migrate     # Apply migrations
-bun run db:studio      # Open Drizzle Studio UI (requires NETLIFY_DATABASE_URL)
+bun run db:studio      # Prisma Studio UI (requires DATABASE_URL)
 bun run db:seed        # Seed database with test data
 
 # Admin operations
@@ -47,7 +49,7 @@ The "makers" feature is a curated list of queer businesses/individuals. New subm
    - CLI helper: `bun run approve <id>` (locally or via `netlify dev:exec`)
 4. **Public API** → `GET /api/makers` returns only `approved = true` entries, cached for 5 minutes
 
-### Database Schema (Drizzle ORM)
+### Database Schema (Prisma ORM)
 
 **Key tables:**
 - `posts`: Blog posts (id, title, content)
@@ -84,7 +86,6 @@ The "makers" feature is a curated list of queer businesses/individuals. New subm
 ### Database Operations
 
 - All raw SQL queries use tagged template literals: ``await sql`SELECT * FROM makers` ``
-- Schema uses Drizzle's camelCase property names but database columns use snake_case
 - Queries should order results consistently (e.g., `ORDER BY COALESCE(biz_name, human_name)`)
 
 ### Environment Setup
@@ -115,10 +116,10 @@ The "makers" feature is a curated list of queer businesses/individuals. New subm
 ### Approve a maker (local dev)
 ```bash
 # List unapproved makers
-netlify dev:exec -- node scripts/approve-maker.mjs list
+netlify dev:exec -- bun approve-maker.mjs list
 
 # Approve by ID (or curl the API endpoint locally)
-netlify dev:exec -- node scripts/approve-maker.mjs 123
+netlify dev:exec -- bun approve-maker.mjs 123
 ```
 
 ## Environment Variables
@@ -195,7 +196,7 @@ Pages like `src/makers.md` use `<style>` blocks for card layouts. Keep these sco
 - **Solution**: 
   1. Always run `bun run db:generate` BEFORE `bun run db:migrate`
   2. Never edit files in `migrations/` directly
-  3. If stuck, use `bun run db:studio` to inspect current schema in Drizzle Studio
+  3. If stuck, use `bun run db:studio` to inspect current schema in Prisma Studio
 
 ### Build failing locally
 - **Error**: `eleventy` or `bun` not found

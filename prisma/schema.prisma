@@ -3,7 +3,7 @@
 
 generator client {
   provider = "prisma-client"
-  output   = "../src/generated/prisma"
+  output   = "../.prisma/client"
 
 }
 
@@ -21,7 +21,7 @@ model Maker {
   id          Int     @id @default(autoincrement())
   humanName   String  @db.VarChar(100) @map("human_name")
   bizName     String? @db.VarChar(150) @map("biz_name")
-  email       String  @db.VarChar(255)
+  email       String? @db.VarChar(255)
   instagram   String? @db.VarChar(255)
   facebook    String? @db.VarChar(255)
   website     String? @db.VarChar(255)

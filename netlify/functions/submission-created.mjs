@@ -1,4 +1,13 @@
-import { neon } from '@netlify/neon';
+import { PrismaClient } from '@prisma/client';
+import { PgAdapter } from '@prisma/adapter-pg';
+import pg from 'pg';
+
+function getPrisma() {
+  const adapter = new PgAdapter(
+    new pg.Pool({ connectionString: process.env.DATABASE_URL })
+  );
+  return new PrismaClient({ adapter });
+}
 
 export default async function handler(request) {
   let body = {};
@@ -54,16 +63,26 @@ export default async function handler(request) {
   let description = trim(dataObj.description || '');
   if (description.length > 280) description = description.slice(0, 280);
 
+  const prisma = getPrisma();
   try {
-    const sql = neon();
-    await sql`
-      INSERT INTO makers (human_name, biz_name, email, instagram, facebook, website, description, approved)
-      VALUES (${humanName}, ${bizName}, ${email}, ${instagram}, ${facebook}, ${website}, ${description}, false)
-    `;
+    await prisma.maker.create({
+      data: {
+        humanName,
+        bizName: bizName || null,
+        email,
+        instagram,
+        facebook,
+        website,
+        description: description || null,
+        approved: false
+      }
+    });
     return new Response('ok', { status: 200 });
   } catch (e) {
     console.error('submission-created error', e);
     return new Response('db error', { status: 500 });
+  } finally {
+    await prisma.$disconnect();
   }
 }
 
