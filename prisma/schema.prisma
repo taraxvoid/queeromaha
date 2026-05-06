@@ -1,0 +1,32 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Post {
+  id      Int     @id @default(autoincrement())
+  title   String  @db.VarChar(255)
+  content String  @default("")
+}
+
+model Maker {
+  id          Int     @id @default(autoincrement())
+  humanName   String  @db.VarChar(100) @map("human_name")
+  bizName     String? @db.VarChar(150) @map("biz_name")
+  email       String  @db.VarChar(255)
+  instagram   String? @db.VarChar(255)
+  facebook    String? @db.VarChar(255)
+  website     String? @db.VarChar(255)
+  description String? @db.VarChar(280)
+  approved    Boolean @default(false)
+
+  @@map("makers")
+}

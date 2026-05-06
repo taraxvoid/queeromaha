@@ -3,6 +3,10 @@
 
 .neon
 
+# prisma gen files
+
+src/generated/
+
 # Node modules
 **/node_modules/**
 

@@ -1,29 +1,31 @@
 {
   "name": "queeromaha.com",
   "version": "1.0.1",
-  "description": "queer stuff in omaha",
+  "author": "Tara <tara.vie@proton.me>",
   "main": "index.js",
+  "devDependencies": {
+    "@types/pg": "^8.20.0"
+  },
+  "description": "queer stuff in omaha",
+  "keywords": [],
+  "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "bunx @11ty/eleventy --serve",
     "build": "bunx @11ty/eleventy",
-    "approve": "netlify dev:exec -- scripts/approve-maker.mjs",
-    "db:generate": "drizzle-kit generate",
-    "db:migrate": "netlify dev:exec -- drizzle-kit migrate",
-    "db:studio": "netlify dev:exec -- drizzle-kit studio",
-    "db:seed": "netlify dev:exec -- node scripts/seed-makers.mjs"
-  },
-  "keywords": [],
-  "author": "Tara <tara.vie@proton.me>",
-  "license": "MIT",
-  "devDependencies": {
-    "drizzle-kit": "^0.31.9"
-  },
-  "dependencies": {
-    "@netlify/neon": "^0.1.2",
-    "drizzle-orm": "^0.45.1"
+    "approve": "netlify dev:exec -- bunx --bun scripts/approve-maker.mjs",
+    "db:generate": "netlify dev:exec -- bunx --bun prisma generate --config prisma/prisma.config.ts --schema prisma/schema.prisma",
+    "db:migrate": "netlify dev:exec -- bunx --bun prisma migrate dev --name init --config prisma/prisma.config.ts --schema prisma/schema.prisma ",
+    "db:studio": "netlify dev:exec -- bunx --bun prisma studio --config prisma/prisma.config.ts --schema prisma/schema.prisma",
+    "db:seed": "netlify dev:exec -- bunx --bun prisma db seed --config prisma/prisma.config.ts --schema prisma/schema.prisma",
+    "deploy": "netlify deploy --prod --dir=./_site"
   },
   "volta": {
     "node": "22.22.2"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.8.0",
+    "@prisma/client": "^7.8.0",
+    "pg": "^8.20.0"
   }
 }
