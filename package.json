@@ -11,15 +11,12 @@
     "prepare": "husky",
     "fix": "prettier --write .",
     "lint": "prettier --check  ."
-
   },
   "keywords": [],
   "author": "Tara <tara.vie@proton.me>",
   "license": "MIT",
-  "devDependencies": {
-  },
-  "dependencies": {
-  },
+  "devDependencies": {},
+  "dependencies": {},
   "volta": {
     "node": "22.22.2"
   }
