@@ -13,7 +13,7 @@
     "lint": "bunx prettier --check ."
   },
   "keywords": [],
-  "author": "Tara <tara.vie@proton.me>",
+  "author": "Tara <tara@queeromaha.net>",
   "license": "MIT",
   "devDependencies": {
     "@playwright/test": "^1.60.0",
