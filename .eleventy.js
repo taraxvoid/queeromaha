@@ -1,3 +1,5 @@
+const { default: externalLinkPlugin } = require("markdown-it-external-link");
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/admin");
@@ -6,6 +8,7 @@ module.exports = function (eleventyConfig) {
 
   let markdownLibrary;
   eleventyConfig.amendLibrary("md", (mdLib) => {
+    mdLib.use(externalLinkPlugin, { rel: "noopener noreferrer" });
     markdownLibrary = mdLib;
   });
 
