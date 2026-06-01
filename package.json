@@ -20,7 +20,8 @@
     "@playwright/test": "^1.60.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.0.5",
-    "markdown-it-external-link": "^1.1.0"
+    "markdown-it-external-link": "^1.1.0",
+    "prettier-plugin-toml": "^2.0.6"
   },
   "dependencies": {},
   "volta": {
