@@ -287,6 +287,16 @@ items:
     id: downtown
 
   - type: item
+    name: NeXT Foundation Arts
+    public: true
+    description: Open Studios for Expressive Art at Millwork Commons
+    links:
+      - label: Art Workshop (on Last Fridays)
+        url: https://nextfoundation.corsizio.com/event/69d8318ee3976dce4b4278a8
+      - label: Events Calendar
+        url: https://www.nextfoundationomaha.com/programs-services
+
+  - type: item
     name: Old Market Passageway
     public: false
     description: Alley with small art galleries. Check out the nearby Garden of the Zodiac.
@@ -343,7 +353,7 @@ items:
 
   - type: item
     name: Millwork Commons
-    public: true
+    public: false
     tags:
       - neutral-bathrooms
     description: Apartment complex with art showings, music shows and business-y mixers
@@ -352,6 +362,7 @@ items:
         url: https://www.instagram.com/millworkcommons/
       - label: Events Calendar
         url: https://millworkcommons.com/events/
+    notes: unpublished may 2026. bathroom police.
 
   - type: item
     name: Omaha Artists Cooperative Gallery
