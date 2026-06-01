@@ -28,6 +28,6 @@
     "node": "24.15.0"
   },
   "lint-staged": {
-    "*.{css,html,js,cjs,json,md,yml}": "bunx prettier --write"
+    "*.{css,html,js,cjs,json,md,toml,yml}": "bunx prettier --write"
   }
 }
