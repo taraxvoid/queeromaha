@@ -1,10 +1,11 @@
 title: Omaha Queer Friendly Cafes
-description: Queer-friendly coffee shops and cafes in Omaha, including queer-owned spots and locations with gender-neutral bathrooms.
+description: Queer-friendly coffee shops and cafes in Omaha, including
+  queer-owned spots and locations with gender-neutral bathrooms.
 public: true
 items:
   - name: Roast Coffeehouse
     public: true
-    description: Great people, coffee and pastries both in Aksarben / 120th and Blondo. 
+    description: Great people, coffee and pastries both in Aksarben / 120th and Blondo.
     links:
       - label: Insta
         url: https://www.instagram.com/roast_coffeehouse/
@@ -31,7 +32,7 @@ items:
       - work-spot
   - name: Marigold's
     public: true
-    description: Artisanal goods and crafts. 
+    description: Artisanal goods and crafts.
     links:
       - label: Insta
         url: https://www.instagram.com/marigoldsmercantile
@@ -52,8 +53,9 @@ items:
       - seating
       - work-spot
   - name: Archetype Coffee
-    public: true
-    description: Best coffee in town. Lil BoHo location serves great brunch food from [Know Good](https://knowgoodeats.com/).
+    public: false
+    description: Best coffee in town. Lil BoHo location serves great brunch food
+      from [Know Good](https://knowgoodeats.com/).
     links:
       - label: Website
         url: https://archetypecoffee.com/
@@ -70,7 +72,8 @@ items:
         url: https://www.sweetmagnoliasbakeshop.com/
   - name: Spielbound
     public: true
-    description: Board game cafe with an [active monthly Meetup Group](https://www.meetup.com/playing-games-at-spielbound/).
+    description: Board game cafe with an [active monthly Meetup
+      Group](https://www.meetup.com/playing-games-at-spielbound/).
     links:
       - label: Official Discord
         url: https://discord.com/invite/official-spellbound-861024184947572736
@@ -118,7 +121,7 @@ items:
       - seating
   - name: Blue Line Coffee
     public: true
-    description: Great coffee and cool people. Posts flyers for local events. 
+    description: Great coffee and cool people. Posts flyers for local events.
     links:
       - label: Insta
         url: https://www.instagram.com/bluelinecoffeeomaha/?hl=en
@@ -145,7 +148,8 @@ items:
     notes: Met Owner at NZC who stated it's queer owned.
   - name: Urban Abbey
     public: false
-    description: Progressive Methodist cafe / bookstore with a queer section. Chill place to hang out.
+    description: Progressive Methodist cafe / bookstore with a queer section. Chill
+      place to hang out.
     links:
       - label: Website
         url: https://www.urbanabbeyomaha.com/
@@ -154,7 +158,9 @@ items:
       - seating
   - name: Reading Room
     public: true
-    description: Bookstore cafe / bar with a [Queer-run poetry reading open mic night](https://www.nepoetrysociety.org/spoken-word). See also the [Poetry Menu site ](https://poetrymenu.com/).
+    description: Bookstore cafe / bar with a [Queer-run poetry reading open mic
+      night](https://www.nepoetrysociety.org/spoken-word). See also the [Poetry
+      Menu site ](https://poetrymenu.com/).
     links:
       - label: Insta
         url: https://www.instagram.com/reading_room_omaha/
@@ -172,7 +178,7 @@ items:
         url: https://www.rallycoffee.co/pages/locations
     notes: Go there first before listing.
   - name: Zen Coffee
-    public: true
+    public: false
     description: Downtown and West O locations.
     links:
       - label: Insta

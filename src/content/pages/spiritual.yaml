@@ -1,5 +1,6 @@
 title: Spiritual Practice
-description: Spiritual groups, meditation, and wellness resources in Omaha with a queer-friendly presence.
+description: Spiritual groups, meditation, and wellness resources in Omaha with
+  a queer-friendly presence.
 public: true
 items:
   - name: Vocal Release Class
@@ -7,7 +8,8 @@ items:
       - neutral-bathrooms
       - seating
     public: false
-    description: Dawaune creates a container to be unapologetically heard on Saturdays 11AM to 1PM @ Ananda Yoga. ~20$ / PWYC
+    description: Dawaune creates a container to be unapologetically heard on
+      Saturdays 11AM to 1PM @ Ananda Yoga. ~20$ / PWYC
     links:
       - label: Insta
         url: https://www.instagram.com/dawaune.one
@@ -29,11 +31,12 @@ items:
       - label: Insta
         url: https://www.instagram.com/ananda.omaha/
   - name: Honey Locust Sangha
-    public: true
+    public: false
     tags:
       - neutral-bathrooms
       - seating
-    description: Low-key meditation in progressive Buddhist tradition on Mondays @ 6:30PM at The Yoga Path on 72nd and Pacific.
+    description: Low-key meditation in progressive Buddhist tradition on Mondays @
+      6:30PM at The Yoga Path on 72nd and Pacific.
     links:
       - label: Events Calendar
         url: https://honeylocustsangha.org/events.html
@@ -53,13 +56,15 @@ items:
       - neutral-bathrooms
       - seating
     public: true
-    description: Get stratospheric with Havalynn at Church Art House every Sunday (except the 1st of the month) @ 10:30AM.  PWYC
+    description: Get stratospheric with Havalynn at Church Art House every Sunday
+      (except the 1st of the month) @ 10:30AM.  PWYC
     links:
       - label: Insta
         url: https://www.instagram.com/havalynn1/
   - name: Sound Bath w/ Geoff Wertheim
     public: false
-    description: Geoff hosts a free sound bath at Church Art House on the 1st Sunday of the month @ 1:11PM. Family-friendly.
+    description: Geoff hosts a free sound bath at Church Art House on the 1st Sunday
+      of the month @ 1:11PM. Family-friendly.
     links:
       - label: FB
         url: https://www.facebook.com/geoff.wertheim.9
