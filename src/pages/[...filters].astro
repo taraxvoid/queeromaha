@@ -33,6 +33,7 @@ export async function getStaticPaths() {
     for (const cat of cats) {
         for (const n of neighborhoodSlugs) {
             paths.push({ params: { filters: `${cat}/${n}` } })
+            paths.push({ params: { filters: `${n}/${cat}` } })
         }
     }
 
