@@ -1,0 +1,49 @@
+<h2>Chunkier, old-web bevel treatment</h2>
+<p class="subtitle">Borrowing the topbar buttons' look: 1-2px solid borders, inset highlight/shadow bevel, pressed-in look for the active segment. Compared against the two purple shades from before.</p>
+
+<div class="cards">
+  <div class="card" data-choice="chunky-medium-purple" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="display:inline-flex;border-radius:999px;background:#f9f5ff;border:2px solid #c4b5fd;font-size:0.85rem;font-weight:700;letter-spacing:0.01em;font-family:Helvetica,sans-serif;overflow:hidden;box-shadow:inset 1px 1px 0 rgba(255,255,255,0.6), inset -1px -1px 0 rgba(124,58,237,0.15);">
+        <span style="padding:0.4rem 0.9rem;color:#6d28d9;border-right:2px solid #c4b5fd;">Old Market</span>
+        <span style="padding:0.4rem 0.9rem;background:#8b5cf6;color:#fff;border-right:2px solid #c4b5fd;box-shadow:inset 1px 1px 0 rgba(0,0,0,0.15), inset -1px -1px 0 rgba(255,255,255,0.25);">📍 Benson</span>
+        <span style="padding:0.4rem 0.9rem;color:#6d28d9;border-right:2px solid #c4b5fd;">Dundee</span>
+        <span style="padding:0.4rem 0.9rem;color:#6d28d9;">Midtown</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Medium purple (#8b5cf6), chunky bevel</h3>
+      <p>2px dividers/outer border, active segment has an inset "pressed" shadow (dark top-left, light bottom-right) instead of looking flat. Inactive segments get a subtle raised highlight.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="chunky-light-purple" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="display:inline-flex;border-radius:999px;background:#f9f5ff;border:2px solid #c4b5fd;font-size:0.85rem;font-weight:700;letter-spacing:0.01em;font-family:Helvetica,sans-serif;overflow:hidden;box-shadow:inset 1px 1px 0 rgba(255,255,255,0.6), inset -1px -1px 0 rgba(124,58,237,0.15);">
+        <span style="padding:0.4rem 0.9rem;color:#6d28d9;border-right:2px solid #c4b5fd;">Old Market</span>
+        <span style="padding:0.4rem 0.9rem;background:#c4b5fd;color:#4c1d95;border-right:2px solid #c4b5fd;box-shadow:inset 1px 1px 0 rgba(0,0,0,0.1), inset -1px -1px 0 rgba(255,255,255,0.4);">📍 Benson</span>
+        <span style="padding:0.4rem 0.9rem;color:#6d28d9;border-right:2px solid #c4b5fd;">Dundee</span>
+        <span style="padding:0.4rem 0.9rem;color:#6d28d9;">Midtown</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Light purple (#c4b5fd) + dark text, chunky bevel</h3>
+      <p>Same bevel treatment, softer active color with dark purple text for contrast.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="chunky-square-corners-purple" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="display:inline-flex;border-radius:6px;background:#f9f5ff;border:2px solid #a78bfa;font-size:0.85rem;font-weight:700;letter-spacing:0.01em;font-family:Helvetica,sans-serif;overflow:hidden;box-shadow:inset 1px 1px 0 rgba(255,255,255,0.6), inset -1px -1px 0 rgba(124,58,237,0.2);">
+        <span style="padding:0.4rem 0.9rem;color:#6d28d9;border-right:2px solid #a78bfa;">Old Market</span>
+        <span style="padding:0.4rem 0.9rem;background:#8b5cf6;color:#fff;border-right:2px solid #a78bfa;box-shadow:inset 1px 1px 0 rgba(0,0,0,0.18), inset -1px -1px 0 rgba(255,255,255,0.25);">📍 Benson</span>
+        <span style="padding:0.4rem 0.9rem;color:#6d28d9;border-right:2px solid #a78bfa;">Dundee</span>
+        <span style="padding:0.4rem 0.9rem;color:#6d28d9;">Midtown</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Mostly-square corners (6px radius), chunky bevel</h3>
+      <p>Keeps "rounded ends" only at the very outer corners but much subtler than a full pill — reads more like an old-web button strip than a soft modern segmented control.</p>
+    </div>
+  </div>
+</div>

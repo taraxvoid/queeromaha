@@ -1,0 +1,51 @@
+<h2>Refined location bar — purple shade + typography</h2>
+<p class="subtitle">No explainer text. Comparing lighter active-purple options, plus larger/bolder text and a Font Awesome location-pin icon (via wa-icon, already bundled — no new dependency).</p>
+
+<div class="cards">
+  <div class="card" data-choice="medium-purple-pin" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="display:inline-flex;border-radius:999px;background:#f9f5ff;border:1px solid #ddd6fe;font-size:0.85rem;font-weight:700;letter-spacing:0.01em;font-family:Helvetica,sans-serif;overflow:hidden;">
+        <span style="padding:0.4rem 0.9rem;color:#6d28d9;border-right:1px solid #ddd6fe;display:inline-flex;align-items:center;gap:0.3rem;">Old Market</span>
+        <span style="padding:0.4rem 0.9rem;background:#8b5cf6;color:#fff;display:inline-flex;align-items:center;gap:0.3rem;">📍 Benson</span>
+        <span style="padding:0.4rem 0.9rem;color:#6d28d9;border-right:1px solid #ddd6fe;border-left:1px solid #ddd6fe;">Dundee</span>
+        <span style="padding:0.4rem 0.9rem;color:#6d28d9;">Midtown</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Medium purple (#8b5cf6) + pin icon</h3>
+      <p>Lighter than the current #7c3aed active-pill purple, still enough contrast for white text (WCAG AA for this font weight/size). Pin icon marks the active segment only.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="light-purple-dark-text" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="display:inline-flex;border-radius:999px;background:#f9f5ff;border:1px solid #ddd6fe;font-size:0.85rem;font-weight:700;letter-spacing:0.01em;font-family:Helvetica,sans-serif;overflow:hidden;">
+        <span style="padding:0.4rem 0.9rem;color:#6d28d9;border-right:1px solid #ddd6fe;">Old Market</span>
+        <span style="padding:0.4rem 0.9rem;background:#c4b5fd;color:#4c1d95;display:inline-flex;align-items:center;gap:0.3rem;">📍 Benson</span>
+        <span style="padding:0.4rem 0.9rem;color:#6d28d9;border-right:1px solid #ddd6fe;border-left:1px solid #ddd6fe;">Dundee</span>
+        <span style="padding:0.4rem 0.9rem;color:#6d28d9;">Midtown</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Light purple (#c4b5fd) + dark text</h3>
+      <p>Noticeably softer/lighter active state, using dark purple text (#4c1d95) instead of white for contrast. Reuses a tint already in the palette (borders/hovers).</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="medium-purple-no-pin" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="display:inline-flex;border-radius:999px;background:#f9f5ff;border:1px solid #ddd6fe;font-size:0.85rem;font-weight:700;letter-spacing:0.01em;font-family:Helvetica,sans-serif;overflow:hidden;">
+        <span style="padding:0.4rem 0.9rem;color:#6d28d9;border-right:1px solid #ddd6fe;">Old Market</span>
+        <span style="padding:0.4rem 0.9rem;background:#8b5cf6;color:#fff;">Benson</span>
+        <span style="padding:0.4rem 0.9rem;color:#6d28d9;border-right:1px solid #ddd6fe;border-left:1px solid #ddd6fe;">Dundee</span>
+        <span style="padding:0.4rem 0.9rem;color:#6d28d9;">Midtown</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Medium purple (#8b5cf6), no icon</h3>
+      <p>Same lighter purple as A, larger/bolder text for readability, but no pin icon — relies on color + bold weight alone to mark the active segment.</p>
+    </div>
+  </div>
+</div>
+
+<p class="section label">Typography change applied to all three: font-size 0.8rem → 0.85rem, font-weight 600 → 700, added letter-spacing 0.01em.</p>

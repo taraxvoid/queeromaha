@@ -1,0 +1,152 @@
+- generic [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - navigation "Main navigation" [ref=e4]:
+      - generic [ref=e5]:
+        - link "Social" [disabled]:
+          - /url: /social
+          - generic: Social
+      - generic [ref=e8]:
+        - link "Spiritual" [disabled]:
+          - /url: /spiritual
+          - generic: Spiritual
+      - link "Art" [ref=e12] [cursor=pointer]:
+        - /url: /art
+        - generic [ref=e13]: Art
+      - generic [ref=e14]:
+        - link "Cafes" [disabled]:
+          - /url: /cafes
+          - generic: Cafes
+      - link "Music" [ref=e18] [cursor=pointer]:
+        - /url: /music
+        - generic [ref=e19]: Music
+      - generic [ref=e20]:
+        - link "Makers" [disabled]:
+          - /url: /makers
+          - generic: Makers
+  - main [ref=e23]:
+    - heading "Queer Omaha — LGBTQ+ Community Directory" [level=1] [ref=e24]
+    - group "Filter by location or tag" [ref=e25]:
+      - group "Filter by location" [ref=e26]:
+        - generic [ref=e27]:
+          - button "Benson" [ref=e28] [cursor=pointer]
+          - button "Dundee" [disabled] [ref=e29]
+          - button "Midtown" [ref=e30] [cursor=pointer]
+          - button "Aksarben" [disabled] [ref=e31]
+          - button "Downtown" [active] [pressed] [ref=e32] [cursor=pointer]
+          - button "North O" [ref=e33] [cursor=pointer]
+          - button "South O" [ref=e34] [cursor=pointer]
+          - button "West O" [disabled] [ref=e35]
+      - generic [ref=e36]:
+        - button "Clear tag filters" [disabled] [ref=e37]: ✕ Clear
+        - button "Gender-neutral bathroom Gender-neutral bathroom" [ref=e38] [cursor=pointer]:
+          - img [ref=e39]: 🚻
+          - text: Gender-neutral bathroom
+        - button "Seating available Seating available" [disabled] [ref=e40]:
+          - img: 🛋️
+          - text: Seating available
+        - button "Work/study spot Work/study spot" [disabled] [ref=e42]:
+          - img: 💻
+          - text: Work/study spot
+    - region "Social"
+    - region "Spiritual"
+    - region "Art" [ref=e43]:
+      - heading "Art" [level=2] [ref=e44]
+      - generic [ref=e306]:
+        - heading "NeXT Foundation Arts" [level=3] [ref=e308]
+        - generic [ref=e309]:
+          - generic:
+            - paragraph [ref=e310]: Open Studios for Expressive Art at Millwork Commons
+            - paragraph [ref=e311]: 📍 (Downtown)
+        - list [ref=e313]:
+          - listitem [ref=e314]:
+            - link "Art Workshop (on Last Fridays) (opens in new tab)" [ref=e315] [cursor=pointer]:
+              - /url: https://nextfoundation.corsizio.com/event/69d8318ee3976dce4b4278a8
+              - text: Art Workshop (on Last Fridays)
+          - listitem [ref=e316]:
+            - link "Events Calendar (opens in new tab)" [ref=e317] [cursor=pointer]:
+              - /url: https://www.nextfoundationomaha.com/programs-services
+              - text: Events Calendar
+      - generic [ref=e318]:
+        - heading "Bemis Center" [level=3] [ref=e320]
+        - generic [ref=e321]:
+          - generic:
+            - paragraph [ref=e322]: Cutting-edge museum with resident artists, the Low End music series and major installations.
+            - paragraph [ref=e323]: 📍 (Downtown)
+        - list [ref=e325]:
+          - listitem [ref=e326]:
+            - link "Insta (opens in new tab)" [ref=e327] [cursor=pointer]:
+              - /url: https://www.instagram.com/bemiscenter/
+              - text: Insta
+          - listitem [ref=e328]:
+            - link "Events Calendar (opens in new tab)" [ref=e329] [cursor=pointer]:
+              - /url: https://www.bemiscenter.org/low-end
+              - text: Events Calendar
+          - listitem [ref=e330]:
+            - link "FB (opens in new tab)" [ref=e331] [cursor=pointer]:
+              - /url: https://www.facebook.com/bemiscenter/
+              - text: FB
+      - generic [ref=e332]:
+        - heading "Hot Shops" [level=3] [ref=e334]
+        - generic [ref=e335]:
+          - generic:
+            - paragraph [ref=e336]: Glassblowing studio with classes and events.
+            - paragraph [ref=e337]: 📍 (Downtown)
+        - list [ref=e339]:
+          - listitem [ref=e340]:
+            - link "Insta (opens in new tab)" [ref=e341] [cursor=pointer]:
+              - /url: https://www.instagram.com/hotshopsartcenter/?hl=en
+              - text: Insta
+          - listitem [ref=e342]:
+            - link "Events Calendar (opens in new tab)" [ref=e343] [cursor=pointer]:
+              - /url: https://hotshopsartcenter.org/events/
+              - text: Events Calendar
+          - listitem [ref=e344]:
+            - link "FB (opens in new tab)" [ref=e345] [cursor=pointer]:
+              - /url: https://www.facebook.com/hotshopsartcenter/
+              - text: FB
+      - generic [ref=e346]:
+        - heading "Omaha Artists Cooperative Gallery Gender-neutral bathroom" [level=3] [ref=e348]:
+          - text: Omaha Artists Cooperative Gallery
+          - img "Gender-neutral bathroom" [ref=e349]:
+            - img [ref=e350]: 🚻
+        - generic [ref=e351]:
+          - generic:
+            - paragraph [ref=e352]: Artist-owned gallery showcasing a wide variety of local art.
+            - paragraph [ref=e353]: 📍 (Downtown)
+        - list [ref=e355]:
+          - listitem [ref=e356]:
+            - link "Events Calendar (opens in new tab)" [ref=e357] [cursor=pointer]:
+              - /url: http://artistscoopomaha.com/events?view=calendar
+              - text: Events Calendar
+    - region "Cafes"
+    - region "Music"
+    - region "Makers"
+  - contentinfo [ref=e358]:
+    - link "Subscribe to the Queer Omaha Events calendar in Google Calendar" [ref=e360] [cursor=pointer]:
+      - /url: https://calendar.google.com/calendar/r?cid=webcal%3A%2F%2Fqueeromaha.net%2Fevents.ics
+      - text: 📅 Subscribe to QueerOmaha Calendar
+    - paragraph [ref=e362]: Conserve your spoons
+    - navigation "Footer navigation" [ref=e363]:
+      - link "About" [ref=e364] [cursor=pointer]:
+        - /url: /about#about
+      - link "@taraxvoid/queeromaha on GitHub (opens in new tab)" [ref=e365] [cursor=pointer]:
+        - /url: https://github.com/taraxvoid/queeromaha
+        - img "GitHub" [ref=e366]:
+          - img [ref=e367]
+  - generic [ref=e371]:
+    - button "Menu" [ref=e372]:
+      - img [ref=e374]
+      - generic: Menu
+    - button "Inspect" [ref=e378]:
+      - img [ref=e380]
+      - generic: Inspect
+    - button "Audit" [ref=e382]:
+      - generic [ref=e383]:
+        - img [ref=e384]
+        - img [ref=e393]
+      - generic: Audit
+    - button "Settings" [ref=e387]:
+      - img [ref=e389]
+      - generic: Settings

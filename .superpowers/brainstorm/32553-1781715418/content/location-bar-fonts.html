@@ -1,0 +1,51 @@
+<h2>Font options — centered text, no icon, option B colors</h2>
+<p class="subtitle">All using the light-purple (#c4b5fd) + dark text (#4c1d95) bevel from B. Text is centered both axes in each segment. No emoji/icon — color + weight alone marks the active segment.</p>
+
+<div class="cards">
+  <div class="card" data-choice="font-verdana" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="display:flex;border-radius:999px;background:#f9f5ff;border:2px solid #c4b5fd;font-size:0.8rem;font-weight:700;font-family:Verdana,Geneva,sans-serif;overflow:hidden;box-shadow:inset 1px 1px 0 rgba(255,255,255,0.6), inset -1px -1px 0 rgba(124,58,237,0.15);">
+        <span style="flex:0 0 auto;padding:0.4rem 0.9rem;color:#6d28d9;border-right:2px solid #c4b5fd;display:flex;align-items:center;justify-content:center;">Old Market</span>
+        <span style="flex:0 0 auto;padding:0.4rem 0.9rem;background:#c4b5fd;color:#4c1d95;border-right:2px solid #c4b5fd;display:flex;align-items:center;justify-content:center;box-shadow:inset 1px 1px 0 rgba(0,0,0,0.1), inset -1px -1px 0 rgba(255,255,255,0.4);">Benson</span>
+        <span style="flex:0 0 auto;padding:0.4rem 0.9rem;color:#6d28d9;border-right:2px solid #c4b5fd;display:flex;align-items:center;justify-content:center;">Dundee</span>
+        <span style="flex:0 0 auto;padding:0.4rem 0.9rem;color:#6d28d9;display:flex;align-items:center;justify-content:center;">Midtown</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Verdana</h3>
+      <p>Classic "old-web" UI font, designed specifically for screen legibility at small sizes (wide letterforms, generous spacing). Web-safe, no font file to load. Matches the chunky-bevel aesthetic well.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="font-inter" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="display:flex;border-radius:999px;background:#f9f5ff;border:2px solid #c4b5fd;font-size:0.82rem;font-weight:700;font-family:'Inter',system-ui,sans-serif;overflow:hidden;box-shadow:inset 1px 1px 0 rgba(255,255,255,0.6), inset -1px -1px 0 rgba(124,58,237,0.15);">
+        <span style="flex:0 0 auto;padding:0.4rem 0.9rem;color:#6d28d9;border-right:2px solid #c4b5fd;display:flex;align-items:center;justify-content:center;">Old Market</span>
+        <span style="flex:0 0 auto;padding:0.4rem 0.9rem;background:#c4b5fd;color:#4c1d95;border-right:2px solid #c4b5fd;display:flex;align-items:center;justify-content:center;box-shadow:inset 1px 1px 0 rgba(0,0,0,0.1), inset -1px -1px 0 rgba(255,255,255,0.4);">Benson</span>
+        <span style="flex:0 0 auto;padding:0.4rem 0.9rem;color:#6d28d9;border-right:2px solid #c4b5fd;display:flex;align-items:center;justify-content:center;">Dundee</span>
+        <span style="flex:0 0 auto;padding:0.4rem 0.9rem;color:#6d28d9;display:flex;align-items:center;justify-content:center;">Midtown</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Inter</h3>
+      <p>Modern UI typeface, purpose-built for high legibility on screens at small sizes (tall x-height, open apertures). Needs a font file (e.g. self-hosted or Google Fonts) — a small dependency add. Less "old-web," more crisp/contemporary.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="font-system-ui" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="display:flex;border-radius:999px;background:#f9f5ff;border:2px solid #c4b5fd;font-size:0.82rem;font-weight:700;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;overflow:hidden;box-shadow:inset 1px 1px 0 rgba(255,255,255,0.6), inset -1px -1px 0 rgba(124,58,237,0.15);">
+        <span style="flex:0 0 auto;padding:0.4rem 0.9rem;color:#6d28d9;border-right:2px solid #c4b5fd;display:flex;align-items:center;justify-content:center;">Old Market</span>
+        <span style="flex:0 0 auto;padding:0.4rem 0.9rem;background:#c4b5fd;color:#4c1d95;border-right:2px solid #c4b5fd;display:flex;align-items:center;justify-content:center;box-shadow:inset 1px 1px 0 rgba(0,0,0,0.1), inset -1px -1px 0 rgba(255,255,255,0.4);">Benson</span>
+        <span style="flex:0 0 auto;padding:0.4rem 0.9rem;color:#6d28d9;border-right:2px solid #c4b5fd;display:flex;align-items:center;justify-content:center;">Dundee</span>
+        <span style="flex:0 0 auto;padding:0.4rem 0.9rem;color:#6d28d9;display:flex;align-items:center;justify-content:center;">Midtown</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — System UI stack</h3>
+      <p>Uses each OS's native UI font (San Francisco on Mac, Segoe UI on Windows). Zero dependency, highly legible since it's tuned per-platform, but text will look slightly different across visitors' devices.</p>
+    </div>
+  </div>
+</div>
+
+<p class="section label">Note: whichever is picked, it would apply only to the location bar (not site-wide) unless you'd like it elsewhere too.</p>

@@ -1,0 +1,282 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - navigation "Main navigation" [ref=e4]:
+      - link "Social" [ref=e6] [cursor=pointer]:
+        - /url: /social
+        - generic [ref=e7]: Social
+      - link "Spiritual" [ref=e9] [cursor=pointer]:
+        - /url: /spiritual
+        - generic [ref=e10]: Spiritual
+      - link "Art" [ref=e12] [cursor=pointer]:
+        - /url: /art
+        - generic [ref=e13]: Art
+      - link "Cafes" [ref=e15] [cursor=pointer]:
+        - /url: /cafes
+        - generic [ref=e16]: Cafes
+      - link "Music" [ref=e18] [cursor=pointer]:
+        - /url: /music
+        - generic [ref=e19]: Music
+      - link "Makers" [ref=e21] [cursor=pointer]:
+        - /url: /makers
+        - generic [ref=e22]: Makers
+  - main [ref=e23]:
+    - heading "Queer Omaha — LGBTQ+ Community Directory" [level=1] [ref=e24]
+    - generic [ref=e25]:
+      - group "Filter by location" [ref=e26]:
+        - generic [ref=e27]:
+          - button "Benson" [pressed] [ref=e28] [cursor=pointer]
+          - button "Dundee" [ref=e29] [cursor=pointer]
+          - button "Midtown" [ref=e30] [cursor=pointer]
+          - button "Aksarben" [ref=e31] [cursor=pointer]
+          - button "Downtown" [ref=e32] [cursor=pointer]
+          - button "North O" [ref=e33] [cursor=pointer]
+          - button "South O" [ref=e34] [cursor=pointer]
+          - button "West O" [ref=e35] [cursor=pointer]
+      - group "Filter by tag" [ref=e36]:
+        - button "Clear tag filters" [disabled] [ref=e37]: ✕ Clear
+        - button "Gender-neutral bathroom" [ref=e38] [cursor=pointer]:
+          - img [ref=e40]: 🚻
+          - text: Gender-neutral bathroom
+        - button "Seating available" [ref=e41] [cursor=pointer]:
+          - img [ref=e43]: 🛋️
+          - text: Seating available
+        - button "Work/study spot" [disabled] [ref=e44]:
+          - generic:
+            - img: 💻
+          - text: Work/study spot
+    - region "Social"
+    - region "Spiritual"
+    - region "Art" [ref=e45]:
+      - heading "Art" [level=2] [ref=e46]
+      - generic [ref=e47]:
+        - heading "Petshop Gender-neutral bathroom" [level=3] [ref=e49]:
+          - text: Petshop
+          - img "Gender-neutral bathroom" [ref=e50]:
+            - img [ref=e51]: 🚻
+        - generic [ref=e52]:
+          - generic:
+            - paragraph [ref=e53]: Punk/queer space for provocative art and experimental music.
+            - paragraph [ref=e54]: 📍 (Benson)
+        - list [ref=e56]:
+          - listitem [ref=e57]:
+            - link "Insta (opens in new tab)" [ref=e58] [cursor=pointer]:
+              - /url: https://www.instagram.com/petshopgallery/?hl=en
+              - text: Insta
+          - listitem [ref=e59]:
+            - link "Website (opens in new tab)" [ref=e60] [cursor=pointer]:
+              - /url: https://www.bffomaha.org/petshop
+              - text: Website
+      - generic [ref=e61]:
+        - heading "Radial Arts Center Gender-neutral bathroom" [level=3] [ref=e63]:
+          - text: Radial Arts Center
+          - img "Gender-neutral bathroom" [ref=e64]:
+            - img [ref=e65]: 🚻
+        - generic [ref=e66]:
+          - generic:
+            - paragraph [ref=e67]: Large gallery showing larger local artists.
+            - paragraph [ref=e68]: 📍 (Benson)
+        - list [ref=e70]:
+          - listitem [ref=e71]:
+            - link "Website (opens in new tab)" [ref=e72] [cursor=pointer]:
+              - /url: https://www.radialartscenter.org/
+              - text: Website
+      - generic [ref=e73]:
+        - heading "BFF Gallery" [level=3] [ref=e75]
+        - generic [ref=e76]:
+          - generic:
+            - paragraph [ref=e77]: Cool punk gallery. My art was in it!
+            - paragraph [ref=e78]: 📍 (Benson)
+        - list [ref=e80]:
+          - listitem [ref=e81]:
+            - link "Insta (opens in new tab)" [ref=e82] [cursor=pointer]:
+              - /url: https://www.instagram.com/thebffgallery/?hl=en
+              - text: Insta
+      - generic [ref=e83]:
+        - heading "Ming Toy Gallery" [level=3] [ref=e85]
+        - generic [ref=e86]:
+          - generic:
+            - paragraph [ref=e87]: Cozy gallery next to Edge of the Universe.
+            - paragraph [ref=e88]: 📍 (Benson)
+        - list [ref=e90]:
+          - listitem [ref=e91]:
+            - link "Insta (opens in new tab)" [ref=e92] [cursor=pointer]:
+              - /url: https://www.instagram.com/mingtoygallery/
+              - text: Insta
+          - listitem [ref=e93]:
+            - link "Website (opens in new tab)" [ref=e94] [cursor=pointer]:
+              - /url: https://www.mingtoygallery.com/
+              - text: Website
+      - generic [ref=e95]:
+        - heading "Maple Street Construct" [level=3] [ref=e97]
+        - generic [ref=e98]:
+          - generic:
+            - paragraph [ref=e99]: Minimalist space with a cool upstairs.
+            - paragraph [ref=e100]: 📍 (Benson)
+        - list [ref=e102]:
+          - listitem [ref=e103]:
+            - link "Website (opens in new tab)" [ref=e104] [cursor=pointer]:
+              - /url: https://www.maplestconstruct.com/
+              - text: Website
+          - listitem [ref=e105]:
+            - link "FB (opens in new tab)" [ref=e106] [cursor=pointer]:
+              - /url: https://www.facebook.com/maplestconstruct/
+              - text: FB
+      - generic [ref=e107]:
+        - heading "MaMo Mobile Gallery Semi-Truck" [level=3] [ref=e109]
+        - generic [ref=e110]:
+          - generic:
+            - paragraph [ref=e111]: Mobile gallery often parked near Petshop showing local artists.
+            - paragraph [ref=e112]: 📍 (Benson)
+        - list [ref=e114]:
+          - listitem [ref=e115]:
+            - link "Insta (opens in new tab)" [ref=e116] [cursor=pointer]:
+              - /url: https://www.instagram.com/bffmamo/?hl=en
+              - text: Insta
+          - listitem [ref=e117]:
+            - link "Website (opens in new tab)" [ref=e118] [cursor=pointer]:
+              - /url: https://www.bffomaha.org/mamo
+              - text: Website
+          - listitem [ref=e119]:
+            - link "FB (opens in new tab)" [ref=e120] [cursor=pointer]:
+              - /url: https://www.facebook.com/MaMOgallery/
+              - text: FB
+      - generic [ref=e121]:
+        - heading "Trudy's" [level=3] [ref=e123]
+        - generic [ref=e124]:
+          - generic:
+            - paragraph [ref=e125]: Open artist studios, music and free workshops ran by BFF.
+            - paragraph [ref=e126]: 📍 (Benson)
+        - list [ref=e128]:
+          - listitem [ref=e129]:
+            - link "Website (opens in new tab)" [ref=e130] [cursor=pointer]:
+              - /url: https://www.bffomaha.org/learn
+              - text: Website
+          - listitem [ref=e131]:
+            - link "FB (opens in new tab)" [ref=e132] [cursor=pointer]:
+              - /url: https://www.facebook.com/people/Trudys/61561806150499/
+              - text: FB
+    - region "Cafes" [ref=e133]:
+      - heading "Cafes" [level=2] [ref=e134]
+      - generic [ref=e135]:
+        - heading "Edge of the Universe Cafe Gender-neutral bathroomSeating available" [level=3] [ref=e137]:
+          - text: Edge of the Universe Cafe
+          - img "Gender-neutral bathroom" [ref=e138]:
+            - img [ref=e139]: 🚻
+          - img "Seating available" [ref=e140]:
+            - img [ref=e141]: 🛋️
+        - generic [ref=e142]:
+          - generic:
+            - paragraph [ref=e143]: Truly unique place with artist owners. Great date spot.
+            - paragraph [ref=e144]: 📍 (Benson)
+        - list [ref=e146]:
+          - listitem [ref=e147]:
+            - link "Insta (opens in new tab)" [ref=e148] [cursor=pointer]:
+              - /url: https://www.instagram.com/edgeuniversebff/
+              - text: Insta
+          - listitem [ref=e149]:
+            - link "Events Calendar (opens in new tab)" [ref=e150] [cursor=pointer]:
+              - /url: https://www.edgeoftheuniverseomaha.com/
+              - text: Events Calendar
+          - listitem [ref=e151]:
+            - link "FB (opens in new tab)" [ref=e152] [cursor=pointer]:
+              - /url: https://www.facebook.com/Edgeuniversebff/about/
+              - text: FB
+      - generic [ref=e153]:
+        - heading "Legends Comics & Coffee Gender-neutral bathroomSeating available" [level=3] [ref=e155]:
+          - text: Legends Comics & Coffee
+          - img "Gender-neutral bathroom" [ref=e156]:
+            - img [ref=e157]: 🚻
+          - img "Seating available" [ref=e158]:
+            - img [ref=e159]: 🛋️
+        - generic [ref=e160]:
+          - generic:
+            - paragraph [ref=e161]: Comic shop with a large queer section. Board game space in the back.
+            - paragraph [ref=e162]: 📍 (Benson)
+        - list [ref=e164]:
+          - listitem [ref=e165]:
+            - link "Insta (opens in new tab)" [ref=e166] [cursor=pointer]:
+              - /url: https://www.instagram.com/legendcomicsandcoffee/?hl=en
+              - text: Insta
+          - listitem [ref=e167]:
+            - link "FB (opens in new tab)" [ref=e168] [cursor=pointer]:
+              - /url: https://www.facebook.com/LegendComics/
+              - text: FB
+    - region "Music" [ref=e169]:
+      - heading "Music" [level=2] [ref=e170]
+      - generic [ref=e171]:
+        - heading "Shakedown Street Gender-neutral bathroom" [level=3] [ref=e173]:
+          - text: Shakedown Street
+          - img "Gender-neutral bathroom" [ref=e174]:
+            - img [ref=e175]: 🚻
+        - generic [ref=e176]:
+          - generic:
+            - paragraph [ref=e177]: Dive bar next to Petshop with drag / burlesque shows and music.
+            - paragraph [ref=e178]: 📍 (Benson)
+        - list [ref=e180]:
+          - listitem [ref=e181]:
+            - link "Insta (opens in new tab)" [ref=e182] [cursor=pointer]:
+              - /url: https://www.instagram.com/shakedownstreettavern/
+              - text: Insta
+          - listitem [ref=e183]:
+            - link "Website (opens in new tab)" [ref=e184] [cursor=pointer]:
+              - /url: https://www.facebook.com/shakedownstreettavern/
+              - text: Website
+          - listitem [ref=e185]:
+            - link "FB (opens in new tab)" [ref=e186] [cursor=pointer]:
+              - /url: https://www.facebook.com/shakedownstreettavern/
+              - text: FB
+          - listitem [ref=e187]:
+            - link "Events on OmahaUnderground (opens in new tab)" [ref=e188] [cursor=pointer]:
+              - /url: https://omahaunderground.net/venues/shakedown-street-tavern
+              - text: Events on OmahaUnderground
+      - generic [ref=e189]:
+        - heading "Reverb Lounge Seating available" [level=3] [ref=e191]:
+          - text: Reverb Lounge
+          - img "Seating available" [ref=e192]:
+            - img [ref=e193]: 🛋️
+        - generic [ref=e194]:
+          - generic:
+            - paragraph [ref=e195]: Gets a lot of cool local and regional acts.
+            - paragraph [ref=e196]: 📍 (Benson)
+        - list [ref=e198]:
+          - listitem [ref=e199]:
+            - link "Website (opens in new tab)" [ref=e200] [cursor=pointer]:
+              - /url: https://www.reverblounge.com/
+              - text: Website
+          - listitem [ref=e201]:
+            - link "Events on OmahaUnderground (opens in new tab)" [ref=e202] [cursor=pointer]:
+              - /url: https://omahaunderground.net/venues/reverb-lounge
+              - text: Events on OmahaUnderground
+      - generic [ref=e203]:
+        - heading "The Sydney Gender-neutral bathroom" [level=3] [ref=e205]:
+          - text: The Sydney
+          - img "Gender-neutral bathroom" [ref=e206]:
+            - img [ref=e207]: 🚻
+        - generic [ref=e208]:
+          - generic:
+            - paragraph [ref=e209]: Dive bar for local acts,burlesque shows and drag.
+            - paragraph [ref=e210]: 📍 (Benson)
+        - list [ref=e212]:
+          - listitem [ref=e213]:
+            - link "Website (opens in new tab)" [ref=e214] [cursor=pointer]:
+              - /url: https://thesydneybenson.com/
+              - text: Website
+          - listitem [ref=e215]:
+            - link "Events on OmahaUnderground (opens in new tab)" [ref=e216] [cursor=pointer]:
+              - /url: https://omahaunderground.net/venues/the-sydney
+              - text: Events on OmahaUnderground
+    - region "Makers"
+  - contentinfo [ref=e217]:
+    - link "Subscribe to the Queer Omaha Events calendar in Google Calendar" [ref=e219] [cursor=pointer]:
+      - /url: https://calendar.google.com/calendar/r?cid=webcal%3A%2F%2Fqueeromaha.net%2Fevents.ics
+      - text: 📅 Subscribe to QueerOmaha Calendar
+    - paragraph [ref=e221]: You are not alone
+    - navigation "Footer navigation" [ref=e222]:
+      - link "About" [ref=e223] [cursor=pointer]:
+        - /url: /about#about
+      - link "@taraxvoid/queeromaha on GitHub (opens in new tab)" [ref=e224] [cursor=pointer]:
+        - /url: https://github.com/taraxvoid/queeromaha
+        - img "GitHub" [ref=e225]:
+          - img [ref=e226]

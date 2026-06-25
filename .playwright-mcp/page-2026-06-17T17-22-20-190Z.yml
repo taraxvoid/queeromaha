@@ -1,0 +1,399 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - navigation "Main navigation" [ref=e4]:
+      - generic [ref=e5]: Social
+      - generic [ref=e6]: Spiritual
+      - generic [ref=e7]: Art
+      - generic [ref=e8]: Cafes
+      - generic [ref=e9]: Music
+      - generic [ref=e10]: Makers
+  - main [ref=e11]:
+    - heading "Queer Omaha — LGBTQ+ Community Directory" [level=1] [ref=e12]
+    - group "Filter by location or tag" [ref=e13]:
+      - group "Filter by location" [ref=e14]:
+        - generic [ref=e15]:
+          - button "Midtown" [ref=e16] [cursor=pointer]
+          - button "South O" [ref=e17] [cursor=pointer]
+          - button "North O" [ref=e18] [cursor=pointer]
+          - button "Benson" [ref=e19] [cursor=pointer]
+          - button "Downtown" [ref=e20] [cursor=pointer]
+          - button "West O" [disabled] [ref=e21]
+          - button "Aksarben" [disabled] [ref=e22]
+          - button "Dundee" [disabled] [ref=e23]
+      - generic [ref=e24]:
+        - button "Clear tag filters" [disabled] [ref=e25]: ✕ Clear
+        - button "Gender-neutral bathroom Gender-neutral bathroom Gender-neutral bathroom" [ref=e26] [cursor=pointer]:
+          - generic [ref=e27]: Gender-neutral bathroom
+          - img "Gender-neutral bathroom" [ref=e28]: 🚻
+          - text: Gender-neutral bathroom
+        - button "Seating available Seating available Seating available" [ref=e29] [cursor=pointer]:
+          - generic [ref=e30]: Seating available
+          - img "Seating available" [ref=e31]: 🛋️
+          - text: Seating available
+        - button "Work/study spot Work/study spot Work/study spot" [disabled] [ref=e32]:
+          - generic: Work/study spot
+          - img "Work/study spot": 💻
+          - text: Work/study spot
+    - region "Social"
+    - region "Spiritual"
+    - region "Art" [ref=e33]:
+      - heading "Art" [level=2] [ref=e34]
+      - generic [ref=e35]:
+        - heading "Soundry w/ Stacey Barelos Gender-neutral bathroomSeating available" [level=3] [ref=e36]:
+          - text: Soundry w/ Stacey Barelos
+          - img "Gender-neutral bathroom" [ref=e37]:
+            - text: Gender-neutral bathroom
+            - img "Gender-neutral bathroom" [ref=e38]: 🚻
+          - img "Seating available" [ref=e39]:
+            - text: Seating available
+            - img "Seating available" [ref=e40]: 🛋️
+        - paragraph [ref=e41]: Fun and inventive music workshops - want to smash a piano? How quietly can you play a tambourine?
+        - list [ref=e42]:
+          - listitem [ref=e43]:
+            - link "Insta (opens in new tab)" [ref=e44] [cursor=pointer]:
+              - /url: https://www.instagram.com/omahasoundry/
+              - text: Insta
+          - listitem [ref=e45]:
+            - link "Events Calendar (opens in new tab)" [ref=e46] [cursor=pointer]:
+              - /url: https://soundryomaha.org
+              - text: Events Calendar
+      - generic [ref=e47]:
+        - heading "Omaha Drum Family" [level=3] [ref=e48]
+        - paragraph [ref=e49]: Drop-in drum circle every 3rd Friday from 7PM to 9PM @ Whole Rejuvenation House (4312 Camden Ave). Bring a drum or borrow one of theirs!
+        - list [ref=e50]:
+          - listitem [ref=e51]:
+            - link "Events Calendar (opens in new tab)" [ref=e52] [cursor=pointer]:
+              - /url: https://www.facebook.com/drumomaha/
+              - text: Events Calendar
+      - generic [ref=e53]:
+        - heading "SynthOmaha Electronic Music Jam" [level=3] [ref=e54]
+        - paragraph [ref=e55]: Bring your laptop, analog synth, or modular rig to Shakedown Street @ 8-10pm on the last Monday of the month. Wallflowers welcome!
+        - list [ref=e56]:
+          - listitem [ref=e57]:
+            - link "Events Calendar (opens in new tab)" [ref=e58] [cursor=pointer]:
+              - /url: https://synthomaha.net/
+              - text: Events Calendar
+      - generic [ref=e59]:
+        - heading "Sowing Seeds" [level=3] [ref=e60]
+        - paragraph [ref=e61]: Jo's free creative gathering at Legend Comics & Coffee (Benson) on the 1st, 2nd, and 3rd Sundays, 11am–2pm. Bring whatever project you're working on and create alongside other artists and writers.
+        - list [ref=e62]:
+          - listitem [ref=e63]:
+            - link "Insta (opens in new tab)" [ref=e64] [cursor=pointer]:
+              - /url: https://www.instagram.com/sowingseeds.omaha/
+              - text: Insta
+      - generic [ref=e65]:
+        - heading "Alternative Publishing (Zines)" [level=3] [ref=e66]
+        - paragraph [ref=e67]: Runs Omaha Zine Fest! (OZF) - publishes queer / trans local Comix, Poetry chapbooks, and Linocuts
+        - list [ref=e68]:
+          - listitem [ref=e69]:
+            - link "Insta (opens in new tab)" [ref=e70] [cursor=pointer]:
+              - /url: https://www.instagram.com/altpubomaha/
+              - text: Insta
+      - generic [ref=e71]:
+        - heading "Church Art House Gender-neutral bathroom" [level=3] [ref=e72]:
+          - text: Church Art House
+          - img "Gender-neutral bathroom" [ref=e73]:
+            - text: Gender-neutral bathroom
+            - img "Gender-neutral bathroom" [ref=e74]: 🚻
+        - paragraph [ref=e75]: Unique artistic space in a de-consecrated church. Drawing classes, acro-yoga, ecstatic dance, singing bowls. Clay wheel and kiln in the basement.
+        - paragraph [ref=e76]: 📍 (South O)
+        - list [ref=e77]:
+          - listitem [ref=e78]:
+            - link "Insta (opens in new tab)" [ref=e79] [cursor=pointer]:
+              - /url: https://www.instagram.com/thechurcharthouse/
+              - text: Insta
+          - listitem [ref=e80]:
+            - link "Events Calendar (opens in new tab)" [ref=e81] [cursor=pointer]:
+              - /url: https://www.thechurcharthouse.love/schedule
+              - text: Events Calendar
+      - generic [ref=e82]:
+        - heading "Project Project Gender-neutral bathroom" [level=3] [ref=e83]:
+          - text: Project Project
+          - img "Gender-neutral bathroom" [ref=e84]:
+            - text: Gender-neutral bathroom
+            - img "Gender-neutral bathroom" [ref=e85]: 🚻
+        - paragraph [ref=e86]: Punk/queer DIY space with experimental music and local art.
+        - paragraph [ref=e87]: 📍 (South O)
+        - list [ref=e88]:
+          - listitem [ref=e89]:
+            - link "Insta (opens in new tab)" [ref=e90] [cursor=pointer]:
+              - /url: https://www.instagram.com/weareprojectproject
+              - text: Insta
+          - listitem [ref=e91]:
+            - link "Events Calendar (opens in new tab)" [ref=e92] [cursor=pointer]:
+              - /url: https://projectprojectomaha.com/current-show
+              - text: Events Calendar
+      - generic [ref=e93]:
+        - heading "Tilt23" [level=3] [ref=e94]
+        - paragraph [ref=e95]: Local artists, music and market at rotating venues eg Church Art House.
+        - paragraph [ref=e96]: 📍 (South O)
+        - list [ref=e97]:
+          - listitem [ref=e98]:
+            - link "Insta (opens in new tab)" [ref=e99] [cursor=pointer]:
+              - /url: https://www.instagram.com/tilt23showcase/
+              - text: Insta
+          - listitem [ref=e100]:
+            - link "FB (opens in new tab)" [ref=e101] [cursor=pointer]:
+              - /url: https://www.facebook.com/tilt23/
+              - text: FB
+      - generic [ref=e102]:
+        - heading "Clover24" [level=3] [ref=e103]
+        - paragraph [ref=e104]: New-ish studio and gallery space.
+        - paragraph [ref=e105]: 📍 (South O)
+        - list [ref=e106]:
+          - listitem [ref=e107]:
+            - link "Insta (opens in new tab)" [ref=e108] [cursor=pointer]:
+              - /url: https://www.instagram.com/clover24omaha/
+              - text: Insta
+          - listitem [ref=e109]:
+            - link "Events Calendar (opens in new tab)" [ref=e110] [cursor=pointer]:
+              - /url: https://clover24.org/events
+              - text: Events Calendar
+      - generic [ref=e111]:
+        - heading "Culxr House Gender-neutral bathroom" [level=3] [ref=e112]:
+          - text: Culxr House
+          - img "Gender-neutral bathroom" [ref=e113]:
+            - text: Gender-neutral bathroom
+            - img "Gender-neutral bathroom" [ref=e114]: 🚻
+        - paragraph [ref=e115]: Black-owned community space for shows and art events.
+        - paragraph [ref=e116]: 📍 (North O)
+        - list [ref=e117]:
+          - listitem [ref=e118]:
+            - link "Insta (opens in new tab)" [ref=e119] [cursor=pointer]:
+              - /url: https://www.instagram.com/culxrhouse/
+              - text: Insta
+          - listitem [ref=e120]:
+            - link "FB (opens in new tab)" [ref=e121] [cursor=pointer]:
+              - /url: https://www.facebook.com/culxrhouse/
+              - text: FB
+          - listitem [ref=e122]:
+            - link "Events Calendar (opens in new tab)" [ref=e123] [cursor=pointer]:
+              - /url: https://www.houseofculxr.com/all-events
+              - text: Events Calendar
+      - generic [ref=e124]:
+        - heading "Union for Contemporary Art" [level=3] [ref=e125]
+        - paragraph [ref=e126]: Exhibits, studios, classes, and talks.
+        - paragraph [ref=e127]: 📍 (North O)
+        - list [ref=e128]:
+          - listitem [ref=e129]:
+            - link "Events Calendar (opens in new tab)" [ref=e130] [cursor=pointer]:
+              - /url: https://www.u-ca.org/happenings
+              - text: Events Calendar
+      - generic [ref=e131]:
+        - heading "Petshop Gender-neutral bathroom" [level=3] [ref=e132]:
+          - text: Petshop
+          - img "Gender-neutral bathroom" [ref=e133]:
+            - text: Gender-neutral bathroom
+            - img "Gender-neutral bathroom" [ref=e134]: 🚻
+        - paragraph [ref=e135]: Punk/queer space for provocative art and experimental music.
+        - paragraph [ref=e136]: 📍 (Benson)
+        - list [ref=e137]:
+          - listitem [ref=e138]:
+            - link "Insta (opens in new tab)" [ref=e139] [cursor=pointer]:
+              - /url: https://www.instagram.com/petshopgallery/?hl=en
+              - text: Insta
+          - listitem [ref=e140]:
+            - link "Website (opens in new tab)" [ref=e141] [cursor=pointer]:
+              - /url: https://www.bffomaha.org/petshop
+              - text: Website
+      - generic [ref=e142]:
+        - heading "Radial Arts Center Gender-neutral bathroom" [level=3] [ref=e143]:
+          - text: Radial Arts Center
+          - img "Gender-neutral bathroom" [ref=e144]:
+            - text: Gender-neutral bathroom
+            - img "Gender-neutral bathroom" [ref=e145]: 🚻
+        - paragraph [ref=e146]: Large gallery showing larger local artists.
+        - paragraph [ref=e147]: 📍 (Benson)
+        - list [ref=e148]:
+          - listitem [ref=e149]:
+            - link "Website (opens in new tab)" [ref=e150] [cursor=pointer]:
+              - /url: https://www.radialartscenter.org/
+              - text: Website
+      - generic [ref=e151]:
+        - heading "BFF Gallery" [level=3] [ref=e152]
+        - paragraph [ref=e153]: Cool punk gallery. My art was in it!
+        - paragraph [ref=e154]: 📍 (Benson)
+        - list [ref=e155]:
+          - listitem [ref=e156]:
+            - link "Insta (opens in new tab)" [ref=e157] [cursor=pointer]:
+              - /url: https://www.instagram.com/thebffgallery/?hl=en
+              - text: Insta
+      - generic [ref=e158]:
+        - heading "Ming Toy Gallery" [level=3] [ref=e159]
+        - paragraph [ref=e160]: Cozy gallery next to Edge of the Universe.
+        - paragraph [ref=e161]: 📍 (Benson)
+        - list [ref=e162]:
+          - listitem [ref=e163]:
+            - link "Insta (opens in new tab)" [ref=e164] [cursor=pointer]:
+              - /url: https://www.instagram.com/mingtoygallery/
+              - text: Insta
+          - listitem [ref=e165]:
+            - link "Website (opens in new tab)" [ref=e166] [cursor=pointer]:
+              - /url: https://www.mingtoygallery.com/
+              - text: Website
+      - generic [ref=e167]:
+        - heading "Maple Street Construct" [level=3] [ref=e168]
+        - paragraph [ref=e169]: Minimalist space with a cool upstairs.
+        - paragraph [ref=e170]: 📍 (Benson)
+        - list [ref=e171]:
+          - listitem [ref=e172]:
+            - link "Website (opens in new tab)" [ref=e173] [cursor=pointer]:
+              - /url: https://www.maplestconstruct.com/
+              - text: Website
+          - listitem [ref=e174]:
+            - link "FB (opens in new tab)" [ref=e175] [cursor=pointer]:
+              - /url: https://www.facebook.com/maplestconstruct/
+              - text: FB
+      - generic [ref=e176]:
+        - heading "MaMo Mobile Gallery Semi-Truck" [level=3] [ref=e177]
+        - paragraph [ref=e178]: Mobile gallery often parked near Petshop showing local artists.
+        - paragraph [ref=e179]: 📍 (Benson)
+        - list [ref=e180]:
+          - listitem [ref=e181]:
+            - link "Insta (opens in new tab)" [ref=e182] [cursor=pointer]:
+              - /url: https://www.instagram.com/bffmamo/?hl=en
+              - text: Insta
+          - listitem [ref=e183]:
+            - link "Website (opens in new tab)" [ref=e184] [cursor=pointer]:
+              - /url: https://www.bffomaha.org/mamo
+              - text: Website
+          - listitem [ref=e185]:
+            - link "FB (opens in new tab)" [ref=e186] [cursor=pointer]:
+              - /url: https://www.facebook.com/MaMOgallery/
+              - text: FB
+      - generic [ref=e187]:
+        - heading "Trudy's" [level=3] [ref=e188]
+        - paragraph [ref=e189]: Open artist studios, music and free workshops ran by BFF.
+        - paragraph [ref=e190]: 📍 (Benson)
+        - list [ref=e191]:
+          - listitem [ref=e192]:
+            - link "Website (opens in new tab)" [ref=e193] [cursor=pointer]:
+              - /url: https://www.bffomaha.org/learn
+              - text: Website
+          - listitem [ref=e194]:
+            - link "FB (opens in new tab)" [ref=e195] [cursor=pointer]:
+              - /url: https://www.facebook.com/people/Trudys/61561806150499/
+              - text: FB
+      - generic [ref=e196]:
+        - heading "Cali Commons" [level=3] [ref=e197]
+        - paragraph [ref=e198]: Arts collective and neighborhood gallery
+        - paragraph [ref=e199]: 📍 (Midtown)
+        - list [ref=e200]:
+          - listitem [ref=e201]:
+            - link "Events Calendar (opens in new tab)" [ref=e202] [cursor=pointer]:
+              - /url: https://calicommons.com/calendar-of-events/
+              - text: Events Calendar
+          - listitem [ref=e203]:
+            - link "Join Artist Collective (opens in new tab)" [ref=e204] [cursor=pointer]:
+              - /url: https://docs.google.com/forms/d/e/1FAIpQLSchb_KdCJCRtj2aAA78m5ycAGq0Mv17EGJYzgd26ciXTDpUcQ/viewform
+              - text: Join Artist Collective
+      - generic [ref=e205]:
+        - heading "Hispanic Arts Center" [level=3] [ref=e206]
+        - paragraph [ref=e207]: Traditional and contemporary Mexican folkloric dance, creative expression, and community gathering. Has Dia de Los Muertos and Cinco de la Mayo events.
+        - paragraph [ref=e208]: 📍 (Midtown)
+        - list [ref=e209]:
+          - listitem [ref=e210]:
+            - link "FB (opens in new tab)" [ref=e211] [cursor=pointer]:
+              - /url: https://www.facebook.com/people/Hispanic-Art-Center-of-Omaha/100075726047114/
+              - text: FB
+          - listitem [ref=e212]:
+            - link "Events Calendar (opens in new tab)" [ref=e213] [cursor=pointer]:
+              - /url: https://www.haco-ne.com/events.html
+              - text: Events Calendar
+      - generic [ref=e214]:
+        - heading "Aksarben Village Gender-neutral bathroom" [level=3] [ref=e215]:
+          - text: Aksarben Village
+          - img "Gender-neutral bathroom" [ref=e216]:
+            - text: Gender-neutral bathroom
+            - img "Gender-neutral bathroom" [ref=e217]: 🚻
+        - paragraph [ref=e218]: Has arts market and outdoor music in the summer. Get the Momos at Inner Rail. Check out Oto Listening Lounge. There are single-stall BRs at Inner Rail, Godega, Marigold's and Roast.
+        - paragraph [ref=e219]: 📍 (Midtown)
+        - list [ref=e220]:
+          - listitem [ref=e221]:
+            - link "Events Calendar (opens in new tab)" [ref=e222] [cursor=pointer]:
+              - /url: https://www.aksarbenvillage.com/events
+              - text: Events Calendar
+      - generic [ref=e223]:
+        - heading "Samuel Bak Museum" [level=3] [ref=e224]
+        - paragraph [ref=e225]: Holocaust survivor's art museum with workshops and education programs.
+        - paragraph [ref=e226]: 📍 (Midtown)
+        - list [ref=e227]:
+          - listitem [ref=e228]:
+            - link "Events Calendar (opens in new tab)" [ref=e229] [cursor=pointer]:
+              - /url: https://www.unomaha.edu/samuel-bak-museum-the-learning-center/programs-and-events/exhibition-programming.php
+              - text: Events Calendar
+      - generic [ref=e230]:
+        - heading "NeXT Foundation Arts" [level=3] [ref=e231]
+        - paragraph [ref=e232]: Open Studios for Expressive Art at Millwork Commons
+        - paragraph [ref=e233]: 📍 (Downtown)
+        - list [ref=e234]:
+          - listitem [ref=e235]:
+            - link "Art Workshop (on Last Fridays) (opens in new tab)" [ref=e236] [cursor=pointer]:
+              - /url: https://nextfoundation.corsizio.com/event/69d8318ee3976dce4b4278a8
+              - text: Art Workshop (on Last Fridays)
+          - listitem [ref=e237]:
+            - link "Events Calendar (opens in new tab)" [ref=e238] [cursor=pointer]:
+              - /url: https://www.nextfoundationomaha.com/programs-services
+              - text: Events Calendar
+      - generic [ref=e239]:
+        - heading "Bemis Center" [level=3] [ref=e240]
+        - paragraph [ref=e241]: Cutting-edge museum with resident artists, the Low End music series and major installations.
+        - paragraph [ref=e242]: 📍 (Downtown)
+        - list [ref=e243]:
+          - listitem [ref=e244]:
+            - link "Insta (opens in new tab)" [ref=e245] [cursor=pointer]:
+              - /url: https://www.instagram.com/bemiscenter/
+              - text: Insta
+          - listitem [ref=e246]:
+            - link "Events Calendar (opens in new tab)" [ref=e247] [cursor=pointer]:
+              - /url: https://www.bemiscenter.org/low-end
+              - text: Events Calendar
+          - listitem [ref=e248]:
+            - link "FB (opens in new tab)" [ref=e249] [cursor=pointer]:
+              - /url: https://www.facebook.com/bemiscenter/
+              - text: FB
+      - generic [ref=e250]:
+        - heading "Hot Shops" [level=3] [ref=e251]
+        - paragraph [ref=e252]: Glassblowing studio with classes and events.
+        - paragraph [ref=e253]: 📍 (Downtown)
+        - list [ref=e254]:
+          - listitem [ref=e255]:
+            - link "Insta (opens in new tab)" [ref=e256] [cursor=pointer]:
+              - /url: https://www.instagram.com/hotshopsartcenter/?hl=en
+              - text: Insta
+          - listitem [ref=e257]:
+            - link "Events Calendar (opens in new tab)" [ref=e258] [cursor=pointer]:
+              - /url: https://hotshopsartcenter.org/events/
+              - text: Events Calendar
+          - listitem [ref=e259]:
+            - link "FB (opens in new tab)" [ref=e260] [cursor=pointer]:
+              - /url: https://www.facebook.com/hotshopsartcenter/
+              - text: FB
+      - generic [ref=e261]:
+        - heading "Omaha Artists Cooperative Gallery Gender-neutral bathroom" [level=3] [ref=e262]:
+          - text: Omaha Artists Cooperative Gallery
+          - img "Gender-neutral bathroom" [ref=e263]:
+            - text: Gender-neutral bathroom
+            - img "Gender-neutral bathroom" [ref=e264]: 🚻
+        - paragraph [ref=e265]: Artist-owned gallery showcasing a wide variety of local art.
+        - paragraph [ref=e266]: 📍 (Downtown)
+        - list [ref=e267]:
+          - listitem [ref=e268]:
+            - link "Events Calendar (opens in new tab)" [ref=e269] [cursor=pointer]:
+              - /url: http://artistscoopomaha.com/events?view=calendar
+              - text: Events Calendar
+    - region "Cafes"
+    - region "Music"
+    - region "Makers"
+  - contentinfo [ref=e270]:
+    - link "Subscribe to the Queer Omaha Events calendar in Google Calendar" [ref=e272] [cursor=pointer]:
+      - /url: https://calendar.google.com/calendar/r?cid=webcal%3A%2F%2Fqueeromaha.net%2Fevents.ics
+      - text: 📅 Subscribe to QueerOmaha Calendar
+    - paragraph [ref=e274]: You are valid
+    - navigation "Footer navigation" [ref=e275]:
+      - link "About" [ref=e276] [cursor=pointer]:
+        - /url: /about#about
+      - link "@taraxvoid/queeromaha on GitHub (opens in new tab)" [ref=e277] [cursor=pointer]:
+        - /url: https://github.com/taraxvoid/queeromaha
