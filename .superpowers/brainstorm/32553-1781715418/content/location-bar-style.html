@@ -1,0 +1,54 @@
+<h2>Which location bar style feels right?</h2>
+<p class="subtitle">Single bar, rounded ends, one location active at a time. Using the site's existing purple palette (#7c3aed active, #f9f5ff/#ddd6fe idle).</p>
+
+<div class="cards">
+  <div class="card" data-choice="seamless-track" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="display:inline-flex;border-radius:999px;background:#f9f5ff;border:1px solid #ddd6fe;padding:3px;gap:2px;font-size:0.8rem;font-weight:600;font-family:inherit;">
+        <span style="padding:0.3rem 0.85rem;border-radius:999px;color:#6d28d9;">All</span>
+        <span style="padding:0.3rem 0.85rem;border-radius:999px;background:#7c3aed;color:#fff;">Benson</span>
+        <span style="padding:0.3rem 0.85rem;border-radius:999px;color:#6d28d9;">Dundee</span>
+        <span style="padding:0.3rem 0.85rem;border-radius:999px;color:#6d28d9;">Old Market</span>
+        <span style="padding:0.3rem 0.85rem;border-radius:999px;color:#6d28d9;">Midtown</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Seamless track</h3>
+      <p>One continuous rounded "track" container; no gaps/borders between segments. Active segment gets a solid purple capsule that appears to float inside the track. Closest to a true segmented control.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="spaced-pills-in-bar" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="display:inline-flex;border-radius:999px;background:#f9f5ff;border:1px solid #ddd6fe;padding:4px;gap:6px;font-size:0.8rem;font-weight:600;font-family:inherit;">
+        <span style="padding:0.3rem 0.8rem;border-radius:999px;color:#6d28d9;">All</span>
+        <span style="padding:0.3rem 0.8rem;border-radius:999px;background:#7c3aed;color:#fff;">Benson</span>
+        <span style="padding:0.3rem 0.8rem;border-radius:999px;color:#6d28d9;">Dundee</span>
+        <span style="padding:0.3rem 0.8rem;border-radius:999px;color:#6d28d9;">Old Market</span>
+        <span style="padding:0.3rem 0.8rem;border-radius:999px;color:#6d28d9;">Midtown</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Spaced pills in a bar</h3>
+      <p>Same rounded-end outer track, but each location keeps a little breathing room between it and its neighbors (visible gap, no dividers). Closer to today's individual filter-pill look, just enclosed in one outer shell.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="divided-segments" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="display:inline-flex;border-radius:999px;background:#f9f5ff;border:1px solid #ddd6fe;font-size:0.8rem;font-weight:600;font-family:inherit;overflow:hidden;">
+        <span style="padding:0.35rem 0.85rem;color:#6d28d9;border-right:1px solid #ddd6fe;">All</span>
+        <span style="padding:0.35rem 0.85rem;background:#7c3aed;color:#fff;">Benson</span>
+        <span style="padding:0.35rem 0.85rem;color:#6d28d9;border-right:1px solid #ddd6fe;border-left:1px solid #ddd6fe;">Dundee</span>
+        <span style="padding:0.35rem 0.85rem;color:#6d28d9;border-right:1px solid #ddd6fe;">Old Market</span>
+        <span style="padding:0.35rem 0.85rem;color:#6d28d9;">Midtown</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Divided segments</h3>
+      <p>Classic hardware-style segmented control: thin vertical dividers between each segment, flush edges, only the outer corners rounded. Most literally "cassette button bar," just re-skinned in the purple palette instead of skeuomorphic plastic.</p>
+    </div>
+  </div>
+</div>
+
+<p class="section label">Note: on narrow/mobile widths the bar would wrap or scroll horizontally — happy to mock that separately once a style is picked.</p>

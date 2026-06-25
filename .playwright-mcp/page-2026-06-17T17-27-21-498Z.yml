@@ -1,0 +1,188 @@
+- generic [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - navigation "Main navigation" [ref=e4]:
+      - link "Social" [ref=e6] [cursor=pointer]:
+        - /url: /social
+        - generic [ref=e7]: Social
+      - link "Spiritual" [ref=e9] [cursor=pointer]:
+        - /url: /spiritual
+        - generic [ref=e10]: Spiritual
+      - link "Art" [ref=e12] [cursor=pointer]:
+        - /url: /art
+        - generic [ref=e13]: Art
+      - link "Cafes" [ref=e15] [cursor=pointer]:
+        - /url: /cafes
+        - generic [ref=e16]: Cafes
+      - link "Music" [ref=e18] [cursor=pointer]:
+        - /url: /music
+        - generic [ref=e19]: Music
+      - link "Makers" [ref=e21] [cursor=pointer]:
+        - /url: /makers
+        - generic [ref=e22]: Makers
+  - main [ref=e23]:
+    - heading "Queer Omaha — LGBTQ+ Community Directory" [level=1] [ref=e24]
+    - group "Filter by location or tag" [ref=e25]:
+      - group "Filter by location" [ref=e26]:
+        - generic [ref=e27]:
+          - button "Midtown" [ref=e28] [cursor=pointer]
+          - button "South O" [ref=e29] [cursor=pointer]
+          - button "North O" [ref=e30] [cursor=pointer]
+          - button "Benson" [active] [pressed] [ref=e31] [cursor=pointer]
+          - button "Downtown" [ref=e32] [cursor=pointer]
+          - button "West O" [disabled] [ref=e33]
+          - button "Aksarben" [disabled] [ref=e34]
+          - button "Dundee" [disabled] [ref=e35]
+      - generic [ref=e36]:
+        - button "Clear tag filters" [disabled] [ref=e37]: ✕ Clear
+        - button "Gender-neutral bathroom Gender-neutral bathroom" [ref=e38] [cursor=pointer]:
+          - img [ref=e39]: 🚻
+          - text: Gender-neutral bathroom
+        - button "Seating available Seating available" [disabled] [ref=e40]:
+          - img: 🛋️
+          - text: Seating available
+        - button "Work/study spot Work/study spot" [disabled] [ref=e42]:
+          - img: 💻
+          - text: Work/study spot
+    - region "Social"
+    - region "Spiritual"
+    - region "Art" [ref=e43]:
+      - heading "Art" [level=2] [ref=e44]
+      - generic [ref=e174]:
+        - heading "Petshop Gender-neutral bathroom" [level=3] [ref=e176]:
+          - text: Petshop
+          - img "Gender-neutral bathroom" [ref=e177]:
+            - img [ref=e178]: 🚻
+        - generic [ref=e179]:
+          - generic:
+            - paragraph [ref=e180]: Punk/queer space for provocative art and experimental music.
+            - paragraph [ref=e181]: 📍 (Benson)
+        - list [ref=e183]:
+          - listitem [ref=e184]:
+            - link "Insta (opens in new tab)" [ref=e185] [cursor=pointer]:
+              - /url: https://www.instagram.com/petshopgallery/?hl=en
+              - text: Insta
+          - listitem [ref=e186]:
+            - link "Website (opens in new tab)" [ref=e187] [cursor=pointer]:
+              - /url: https://www.bffomaha.org/petshop
+              - text: Website
+      - generic [ref=e188]:
+        - heading "Radial Arts Center Gender-neutral bathroom" [level=3] [ref=e190]:
+          - text: Radial Arts Center
+          - img "Gender-neutral bathroom" [ref=e191]:
+            - img [ref=e192]: 🚻
+        - generic [ref=e193]:
+          - generic:
+            - paragraph [ref=e194]: Large gallery showing larger local artists.
+            - paragraph [ref=e195]: 📍 (Benson)
+        - list [ref=e197]:
+          - listitem [ref=e198]:
+            - link "Website (opens in new tab)" [ref=e199] [cursor=pointer]:
+              - /url: https://www.radialartscenter.org/
+              - text: Website
+      - generic [ref=e200]:
+        - heading "BFF Gallery" [level=3] [ref=e202]
+        - generic [ref=e203]:
+          - generic:
+            - paragraph [ref=e204]: Cool punk gallery. My art was in it!
+            - paragraph [ref=e205]: 📍 (Benson)
+        - list [ref=e207]:
+          - listitem [ref=e208]:
+            - link "Insta (opens in new tab)" [ref=e209] [cursor=pointer]:
+              - /url: https://www.instagram.com/thebffgallery/?hl=en
+              - text: Insta
+      - generic [ref=e210]:
+        - heading "Ming Toy Gallery" [level=3] [ref=e212]
+        - generic [ref=e213]:
+          - generic:
+            - paragraph [ref=e214]: Cozy gallery next to Edge of the Universe.
+            - paragraph [ref=e215]: 📍 (Benson)
+        - list [ref=e217]:
+          - listitem [ref=e218]:
+            - link "Insta (opens in new tab)" [ref=e219] [cursor=pointer]:
+              - /url: https://www.instagram.com/mingtoygallery/
+              - text: Insta
+          - listitem [ref=e220]:
+            - link "Website (opens in new tab)" [ref=e221] [cursor=pointer]:
+              - /url: https://www.mingtoygallery.com/
+              - text: Website
+      - generic [ref=e222]:
+        - heading "Maple Street Construct" [level=3] [ref=e224]
+        - generic [ref=e225]:
+          - generic:
+            - paragraph [ref=e226]: Minimalist space with a cool upstairs.
+            - paragraph [ref=e227]: 📍 (Benson)
+        - list [ref=e229]:
+          - listitem [ref=e230]:
+            - link "Website (opens in new tab)" [ref=e231] [cursor=pointer]:
+              - /url: https://www.maplestconstruct.com/
+              - text: Website
+          - listitem [ref=e232]:
+            - link "FB (opens in new tab)" [ref=e233] [cursor=pointer]:
+              - /url: https://www.facebook.com/maplestconstruct/
+              - text: FB
+      - generic [ref=e234]:
+        - heading "MaMo Mobile Gallery Semi-Truck" [level=3] [ref=e236]
+        - generic [ref=e237]:
+          - generic:
+            - paragraph [ref=e238]: Mobile gallery often parked near Petshop showing local artists.
+            - paragraph [ref=e239]: 📍 (Benson)
+        - list [ref=e241]:
+          - listitem [ref=e242]:
+            - link "Insta (opens in new tab)" [ref=e243] [cursor=pointer]:
+              - /url: https://www.instagram.com/bffmamo/?hl=en
+              - text: Insta
+          - listitem [ref=e244]:
+            - link "Website (opens in new tab)" [ref=e245] [cursor=pointer]:
+              - /url: https://www.bffomaha.org/mamo
+              - text: Website
+          - listitem [ref=e246]:
+            - link "FB (opens in new tab)" [ref=e247] [cursor=pointer]:
+              - /url: https://www.facebook.com/MaMOgallery/
+              - text: FB
+      - generic [ref=e248]:
+        - heading "Trudy's" [level=3] [ref=e250]
+        - generic [ref=e251]:
+          - generic:
+            - paragraph [ref=e252]: Open artist studios, music and free workshops ran by BFF.
+            - paragraph [ref=e253]: 📍 (Benson)
+        - list [ref=e255]:
+          - listitem [ref=e256]:
+            - link "Website (opens in new tab)" [ref=e257] [cursor=pointer]:
+              - /url: https://www.bffomaha.org/learn
+              - text: Website
+          - listitem [ref=e258]:
+            - link "FB (opens in new tab)" [ref=e259] [cursor=pointer]:
+              - /url: https://www.facebook.com/people/Trudys/61561806150499/
+              - text: FB
+    - region "Cafes"
+    - region "Music"
+    - region "Makers"
+  - contentinfo [ref=e358]:
+    - link "Subscribe to the Queer Omaha Events calendar in Google Calendar" [ref=e360] [cursor=pointer]:
+      - /url: https://calendar.google.com/calendar/r?cid=webcal%3A%2F%2Fqueeromaha.net%2Fevents.ics
+      - text: 📅 Subscribe to QueerOmaha Calendar
+    - paragraph [ref=e362]: You are valid
+    - navigation "Footer navigation" [ref=e363]:
+      - link "About" [ref=e364] [cursor=pointer]:
+        - /url: /about#about
+      - link "@taraxvoid/queeromaha on GitHub (opens in new tab)" [ref=e365] [cursor=pointer]:
+        - /url: https://github.com/taraxvoid/queeromaha
+        - img "GitHub" [ref=e366]:
+          - img [ref=e367]
+  - generic [ref=e371]:
+    - button "Menu" [ref=e372]:
+      - img [ref=e374]
+      - generic: Menu
+    - button "Inspect" [ref=e378]:
+      - img [ref=e380]
+      - generic: Inspect
+    - button "Audit" [ref=e382]:
+      - generic [ref=e383]:
+        - img [ref=e384]
+        - img [ref=e393]
+      - generic: Audit
+    - button "Settings" [ref=e387]:
+      - img [ref=e389]
+      - generic: Settings

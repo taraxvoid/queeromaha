@@ -1,0 +1,199 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - navigation "Main navigation" [ref=e4]:
+      - link "Social" [ref=e6] [cursor=pointer]:
+        - /url: /social
+        - generic [ref=e7]: Social
+      - link "Spiritual" [ref=e9] [cursor=pointer]:
+        - /url: /spiritual
+        - generic [ref=e10]: Spiritual
+      - link "Art" [ref=e12] [cursor=pointer]:
+        - /url: /art
+        - generic [ref=e13]: Art
+      - link "Cafes" [ref=e15] [cursor=pointer]:
+        - /url: /cafes
+        - generic [ref=e16]: Cafes
+      - link "Music" [ref=e18] [cursor=pointer]:
+        - /url: /music
+        - generic [ref=e19]: Music
+      - link "Makers" [ref=e21] [cursor=pointer]:
+        - /url: /makers
+        - generic [ref=e22]: Makers
+  - main [ref=e23]:
+    - heading "Queer Omaha — LGBTQ+ Community Directory" [level=1] [ref=e24]
+    - generic [ref=e25]:
+      - group "Filter by location" [ref=e26]:
+        - generic [ref=e27]:
+          - button "Midtown" [ref=e28] [cursor=pointer]
+          - button "South O" [disabled] [ref=e29]
+          - button "North O" [disabled] [ref=e30]
+          - button "Benson" [disabled] [ref=e31]
+          - button "Downtown" [disabled] [ref=e32]
+          - button "West O" [disabled] [ref=e33]
+          - button "Aksarben" [disabled] [ref=e34]
+          - button "Dundee" [disabled] [ref=e35]
+      - group "Filter by tag" [ref=e36]:
+        - button "Clear tag filters" [disabled] [ref=e37]: ✕ Clear
+        - button "Gender-neutral bathroom" [ref=e38] [cursor=pointer]:
+          - img [ref=e40]: 🚻
+          - text: Gender-neutral bathroom
+        - button "Seating available" [ref=e41] [cursor=pointer]:
+          - img [ref=e43]: 🛋️
+          - text: Seating available
+        - button "Work/study spot" [ref=e44] [cursor=pointer]:
+          - img [ref=e46]: 💻
+          - text: Work/study spot
+    - region "Social" [ref=e47]:
+      - heading "Social" [level=2] [ref=e48]
+      - generic [ref=e49]:
+        - heading "OmahaForUs LGBTQIA* Center Work/study spotGender-neutral bathroomSeating available" [level=3] [ref=e51]:
+          - text: OmahaForUs LGBTQIA* Center
+          - img "Work/study spot" [ref=e52]:
+            - img [ref=e53]: 💻
+          - img "Gender-neutral bathroom" [ref=e54]:
+            - img [ref=e55]: 🚻
+          - img "Seating available" [ref=e56]:
+            - img [ref=e57]: 🛋️
+        - generic [ref=e58]:
+          - generic:
+            - paragraph [ref=e59]: Hub of community, resources, and events. Food bank, gender affirming clothing, provider referrals. Quiet/sensory room
+            - paragraph [ref=e60]:
+              - 'link "Map: 742 N 109th Ct, Omaha, NE 68154 (Midtown) (opens in new tab)" [ref=e61] [cursor=pointer]':
+                - /url: https://maps.app.goo.gl/jqUnPGEamuFRGZT49
+                - text: 📍 742 N 109th Ct, Omaha, NE 68154 (Midtown)
+        - list [ref=e63]:
+          - listitem [ref=e64]:
+            - link "Events Calendar (opens in new tab)" [ref=e65] [cursor=pointer]:
+              - /url: https://omahafor.us/events-calendar
+              - text: Events Calendar
+          - listitem [ref=e66]:
+            - link "Programs (opens in new tab)" [ref=e67] [cursor=pointer]:
+              - /url: https://omahafor.us/programs/programs-community-support
+              - text: Programs
+          - listitem [ref=e68]:
+            - link "Support group (hybrid) (opens in new tab)" [ref=e69] [cursor=pointer]:
+              - /url: https://forms.office.com/Pages/ResponsePage.aspx?id=9u0lZEHkV06enOibWxjB9G4xeitP3kJGhExliU8hl9lUN1lMVUlWSjFCN0kxUVhRSE9LMFVFN0VBTC4u
+              - text: Support group (hybrid)
+          - listitem [ref=e70]:
+            - link "Mental Health Resources (opens in new tab)" [ref=e71] [cursor=pointer]:
+              - /url: https://omahafor.us/programs/mental-health
+              - text: Mental Health Resources
+          - listitem [ref=e72]:
+            - link "Dedicated Teen / Youth Programs and Space (opens in new tab)" [ref=e73] [cursor=pointer]:
+              - /url: https://omahafor.us/programs/youth-programs
+              - text: Dedicated Teen / Youth Programs and Space
+      - generic [ref=e74]:
+        - heading "The Queer Collective" [level=3] [ref=e76]
+        - paragraph [ref=e78]: Mutual aid, drag shows, line dancing, and art markets, often at Floors Floors Floors in Benson. Organized via Instagram.
+        - list [ref=e80]:
+          - listitem [ref=e81]:
+            - link "Instagram (opens in new tab)" [ref=e82] [cursor=pointer]:
+              - /url: https://www.instagram.com/queercollectiveomaha
+              - text: Instagram
+          - listitem [ref=e83]:
+            - link "Facebook (opens in new tab)" [ref=e84] [cursor=pointer]:
+              - /url: https://www.facebook.com/people/The-Queer-Collective/61582433398892/
+              - text: Facebook
+      - generic [ref=e85]:
+        - heading "River Daze Collective" [level=3] [ref=e87]
+        - paragraph [ref=e89]: Social group with events organized via Facebook.
+        - list [ref=e91]:
+          - listitem [ref=e92]:
+            - link "Facebook (opens in new tab)" [ref=e93] [cursor=pointer]:
+              - /url: https://www.facebook.com/people/River-Daze-Collective/61565416288577
+              - text: Facebook
+      - generic [ref=e94]:
+        - heading "Out Wild Adventures" [level=3] [ref=e96]
+        - paragraph [ref=e98]: Hikes, coffee chats, movie nights, etc. Sober-friendly
+        - list [ref=e100]:
+          - listitem [ref=e101]:
+            - link "Signup (vetted) (opens in new tab)" [ref=e102] [cursor=pointer]:
+              - /url: https://forms.gle/k2HhE8boH47rkJpT6
+              - text: Signup (vetted)
+          - listitem [ref=e103]:
+            - link "More Information (opens in new tab)" [ref=e104] [cursor=pointer]:
+              - /url: https://flow.page/outwildadventures
+              - text: More Information
+      - generic [ref=e105]:
+        - heading "TransNebraska.Online" [level=3] [ref=e107]
+        - paragraph [ref=e109]: Monthly online Trans* group ran by Babs Ramsey.
+        - list [ref=e111]:
+          - listitem [ref=e112]:
+            - link "Signup (vetted) (opens in new tab)" [ref=e113] [cursor=pointer]:
+              - /url: https://www.transnebraska.online/get-involved
+              - text: Signup (vetted)
+          - listitem [ref=e114]:
+            - link "More Information (opens in new tab)" [ref=e115] [cursor=pointer]:
+              - /url: https://www.transnebraska.online
+              - text: More Information
+      - generic [ref=e116]:
+        - heading "Second Sunday - Trans Masc Meetup" [level=3] [ref=e118]
+        - paragraph [ref=e120]: In-person social group centering Trans Men, Trans Masc* and Nonbinary folks.
+        - list [ref=e122]:
+          - listitem [ref=e123]:
+            - link "Signup (vetted) (opens in new tab)" [ref=e124] [cursor=pointer]:
+              - /url: https://secondsunday.xyz/meet-up
+              - text: Signup (vetted)
+          - listitem [ref=e125]:
+            - link "Discord (opens in new tab)" [ref=e126] [cursor=pointer]:
+              - /url: https://discord.com/invite/EdVFccyJeT
+              - text: Discord
+      - generic [ref=e127]:
+        - heading "OWOmaha Furry Group" [level=3] [ref=e129]
+        - paragraph [ref=e131]: All-inclusive, actively moderated Furry group with frequent in-person and Discord meetups.
+        - list [ref=e133]:
+          - listitem [ref=e134]:
+            - link "Events Calendar (opens in new tab)" [ref=e135] [cursor=pointer]:
+              - /url: https://www.owomaha.com/calendar
+              - text: Events Calendar
+          - listitem [ref=e136]:
+            - link "Carrd (opens in new tab)" [ref=e137] [cursor=pointer]:
+              - /url: https://owomaha.carrd.co/
+              - text: Carrd
+          - listitem [ref=e138]:
+            - link "Discord (13+) (opens in new tab)" [ref=e139] [cursor=pointer]:
+              - /url: https://discord.com/invite/3Vq63UFrhH
+              - text: Discord (13+)
+      - generic [ref=e140]:
+        - heading "Omaha Goth Discord" [level=3] [ref=e142]
+        - paragraph [ref=e144]: Local scene for goth / darkwave / industrial
+        - list [ref=e146]:
+          - listitem [ref=e147]:
+            - link "Discord (opens in new tab)" [ref=e148] [cursor=pointer]:
+              - /url: https://discord.com/invite/M5JUCgY9c
+              - text: Discord
+      - generic [ref=e149]:
+        - heading "Open Arms Trans Social Group (OATS)" [level=3] [ref=e151]
+        - paragraph [ref=e153]: Long-running meetup of Trans* folks, queer people and allies on every 3rd Saturday @ Noon at 2nd Unitarian Church of Omaha.
+        - list [ref=e155]:
+          - listitem [ref=e156]:
+            - link "More Information (opens in new tab)" [ref=e157] [cursor=pointer]:
+              - /url: https://2uomaha.org/justice/lgbtq
+              - text: More Information
+      - generic [ref=e158]:
+        - heading "UNO Queer and Trans Student Alliance (QTS)" [level=3] [ref=e160]
+        - paragraph [ref=e162]: Runs Queer Prom! Has sub-groups for Black, Lesbian, Bi, Trans folks.
+        - list [ref=e164]:
+          - listitem [ref=e165]:
+            - link "Website (opens in new tab)" [ref=e166] [cursor=pointer]:
+              - /url: https://www.unomaha.edu/student-life/involvement/student-government/affiliated-student-groups.php
+              - text: Website
+    - region "Spiritual"
+    - region "Art"
+    - region "Cafes"
+    - region "Music"
+    - region "Makers"
+  - contentinfo [ref=e167]:
+    - link "Subscribe to the Queer Omaha Events calendar in Google Calendar" [ref=e169] [cursor=pointer]:
+      - /url: https://calendar.google.com/calendar/r?cid=webcal%3A%2F%2Fqueeromaha.net%2Fevents.ics
+      - text: 📅 Subscribe to QueerOmaha Calendar
+    - paragraph [ref=e171]: You are worth it
+    - navigation "Footer navigation" [ref=e172]:
+      - link "About" [ref=e173] [cursor=pointer]:
+        - /url: /about#about
+      - link "@taraxvoid/queeromaha on GitHub (opens in new tab)" [ref=e174] [cursor=pointer]:
+        - /url: https://github.com/taraxvoid/queeromaha
+        - img "GitHub" [ref=e175]:
+          - img [ref=e176]

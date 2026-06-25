@@ -1,0 +1,396 @@
+- generic [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - navigation "Main navigation" [ref=e4]:
+      - link "Social" [ref=e6] [cursor=pointer]:
+        - /url: /social
+        - generic [ref=e7]: Social
+      - link "Spiritual" [ref=e9] [cursor=pointer]:
+        - /url: /spiritual
+        - generic [ref=e10]: Spiritual
+      - link "Art" [ref=e12] [cursor=pointer]:
+        - /url: /art
+        - generic [ref=e13]: Art
+      - link "Cafes" [ref=e15] [cursor=pointer]:
+        - /url: /cafes
+        - generic [ref=e16]: Cafes
+      - link "Music" [ref=e18] [cursor=pointer]:
+        - /url: /music
+        - generic [ref=e19]: Music
+      - link "Makers" [ref=e21] [cursor=pointer]:
+        - /url: /makers
+        - generic [ref=e22]: Makers
+  - main [ref=e23]:
+    - heading "Queer Omaha — LGBTQ+ Community Directory" [level=1] [ref=e24]
+    - group "Filter by location or tag" [ref=e25]:
+      - group "Filter by location" [ref=e26]:
+        - generic [ref=e27]:
+          - button "Benson" [ref=e28] [cursor=pointer]
+          - button "Dundee" [ref=e29] [cursor=pointer]
+          - button "Midtown" [ref=e30] [cursor=pointer]
+          - button "Aksarben" [ref=e31] [cursor=pointer]
+          - button "Downtown" [disabled] [ref=e32]
+          - button "North O" [disabled] [ref=e33]
+          - button "South O" [disabled] [ref=e34]
+          - button "West O" [ref=e35] [cursor=pointer]
+      - generic [ref=e36]:
+        - button "Clear tag filters" [disabled] [ref=e37]: ✕ Clear
+        - button "Gender-neutral bathroom Gender-neutral bathroom" [ref=e38] [cursor=pointer]:
+          - img [ref=e39]: 🚻
+          - text: Gender-neutral bathroom
+        - button "Seating available Seating available" [ref=e40] [cursor=pointer]:
+          - img [ref=e133]: 🛋️
+          - text: Seating available
+        - button "Work/study spot Work/study spot" [ref=e41] [cursor=pointer]:
+          - img [ref=e134]: 💻
+          - text: Work/study spot
+    - region "Social"
+    - region "Spiritual"
+    - region "Art"
+    - region "Cafes" [ref=e135]:
+      - heading "Cafes" [level=2] [ref=e136]
+      - generic [ref=e137]:
+        - heading "Roast Coffeehouse Gender-neutral bathroomWork/study spot" [level=3] [ref=e139]:
+          - text: Roast Coffeehouse
+          - img "Gender-neutral bathroom" [ref=e140]:
+            - img [ref=e141]: 🚻
+          - img "Work/study spot" [ref=e142]:
+            - img [ref=e143]: 💻
+        - generic [ref=e144]:
+          - generic:
+            - paragraph [ref=e145]: Great people, coffee and pastries both in Aksarben / 120th and Blondo.
+            - paragraph [ref=e146]:
+              - 'link "Map: 120th and Blondo (West O) (opens in new tab)" [ref=e147] [cursor=pointer]':
+                - /url: https://maps.app.goo.gl/4qViWqoWxHpZn4oR9
+                - text: 📍 120th and Blondo (West O)
+        - list [ref=e149]:
+          - listitem [ref=e150]:
+            - link "Insta (opens in new tab)" [ref=e151] [cursor=pointer]:
+              - /url: https://www.instagram.com/roast_coffeehouse/
+              - text: Insta
+          - listitem [ref=e152]:
+            - link "Website (opens in new tab)" [ref=e153] [cursor=pointer]:
+              - /url: https://www.ahillofbeans.com/pages/roast-coffeehouse
+              - text: Website
+          - listitem [ref=e154]:
+            - link "FB (opens in new tab)" [ref=e155] [cursor=pointer]:
+              - /url: https://www.facebook.com/profile.php/?id=100089484920886
+              - text: FB
+      - generic [ref=e156]:
+        - heading "Godega Gender-neutral bathroomSeating availableWork/study spot" [level=3] [ref=e158]:
+          - text: Godega
+          - img "Gender-neutral bathroom" [ref=e159]:
+            - img [ref=e160]: 🚻
+          - img "Seating available" [ref=e161]:
+            - img [ref=e162]: 🛋️
+          - img "Work/study spot" [ref=e163]:
+            - img [ref=e164]: 💻
+        - generic [ref=e165]:
+          - generic:
+            - paragraph [ref=e166]: Grab-and-go food, specialty snacks, and a place to hang out
+            - paragraph [ref=e167]: 📍 (Aksarben)
+        - list [ref=e169]:
+          - listitem [ref=e170]:
+            - link "Insta (opens in new tab)" [ref=e171] [cursor=pointer]:
+              - /url: https://www.instagram.com/godegamarket/
+              - text: Insta
+          - listitem [ref=e172]:
+            - link "Website (opens in new tab)" [ref=e173] [cursor=pointer]:
+              - /url: https://godegamarket.com/
+              - text: Website
+          - listitem [ref=e174]:
+            - link "FB (opens in new tab)" [ref=e175] [cursor=pointer]:
+              - /url: https://www.facebook.com/GodegaMarket/
+              - text: FB
+      - generic [ref=e176]:
+        - heading "Marigold's Gender-neutral bathroomSeating available" [level=3] [ref=e178]:
+          - text: Marigold's
+          - img "Gender-neutral bathroom" [ref=e179]:
+            - img [ref=e180]: 🚻
+          - img "Seating available" [ref=e181]:
+            - img [ref=e182]: 🛋️
+        - generic [ref=e183]:
+          - generic:
+            - paragraph [ref=e184]: Artisanal goods and crafts.
+            - paragraph [ref=e185]: 📍 (Aksarben)
+        - list [ref=e187]:
+          - listitem [ref=e188]:
+            - link "Insta (opens in new tab)" [ref=e189] [cursor=pointer]:
+              - /url: https://www.instagram.com/marigoldsmercantile
+              - text: Insta
+          - listitem [ref=e190]:
+            - link "Website (opens in new tab)" [ref=e191] [cursor=pointer]:
+              - /url: https://www.marigoldsmercantile.com/
+              - text: Website
+          - listitem [ref=e192]:
+            - link "FB (opens in new tab)" [ref=e193] [cursor=pointer]:
+              - /url: https://www.facebook.com/marigoldsmercantile/
+              - text: FB
+      - generic [ref=e194]:
+        - heading "Mill on Leavenworth Seating availableWork/study spot" [level=3] [ref=e196]:
+          - text: Mill on Leavenworth
+          - img "Seating available" [ref=e197]:
+            - img [ref=e198]: 🛋️
+          - img "Work/study spot" [ref=e199]:
+            - img [ref=e200]: 💻
+        - generic [ref=e201]:
+          - generic:
+            - paragraph [ref=e202]: Large popular cafe. Good for meetups and "working".
+            - paragraph [ref=e203]: 📍 (Midtown)
+        - list [ref=e205]:
+          - listitem [ref=e206]:
+            - link "Website (opens in new tab)" [ref=e207] [cursor=pointer]:
+              - /url: https://millcoffee.com/pages/the-mill-on-leavenworth
+              - text: Website
+      - generic [ref=e208]:
+        - heading "Archetype Coffee Gender-neutral bathroomWork/study spot" [level=3] [ref=e210]:
+          - text: Archetype Coffee
+          - img "Gender-neutral bathroom" [ref=e211]:
+            - img [ref=e212]: 🚻
+          - img "Work/study spot" [ref=e213]:
+            - img [ref=e214]: 💻
+        - generic [ref=e215]:
+          - generic:
+            - paragraph [ref=e216]:
+              - text: Best coffee in town. Lil BoHo location serves great brunch food from
+              - link "Know Good" [ref=e217] [cursor=pointer]:
+                - /url: https://knowgoodeats.com/
+              - text: .
+            - paragraph [ref=e218]: 📍 (Midtown)
+        - list [ref=e220]:
+          - listitem [ref=e221]:
+            - link "Website (opens in new tab)" [ref=e222] [cursor=pointer]:
+              - /url: https://drinkarchetype.com/
+              - text: Website
+      - generic [ref=e223]:
+        - heading "Sweet Magnolias" [level=3] [ref=e225]
+        - generic [ref=e226]:
+          - generic:
+            - paragraph [ref=e227]: Queer-owned pastry shop.
+            - paragraph [ref=e228]: 📍 (Midtown)
+        - list [ref=e230]:
+          - listitem [ref=e231]:
+            - link "Insta (opens in new tab)" [ref=e232] [cursor=pointer]:
+              - /url: https://www.instagram.com/sweetmagnoliasbakeshop/?hl=en
+              - text: Insta
+          - listitem [ref=e233]:
+            - link "Website (opens in new tab)" [ref=e234] [cursor=pointer]:
+              - /url: https://www.sweetmagnoliasbakeshop.com/
+              - text: Website
+      - generic [ref=e235]:
+        - heading "Spielbound Gender-neutral bathroom" [level=3] [ref=e237]:
+          - text: Spielbound
+          - img "Gender-neutral bathroom" [ref=e238]:
+            - img [ref=e239]: 🚻
+        - generic [ref=e240]:
+          - generic:
+            - paragraph [ref=e241]:
+              - text: Board game cafe with an
+              - link "active monthly Meetup Group" [ref=e242] [cursor=pointer]:
+                - /url: https://www.meetup.com/playing-games-at-spielbound/
+              - text: .
+            - paragraph [ref=e243]: 📍 (Midtown)
+        - list [ref=e245]:
+          - listitem [ref=e246]:
+            - link "Official Discord (opens in new tab)" [ref=e247] [cursor=pointer]:
+              - /url: https://discord.com/invite/official-spellbound-861024184947572736
+              - text: Official Discord
+          - listitem [ref=e248]:
+            - link "Website (opens in new tab)" [ref=e249] [cursor=pointer]:
+              - /url: https://www.spielbound.com/how-to-spielbound
+              - text: Website
+      - generic [ref=e250]:
+        - heading "Edge of the Universe Cafe Gender-neutral bathroomSeating available" [level=3] [ref=e252]:
+          - text: Edge of the Universe Cafe
+          - img "Gender-neutral bathroom" [ref=e253]:
+            - img [ref=e254]: 🚻
+          - img "Seating available" [ref=e255]:
+            - img [ref=e256]: 🛋️
+        - generic [ref=e257]:
+          - generic:
+            - paragraph [ref=e258]: Truly unique place with artist owners. Great date spot.
+            - paragraph [ref=e259]: 📍 (Benson)
+        - list [ref=e261]:
+          - listitem [ref=e262]:
+            - link "Insta (opens in new tab)" [ref=e263] [cursor=pointer]:
+              - /url: https://www.instagram.com/edgeuniversebff/
+              - text: Insta
+          - listitem [ref=e264]:
+            - link "Events Calendar (opens in new tab)" [ref=e265] [cursor=pointer]:
+              - /url: https://www.edgeoftheuniverseomaha.com/
+              - text: Events Calendar
+          - listitem [ref=e266]:
+            - link "FB (opens in new tab)" [ref=e267] [cursor=pointer]:
+              - /url: https://www.facebook.com/Edgeuniversebff/about/
+              - text: FB
+      - generic [ref=e268]:
+        - heading "Legends Comics & Coffee Gender-neutral bathroomSeating available" [level=3] [ref=e270]:
+          - text: Legends Comics & Coffee
+          - img "Gender-neutral bathroom" [ref=e271]:
+            - img [ref=e272]: 🚻
+          - img "Seating available" [ref=e273]:
+            - img [ref=e274]: 🛋️
+        - generic [ref=e275]:
+          - generic:
+            - paragraph [ref=e276]: Comic shop with a large queer section. Board game space in the back.
+            - paragraph [ref=e277]: 📍 (Benson)
+        - list [ref=e279]:
+          - listitem [ref=e280]:
+            - link "Insta (opens in new tab)" [ref=e281] [cursor=pointer]:
+              - /url: https://www.instagram.com/legendcomicsandcoffee/?hl=en
+              - text: Insta
+          - listitem [ref=e282]:
+            - link "FB (opens in new tab)" [ref=e283] [cursor=pointer]:
+              - /url: https://www.facebook.com/LegendComics/
+              - text: FB
+      - generic [ref=e284]:
+        - heading "Blue Line Coffee Gender-neutral bathroomWork/study spot" [level=3] [ref=e286]:
+          - text: Blue Line Coffee
+          - img "Gender-neutral bathroom" [ref=e287]:
+            - img [ref=e288]: 🚻
+          - img "Work/study spot" [ref=e289]:
+            - img [ref=e290]: 💻
+        - generic [ref=e291]:
+          - generic:
+            - paragraph [ref=e292]: Great coffee and cool people. Posts flyers for local events.
+            - paragraph [ref=e293]: 📍 (Dundee)
+        - list [ref=e295]:
+          - listitem [ref=e296]:
+            - link "Insta (opens in new tab)" [ref=e297] [cursor=pointer]:
+              - /url: https://www.instagram.com/bluelinecoffeeomaha/?hl=en
+              - text: Insta
+          - listitem [ref=e298]:
+            - link "FB (opens in new tab)" [ref=e299] [cursor=pointer]:
+              - /url: https://www.facebook.com/pages/Blue-Line-Coffee/140611479308727
+              - text: FB
+      - generic [ref=e300]:
+        - heading "Amateur Coffee Gender-neutral bathroom" [level=3] [ref=e302]:
+          - text: Amateur Coffee
+          - img "Gender-neutral bathroom" [ref=e303]:
+            - img [ref=e304]: 🚻
+        - generic [ref=e305]:
+          - generic:
+            - paragraph [ref=e306]: Small place whose takeout coffee comes in glass containers with deposit.
+            - paragraph [ref=e307]: 📍 (Dundee)
+        - list [ref=e309]:
+          - listitem [ref=e310]:
+            - link "Insta (opens in new tab)" [ref=e311] [cursor=pointer]:
+              - /url: https://www.instagram.com/amateurcoffee/?hl=en
+              - text: Insta
+          - listitem [ref=e312]:
+            - link "Website (opens in new tab)" [ref=e313] [cursor=pointer]:
+              - /url: https://www.amateurcoffee.com/
+              - text: Website
+          - listitem [ref=e314]:
+            - link "FB (opens in new tab)" [ref=e315] [cursor=pointer]:
+              - /url: https://www.instagram.com/amateurcoffee
+              - text: FB
+      - generic [ref=e316]:
+        - heading "Reading Room Seating available" [level=3] [ref=e318]:
+          - text: Reading Room
+          - img "Seating available" [ref=e319]:
+            - img [ref=e320]: 🛋️
+        - generic [ref=e321]:
+          - generic:
+            - paragraph [ref=e322]:
+              - text: Bookstore cafe / bar with a
+              - link "Queer-run poetry reading open mic night" [ref=e323] [cursor=pointer]:
+                - /url: https://www.nepoetrysociety.org/spoken-word
+              - text: . See also the
+              - link "Poetry Menu site" [ref=e324] [cursor=pointer]:
+                - /url: https://poetrymenu.com/
+              - text: .
+            - paragraph [ref=e325]: 📍 (Dundee)
+        - list [ref=e327]:
+          - listitem [ref=e328]:
+            - link "Insta (opens in new tab)" [ref=e329] [cursor=pointer]:
+              - /url: https://www.instagram.com/reading_room_omaha/
+              - text: Insta
+          - listitem [ref=e330]:
+            - link "Events Calendar (opens in new tab)" [ref=e331] [cursor=pointer]:
+              - /url: https://readingroomomaha.com/events/
+              - text: Events Calendar
+          - listitem [ref=e332]:
+            - link "FB (opens in new tab)" [ref=e333] [cursor=pointer]:
+              - /url: https://www.facebook.com/p/Reading-Room-Omaha-61576576713461/
+              - text: FB
+      - generic [ref=e334]:
+        - heading "Zen Coffee Gender-neutral bathroomSeating available" [level=3] [ref=e336]:
+          - text: Zen Coffee
+          - img "Gender-neutral bathroom" [ref=e337]:
+            - img [ref=e338]: 🚻
+          - img "Seating available" [ref=e339]:
+            - img [ref=e340]: 🛋️
+        - generic [ref=e341]:
+          - generic:
+            - paragraph [ref=e342]: Downtown and West O locations.
+            - paragraph [ref=e343]: 📍 (Dundee)
+        - list [ref=e345]:
+          - listitem [ref=e346]:
+            - link "Insta (opens in new tab)" [ref=e347] [cursor=pointer]:
+              - /url: https://www.instagram.com/zencoffeeco/?hl=en
+              - text: Insta
+          - listitem [ref=e348]:
+            - link "FB (opens in new tab)" [ref=e349] [cursor=pointer]:
+              - /url: https://www.facebook.com/zencoffeecompany/
+              - text: FB
+          - listitem [ref=e350]:
+            - link "Website (opens in new tab)" [ref=e351] [cursor=pointer]:
+              - /url: https://www.zencoffeecompany.com/
+              - text: Website
+      - generic [ref=e352]:
+        - heading "Karma Koffee Gender-neutral bathroomSeating availableWork/study spot" [level=3] [ref=e354]:
+          - text: Karma Koffee
+          - img "Gender-neutral bathroom" [ref=e355]:
+            - img [ref=e356]: 🚻
+          - img "Seating available" [ref=e357]:
+            - img [ref=e358]: 🛋️
+          - img "Work/study spot" [ref=e359]:
+            - img [ref=e360]: 💻
+        - generic [ref=e361]:
+          - generic:
+            - paragraph [ref=e362]: Buddhist themed cafe with vegan options and authentic thangkas.
+            - paragraph [ref=e363]: 📍 (West O)
+        - list [ref=e365]:
+          - listitem [ref=e366]:
+            - link "Insta (opens in new tab)" [ref=e367] [cursor=pointer]:
+              - /url: https://www.instagram.com/karma_koffee/?hl=en
+              - text: Insta
+          - listitem [ref=e368]:
+            - link "Website (opens in new tab)" [ref=e369] [cursor=pointer]:
+              - /url: https://www.karmakoffee.com/
+              - text: Website
+          - listitem [ref=e370]:
+            - link "FB (opens in new tab)" [ref=e371] [cursor=pointer]:
+              - /url: https://www.facebook.com/karmakoffeeomaha/
+              - text: FB
+    - region "Music"
+    - region "Makers"
+  - contentinfo [ref=e96]:
+    - link "Subscribe to the Queer Omaha Events calendar in Google Calendar" [ref=e98] [cursor=pointer]:
+      - /url: https://calendar.google.com/calendar/r?cid=webcal%3A%2F%2Fqueeromaha.net%2Fevents.ics
+      - text: 📅 Subscribe to QueerOmaha Calendar
+    - paragraph [ref=e100]: You are valid
+    - navigation "Footer navigation" [ref=e101]:
+      - link "About" [ref=e102] [cursor=pointer]:
+        - /url: /about#about
+      - link "@taraxvoid/queeromaha on GitHub (opens in new tab)" [ref=e103] [cursor=pointer]:
+        - /url: https://github.com/taraxvoid/queeromaha
+        - img "GitHub" [ref=e104]:
+          - img [ref=e105]
+  - generic [ref=e109]:
+    - button "Menu" [ref=e110]:
+      - img [ref=e112]
+      - generic: Menu
+    - button "Inspect" [ref=e116]:
+      - img [ref=e118]
+      - generic: Inspect
+    - button "Audit" [ref=e120]:
+      - generic [ref=e121]:
+        - img [ref=e122]
+        - img [ref=e125]
+      - generic: Audit
+    - button "Settings" [ref=e128]:
+      - img [ref=e130]
+      - generic: Settings

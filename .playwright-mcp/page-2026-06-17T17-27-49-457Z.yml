@@ -1,0 +1,136 @@
+- generic [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - navigation "Main navigation" [ref=e4]:
+      - link "Social" [ref=e6] [cursor=pointer]:
+        - /url: /social
+        - generic [ref=e7]: Social
+      - link "Spiritual" [ref=e9] [cursor=pointer]:
+        - /url: /spiritual
+        - generic [ref=e10]: Spiritual
+      - link "Art" [ref=e12] [cursor=pointer]:
+        - /url: /art
+        - generic [ref=e13]: Art
+      - link "Cafes" [ref=e15] [cursor=pointer]:
+        - /url: /cafes
+        - generic [ref=e16]: Cafes
+      - link "Music" [ref=e18] [cursor=pointer]:
+        - /url: /music
+        - generic [ref=e19]: Music
+      - link "Makers" [ref=e21] [cursor=pointer]:
+        - /url: /makers
+        - generic [ref=e22]: Makers
+  - main [ref=e23]:
+    - heading "Queer Omaha — LGBTQ+ Community Directory" [level=1] [ref=e24]
+    - group "Filter by location or tag" [ref=e25]:
+      - group "Filter by location" [ref=e26]:
+        - generic [ref=e27]:
+          - button "Midtown" [active] [pressed] [ref=e28] [cursor=pointer]
+          - button "South O" [ref=e29] [cursor=pointer]
+          - button "North O" [ref=e30] [cursor=pointer]
+          - button "Benson" [ref=e31] [cursor=pointer]
+          - button "Downtown" [ref=e32] [cursor=pointer]
+          - button "West O" [disabled] [ref=e33]
+          - button "Aksarben" [disabled] [ref=e34]
+          - button "Dundee" [disabled] [ref=e35]
+      - generic [ref=e36]:
+        - button "Clear tag filters" [disabled] [ref=e37]: ✕ Clear
+        - button "Gender-neutral bathroom Gender-neutral bathroom" [ref=e38] [cursor=pointer]:
+          - img [ref=e39]: 🚻
+          - text: Gender-neutral bathroom
+        - button "Seating available Seating available" [disabled] [ref=e40]:
+          - img: 🛋️
+          - text: Seating available
+        - button "Work/study spot Work/study spot" [disabled] [ref=e42]:
+          - img: 💻
+          - text: Work/study spot
+    - region "Social"
+    - region "Spiritual"
+    - region "Art" [ref=e43]:
+      - heading "Art" [level=2] [ref=e44]
+      - generic [ref=e260]:
+        - heading "Cali Commons" [level=3] [ref=e262]
+        - generic [ref=e263]:
+          - generic:
+            - paragraph [ref=e264]: Arts collective and neighborhood gallery
+            - paragraph [ref=e265]: 📍 (Midtown)
+        - list [ref=e267]:
+          - listitem [ref=e268]:
+            - link "Events Calendar (opens in new tab)" [ref=e269] [cursor=pointer]:
+              - /url: https://calicommons.com/calendar-of-events/
+              - text: Events Calendar
+          - listitem [ref=e270]:
+            - link "Join Artist Collective (opens in new tab)" [ref=e271] [cursor=pointer]:
+              - /url: https://docs.google.com/forms/d/e/1FAIpQLSchb_KdCJCRtj2aAA78m5ycAGq0Mv17EGJYzgd26ciXTDpUcQ/viewform
+              - text: Join Artist Collective
+      - generic [ref=e272]:
+        - heading "Hispanic Arts Center" [level=3] [ref=e274]
+        - generic [ref=e275]:
+          - generic:
+            - paragraph [ref=e276]: Traditional and contemporary Mexican folkloric dance, creative expression, and community gathering. Has Dia de Los Muertos and Cinco de la Mayo events.
+            - paragraph [ref=e277]: 📍 (Midtown)
+        - list [ref=e279]:
+          - listitem [ref=e280]:
+            - link "FB (opens in new tab)" [ref=e281] [cursor=pointer]:
+              - /url: https://www.facebook.com/people/Hispanic-Art-Center-of-Omaha/100075726047114/
+              - text: FB
+          - listitem [ref=e282]:
+            - link "Events Calendar (opens in new tab)" [ref=e283] [cursor=pointer]:
+              - /url: https://www.haco-ne.com/events.html
+              - text: Events Calendar
+      - generic [ref=e284]:
+        - heading "Aksarben Village Gender-neutral bathroom" [level=3] [ref=e286]:
+          - text: Aksarben Village
+          - img "Gender-neutral bathroom" [ref=e287]:
+            - img [ref=e288]: 🚻
+        - generic [ref=e289]:
+          - generic:
+            - paragraph [ref=e290]: Has arts market and outdoor music in the summer. Get the Momos at Inner Rail. Check out Oto Listening Lounge. There are single-stall BRs at Inner Rail, Godega, Marigold's and Roast.
+            - paragraph [ref=e291]: 📍 (Midtown)
+        - list [ref=e293]:
+          - listitem [ref=e294]:
+            - link "Events Calendar (opens in new tab)" [ref=e295] [cursor=pointer]:
+              - /url: https://www.aksarbenvillage.com/events
+              - text: Events Calendar
+      - generic [ref=e296]:
+        - heading "Samuel Bak Museum" [level=3] [ref=e298]
+        - generic [ref=e299]:
+          - generic:
+            - paragraph [ref=e300]: Holocaust survivor's art museum with workshops and education programs.
+            - paragraph [ref=e301]: 📍 (Midtown)
+        - list [ref=e303]:
+          - listitem [ref=e304]:
+            - link "Events Calendar (opens in new tab)" [ref=e305] [cursor=pointer]:
+              - /url: https://www.unomaha.edu/samuel-bak-museum-the-learning-center/programs-and-events/exhibition-programming.php
+              - text: Events Calendar
+    - region "Cafes"
+    - region "Music"
+    - region "Makers"
+  - contentinfo [ref=e358]:
+    - link "Subscribe to the Queer Omaha Events calendar in Google Calendar" [ref=e360] [cursor=pointer]:
+      - /url: https://calendar.google.com/calendar/r?cid=webcal%3A%2F%2Fqueeromaha.net%2Fevents.ics
+      - text: 📅 Subscribe to QueerOmaha Calendar
+    - paragraph [ref=e362]: You are valid
+    - navigation "Footer navigation" [ref=e363]:
+      - link "About" [ref=e364] [cursor=pointer]:
+        - /url: /about#about
+      - link "@taraxvoid/queeromaha on GitHub (opens in new tab)" [ref=e365] [cursor=pointer]:
+        - /url: https://github.com/taraxvoid/queeromaha
+        - img "GitHub" [ref=e366]:
+          - img [ref=e367]
+  - generic [ref=e371]:
+    - button "Menu" [ref=e372]:
+      - img [ref=e374]
+      - generic: Menu
+    - button "Inspect" [ref=e378]:
+      - img [ref=e380]
+      - generic: Inspect
+    - button "Audit" [ref=e382]:
+      - generic [ref=e383]:
+        - img [ref=e384]
+        - img [ref=e393]
+      - generic: Audit
+    - button "Settings" [ref=e387]:
+      - img [ref=e389]
+      - generic: Settings
