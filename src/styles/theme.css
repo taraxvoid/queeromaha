@@ -175,16 +175,14 @@ footer {
     display: flex;
     flex-direction: row;
     align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0;
+    justify-content: space-between;
+    gap: 0.75rem;
 }
 
 .footer-text {
     text-align: center;
     flex: 1 1 0;
     min-width: 0;
-    padding: 0.25rem 0.75rem;
     opacity: 0.8;
     overflow: hidden;
     white-space: nowrap;
@@ -197,8 +195,12 @@ footer {
     flex-shrink: 0;
 }
 
-.footer-nav > a:first-child {
+.footer-nav a {
     border-left: 1px solid rgba(255, 255, 255, 0.15);
+
+    &:last-child {
+        border-right: 1px solid rgba(255, 255, 255, 0.15);
+    }
 }
 
 footer a {
@@ -219,16 +221,11 @@ footer a:hover {
     display: flex;
     align-items: center;
     font-size: 1.7rem;
-    background: none;
-    border: none;
-    border-left: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: none;
     padding: 0.1rem 0.5rem 0.1rem 0.75rem;
 }
 
 .footer-cal {
     flex-shrink: 0;
-    padding-right: 0.5rem;
 }
 
 .footer-cal a {
@@ -590,19 +587,4 @@ blockquote p {
 .filter-pill.unavailable {
     opacity: 0.35;
     cursor: not-allowed;
-}
-
-/* Nav github icon in header */
-.nav-github {
-    display: flex;
-    align-items: center;
-    padding: 0.8rem;
-    color: #fff;
-    opacity: 0.8;
-    font-size: 1.3rem;
-    transition: opacity 0.2s;
-}
-
-.nav-github:hover {
-    opacity: 1;
 }
