@@ -33,6 +33,7 @@ export async function getStaticPaths() {
 const { filters = '' } = Astro.params
 const filterSlugs = filters.split('/').filter(Boolean)
 const initialCategories = filterSlugs.filter((s) => categorySlugs.includes(s))
+const initialRecent = filterSlugs.length === 0 ? 'social' : ''
 
 const ORDER = ['social', 'spiritual', 'art', 'cafes', 'music', 'makers']
 const entries = await getCollection('directory')
@@ -60,6 +61,7 @@ const categoryLabels: Record<string, string> = {
   description="Community-maintained directory of queer groups, spaces, and resources in Omaha, Nebraska."
   initialCategories={initialCategories}
   initialNeighborhoods={initialNeighborhoods}
+  initialRecent={initialRecent}
 >
   <FilterBar neighborhoods={allNeighborhoods} />
   {entries.map(entry => {

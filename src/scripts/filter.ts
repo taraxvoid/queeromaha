@@ -12,7 +12,11 @@ if (cards.length > 0) {
     const activeNeighborhoods = new Set<string>()
 
     function updateClearBtn() {
-        if (clearBtn) clearBtn.disabled = activeTags.size === 0
+        if (clearBtn)
+            clearBtn.disabled =
+                activeTags.size === 0 &&
+                activeCategories.size === 0 &&
+                activeNeighborhoods.size === 0
     }
 
     function cardMatches(
@@ -57,7 +61,10 @@ if (cards.length > 0) {
             activeNeighborhoods.size > 0 && activeCategories.size === 0
         pills.forEach((pill) => {
             if (pill.dataset.filterType !== 'category') return
-            pill.classList.toggle('implied', allCategoriesImplied)
+            pill.classList.toggle(
+                'implied',
+                allCategoriesImplied && !pill.classList.contains('recent'),
+            )
         })
     }
 
@@ -70,11 +77,8 @@ if (cards.length > 0) {
         const testNbrs = new Set(activeNeighborhoods)
         const testTags = new Set(activeTags)
         if (type === 'category') {
-            // Switching category also clears location/tags (see
-            // setCategory), so availability shouldn't be constrained by them.
             testCats.clear()
             testCats.add(slug)
-            testNbrs.clear()
             testTags.clear()
         } else if (type === 'neighborhood') {
             testNbrs.clear()
@@ -157,23 +161,39 @@ if (cards.length > 0) {
 
     function setCategory(slug: string) {
         clearType('category', activeCategories)
-        // Switching category also resets location and tags, since a
-        // filter combo from the old category may not make sense in the
-        // new one.
-        clearType('neighborhood', activeNeighborhoods)
         clearType('tag', activeTags)
+        pills.forEach((p) => {
+            if (p.dataset.filterType === 'category')
+                p.classList.remove('recent')
+        })
         activateFilter(slug)
         scrollToTop()
     }
 
     function setNeighborhood(slug: string) {
         clearType('neighborhood', activeNeighborhoods)
+        pills.forEach((p) => {
+            if (p.dataset.filterType === 'category')
+                p.classList.remove('recent')
+        })
         activateFilter(slug)
     }
 
     if (clearBtn) {
         clearBtn.addEventListener('click', () => {
+            const lastCat = [...activeCategories][0] ?? ''
+            clearType('category', activeCategories)
+            clearType('neighborhood', activeNeighborhoods)
             clearType('tag', activeTags)
+            pills.forEach((p) => {
+                p.classList.remove('recent')
+            })
+            if (lastCat) {
+                const recentPill = document.querySelector<HTMLElement>(
+                    `[data-filter="${lastCat}"]`,
+                )
+                if (recentPill) recentPill.classList.add('recent')
+            }
             applyFilters()
             updateClearBtn()
             history.pushState({}, '', buildUrl())
@@ -188,8 +208,9 @@ if (cards.length > 0) {
             const isActive = pill.classList.contains('active')
             if (type === 'category') {
                 if (isActive) {
+                    deactivateFilter(slug)
+                    pill.classList.add('recent')
                     scrollToTop()
-                    return
                 } else setCategory(slug)
             } else if (type === 'neighborhood') {
                 if (isActive) deactivateFilter(slug)
@@ -215,4 +236,12 @@ if (cards.length > 0) {
     if (initCats.length > 0) setCategory(initCats[0])
     initNbrs.forEach(activateFilter)
     initTags.forEach(activateFilter)
+    const initRecent = document.body.dataset.initialRecent || ''
+    if (initRecent && activeCategories.size === 0) {
+        const recentPill = document.querySelector<HTMLElement>(
+            `[data-filter="${initRecent}"]`,
+        )
+        if (recentPill?.dataset.filterType === 'category')
+            recentPill.classList.add('recent')
+    }
 }

@@ -122,6 +122,11 @@ header {
     border-color: rgba(255, 255, 255, 0.5);
 }
 
+.main-nav wa-button.recent::part(base) {
+    background-color: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.55);
+}
+
 main {
     flex: 1;
     max-width: 700px;
@@ -475,24 +480,25 @@ blockquote p {
 .filter-clear {
     padding: 0.2rem 0.6rem;
     border-radius: 999px;
-    background: none;
-    border: 1px solid #c4b5fd;
-    color: #7c3aed;
+    background: #ede9fe;
+    border: 2px solid #a78bfa;
+    color: #6d28d9;
     font-size: 0.75rem;
-    font-weight: 600;
+    font-weight: 700;
     font-family: inherit;
     cursor: pointer;
     transition:
         background 0.15s,
-        color 0.15s;
+        opacity 0.15s;
 }
 
 .filter-clear:hover:not(:disabled) {
-    background: #f3e8ff;
+    background: #ddd6fe;
+    border-color: #7c3aed;
 }
 
 .filter-clear:disabled {
-    opacity: 0.4;
+    opacity: 0.35;
     cursor: default;
 }
 
@@ -559,6 +565,7 @@ blockquote p {
 
 @media (max-width: 768px) {
     .location-bar {
+        box-sizing: border-box;
         margin-left: -0.75rem;
         margin-right: -0.75rem;
         width: calc(100% + 1.5rem);
