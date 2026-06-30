@@ -5,6 +5,7 @@ const pills = document.querySelectorAll<HTMLElement & { disabled: boolean }>(
 const clearBtn = document.getElementById(
     'filterClear',
 ) as HTMLButtonElement | null
+const allBanner = document.getElementById('showingAll') as HTMLElement | null
 
 if (cards.length > 0) {
     const activeTags = new Set<string>()
@@ -54,17 +55,24 @@ if (cards.length > 0) {
             })
         updatePillAvailability()
         updateImpliedCategoryState()
+        updateAllBanner()
+    }
+
+    function updateAllBanner() {
+        if (!allBanner) return
+        allBanner.hidden =
+            activeCategories.size > 0 ||
+            activeNeighborhoods.size > 0 ||
+            activeTags.size > 0
     }
 
     function updateImpliedCategoryState() {
         const allCategoriesImplied =
             activeNeighborhoods.size > 0 && activeCategories.size === 0
+        if (allCategoriesImplied) clearRecentCategory()
         pills.forEach((pill) => {
             if (pill.dataset.filterType !== 'category') return
-            pill.classList.toggle(
-                'implied',
-                allCategoriesImplied && !pill.classList.contains('recent'),
-            )
+            pill.classList.toggle('implied', allCategoriesImplied)
         })
     }
 
@@ -159,23 +167,32 @@ if (cards.length > 0) {
         window.scrollTo({ top: 0, behavior: reduced ? 'instant' : 'smooth' })
     }
 
-    function setCategory(slug: string) {
-        clearType('category', activeCategories)
-        clearType('tag', activeTags)
+    function clearRecentCategory() {
         pills.forEach((p) => {
             if (p.dataset.filterType === 'category')
                 p.classList.remove('recent')
         })
+    }
+
+    function setRecentCategory(slug: string) {
+        clearRecentCategory()
+        const pill = document.querySelector<HTMLElement>(
+            `[data-filter="${slug}"]`,
+        )
+        if (pill?.dataset.filterType === 'category')
+            pill.classList.add('recent')
+    }
+
+    function setCategory(slug: string) {
+        clearType('category', activeCategories)
+        clearType('tag', activeTags)
+        clearRecentCategory()
         activateFilter(slug)
         scrollToTop()
     }
 
     function setNeighborhood(slug: string) {
         clearType('neighborhood', activeNeighborhoods)
-        pills.forEach((p) => {
-            if (p.dataset.filterType === 'category')
-                p.classList.remove('recent')
-        })
         activateFilter(slug)
     }
 
@@ -185,15 +202,8 @@ if (cards.length > 0) {
             clearType('category', activeCategories)
             clearType('neighborhood', activeNeighborhoods)
             clearType('tag', activeTags)
-            pills.forEach((p) => {
-                p.classList.remove('recent')
-            })
-            if (lastCat) {
-                const recentPill = document.querySelector<HTMLElement>(
-                    `[data-filter="${lastCat}"]`,
-                )
-                if (recentPill) recentPill.classList.add('recent')
-            }
+            if (lastCat) setRecentCategory(lastCat)
+            else clearRecentCategory()
             applyFilters()
             updateClearBtn()
             history.pushState({}, '', buildUrl())
@@ -209,7 +219,7 @@ if (cards.length > 0) {
             if (type === 'category') {
                 if (isActive) {
                     deactivateFilter(slug)
-                    pill.classList.add('recent')
+                    setRecentCategory(slug)
                     scrollToTop()
                 } else setCategory(slug)
             } else if (type === 'neighborhood') {
@@ -237,11 +247,6 @@ if (cards.length > 0) {
     initNbrs.forEach(activateFilter)
     initTags.forEach(activateFilter)
     const initRecent = document.body.dataset.initialRecent || ''
-    if (initRecent && activeCategories.size === 0) {
-        const recentPill = document.querySelector<HTMLElement>(
-            `[data-filter="${initRecent}"]`,
-        )
-        if (recentPill?.dataset.filterType === 'category')
-            recentPill.classList.add('recent')
-    }
+    if (initRecent && activeCategories.size === 0) setRecentCategory(initRecent)
+    updateAllBanner()
 }

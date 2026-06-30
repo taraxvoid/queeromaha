@@ -64,6 +64,7 @@ const categoryLabels: Record<string, string> = {
   initialRecent={initialRecent}
 >
   <FilterBar neighborhoods={allNeighborhoods} />
+  <div class="section-header" id="showingAll" aria-live="polite">All listings</div>
   {entries.map(entry => {
     const publicItems = (entry.data.items ?? []).filter(i => i.public !== false)
     if (publicItems.length === 0) return null
