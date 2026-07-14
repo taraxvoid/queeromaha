@@ -5,7 +5,6 @@
     "description": "queer stuff in omaha",
     "scripts": {
         "test": "npm-run-all -l -p check test:unit -s test:e2e",
-        "pre-commit": "npm-run-all -l -p format test:data",
         "test:fast": "run-p -l lint test:data",
         "test:data": "vitest run test/data.test.ts",
         "test:build": "vitest run test/build.test.ts",
