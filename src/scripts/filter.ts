@@ -169,6 +169,9 @@ function initFilters() {
                 // fetch) — the pill's real href is only a JS-off fallback.
                 setCategory(slug)
                 history.pushState({}, '', buildUrl())
+                window.posthog?.capture('filter_category_changed', {
+                    category: slug,
+                })
                 return
             }
 
