@@ -16,6 +16,19 @@ function initFocusOnOpen(
     })
 }
 
+function initCalendarTracking(details: HTMLDetailsElement) {
+    details
+        .querySelectorAll<HTMLAnchorElement>('.calendar-option')
+        .forEach((link) => {
+            link.addEventListener('click', () => {
+                const isGoogle = link.href.includes('google.com')
+                window.posthog?.capture('calendar_subscribed', {
+                    calendar_type: isGoogle ? 'google' : 'apple',
+                })
+            })
+        })
+}
+
 function init() {
     const details = document.querySelector<HTMLDetailsElement>('#calendarBox')
     const firstOption =
@@ -23,6 +36,7 @@ function init() {
     if (!details || !firstOption) return
 
     initFocusOnOpen(details, firstOption)
+    initCalendarTracking(details)
 }
 
 if (document.readyState === 'loading')

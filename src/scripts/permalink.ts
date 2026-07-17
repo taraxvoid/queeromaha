@@ -67,7 +67,16 @@ function initTapToggle() {
 
     function toggle(card: HTMLElement) {
         if (card === activeCard) deactivate()
-        else activate(card)
+        else {
+            activate(card)
+            window.posthog?.capture('item_expanded', {
+                item_name: card
+                    .querySelector('.item-tap-target')
+                    ?.textContent?.trim(),
+                item_category: card.dataset.category,
+                item_slug: card.dataset.slug,
+            })
+        }
     }
 
     cards.forEach((card) => {
