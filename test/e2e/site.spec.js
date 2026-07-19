@@ -161,11 +161,43 @@ test('suggestion box toggle does not jump horizontally when opened on mobile', a
     // Regression test: the pill used to be centered via `margin: 0 auto`
     // between the two footer separators, so opening it (which hides every
     // sibling it was centering against) recentered it in the whole footer
-    // width instead, visibly jumping it left. It's now tucked to the right
-    // via `margin-left: auto` on both the closed pill and the open toggle,
-    // so its position holds regardless of which siblings are visible.
+    // width instead, visibly jumping it left by tens of pixels. It's now
+    // anchored against .footer-separator-left in both closed and open
+    // states, so the box's own left edge no longer moves — the toggle
+    // itself lands a few pixels further right than the closed pill (it
+    // now follows "Send" and the separator in normal flow, spaced by a
+    // small column-gap, rather than reproducing the closed pill's exact
+    // x), which is an intentional small shift, not the old
+    // multi-siblings-wide jump this test guards against.
     const openBox = await summary.boundingBox()
-    expect(openBox.x).toBeCloseTo(closedBox.x, -1)
+    expect(Math.abs(openBox.x - closedBox.x)).toBeLessThan(20)
+})
+
+test('suggestion box separator stays a short tick mark, not the full accordion height, when opened', async ({
+    page,
+}) => {
+    await page.setViewportSize({ width: 412, height: 839 })
+    await page.goto('/friends/')
+
+    await page.locator('#suggestionBox summary').click()
+
+    // Regression test: this separator used to be the reused top-level
+    // .footer-separator-left, which shares align-self: stretch with the
+    // whole open accordion's flex line -- stretching it to the full
+    // panel height instead of staying a short tick mark between "Send"
+    // and the toggle. It's now a dedicated element scoped to the short
+    // toggle row instead (mirroring .calendar-toggle-separator), so it
+    // should stay close to that row's height, well under the accordion's.
+    const sepBox = await page
+        .locator('.suggestion-toggle-separator')
+        .boundingBox()
+    const toggleRowBox = await page
+        .locator('.suggestion-box-toggle-row')
+        .boundingBox()
+    const accordionBox = await page.locator('.suggestion-box').boundingBox()
+
+    expect(sepBox.height).toBeLessThan(toggleRowBox.height + 20)
+    expect(sepBox.height).toBeLessThan(accordionBox.height / 2)
 })
 
 test('suggestion box pill is tucked against the right separator, next to the GitHub icon', async ({

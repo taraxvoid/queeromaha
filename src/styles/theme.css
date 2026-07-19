@@ -250,6 +250,13 @@ footer {
 .footer-separator-right {
     order: 3;
     margin-right: 0.2rem;
+    /* Pushes .footer-separator-right + .footer-nav (GitHub icon, utility
+       box) to the row's right edge as their own unit, while
+       .calendar-box -> .footer-separator-left -> .suggestion-box pack
+       flush together on the left (see .suggestion-box's comment — this
+       used to live there, tucking the pill against this separator
+       instead of nestling it against .footer-separator-left). */
+    margin-left: auto;
 }
 
 .footer-nav {
@@ -341,19 +348,20 @@ footer a:hover {
     order: 2;
     /* Web Awesome's native.css gives every <details> a white "panel"
        background, border, and padding by default — reset it so the
-       footer's purple background shows through, including its
-       margin-bottom: 24px (margin: 0 first, then margin-left: auto —
-       not the margin-left shorthand alone, which would leave that 24px
-       in place and misalign the pill vertically against .calendar-box).
-       margin-left: auto consumes all remaining free space on the left,
-       tucking the pill against .footer-separator-right (and the GitHub
-       icon beyond it) instead of centering it between the two
-       separators. */
+       footer's purple background shows through (margin: 0 clears its
+       margin-bottom: 24px too, which would otherwise misalign the pill
+       vertically against .calendar-box). No margin-left: auto here —
+       .footer-separator-right carries that now, so this pill packs flush
+       against .footer-separator-left instead of the far right edge. Its
+       left edge stays at this same spot once opened too (unlike the old
+       right-tucked layout, which jumped from one anchor to the other) —
+       see .suggestion-toggle-separator for the open state's own visual
+       boundary, since .footer-separator-left itself just stays hidden
+       while open (same as .footer-separator-right). */
     background: transparent;
     border: none;
     padding: 0;
     margin: 0;
-    margin-left: auto;
 }
 
 /* Opening either footer <details> (suggestion box or calendar box) hides
@@ -402,6 +410,16 @@ footer:has(.utility-box[open]) .footer-separator {
     display: none;
 }
 
+/* Same "grows upward off a sticky-bottom footer" reasoning as
+   .suggestion-box[open] summary's order: 2 (see its comment) — without an
+   explicit order, the summary (first in DOM) would default to order: 0
+   and land above .utility-box-panel, jumping the toggle up above the
+   Privacy/Contact/GitHub links instead of staying anchored near the
+   bottom where it was before opening. */
+.utility-box[open] summary.footer-pill-btn {
+    order: 1;
+}
+
 /* Reuses the same "pressed in" look as .filter-pill.active (inset
    shadow + translateY) so the open state reads as this button being
    currently pressed, not just its content changed. */
@@ -426,27 +444,34 @@ footer:has(.utility-box[open]) .footer-separator {
        footer, so its toggle moves to the *end* (panel first, toggle
        last) to stay near the bottom, roughly where it was before
        opening — putting it on top instead made it leap up the screen as
-       the panel appeared beneath it. margin-left: auto pushes it toward
-       the row's right edge; margin-right compensates for
-       .footer-separator-right and .footer-nav (GitHub icon + divider +
-       gear pill) both going display: none while open, which frees up
-       the width they occupied when closed — without it, the toggle
-       overshoots into that freed space and jumps right instead of
-       holding position. Tuned to the closed pill's mobile-breakpoint
-       offset, the same way .suggestion-box-toggle-row's column-gap
-       below is tuned. Bumped from 3.25rem to 6.5rem because .footer-nav
-       is now wider (divider + gear pill added alongside the GitHub
-       icon), so hiding it frees up more width than before — this
-       container's right edge itself doesn't move (it's still bounded by
-       .footer-separator-right + .footer-nav, both hidden either way;
-       .footer-separator-left staying visible on mobile only affects this
-       element's *left* edge/width, not its right edge, so it doesn't
-       factor into this number). The calendar box doesn't need this: its
-       options sit beside its toggle on the same row instead of below it,
-       so the toggle just stays in its natural (first) position. */
+       the panel appeared beneath it. No magic-number margin needed here
+       (unlike the old right-tucked layout, which had to fight its way
+       back toward a closed-state position on the opposite side of the
+       box): now that .suggestion-box itself is anchored against
+       .footer-separator-left in both closed and open states (see its
+       comment), the toggle just follows .suggestion-box-toggle-row
+       (Send) and .suggestion-toggle-separator in normal flow, spaced by
+       .suggestion-box[open]'s own column-gap below — the same way
+       .calendar-box[open]'s toggle sits beside its own options row with
+       no extra margin. order: 3 (not 2) leaves room for the separator
+       between Send and this toggle. */
+    order: 3;
+}
+
+/* Dedicated separator between "Send" and the Suggestion Box toggle,
+   mirroring .calendar-toggle-separator (see its comment) instead of
+   reusing the tall top-level .footer-separator-left: that reused element
+   shared a flex line with the whole open accordion (~159px tall), and
+   align-self: stretch on .footer-separator stretched it to match — a
+   thin bar spanning the entire open panel instead of a short tick mark.
+   This element only ever shares a line with .suggestion-box-toggle-row
+   and the toggle (both ~35px), so it stays short. */
+.suggestion-toggle-separator {
     order: 2;
-    margin-left: auto;
-    margin-right: 6.5rem;
+    align-self: stretch;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.15);
+    margin: 0.3rem 0;
 }
 
 summary.footer-pill-btn {
@@ -511,46 +536,6 @@ summary.footer-pill-btn::-webkit-details-marker {
     padding: 0.75rem 0.25rem 0.25rem;
 }
 
-/* Mobile only: instead of spanning the full footer width edge-to-edge,
-   the open Suggestion Box panel now stops at .footer-separator-left —
-   the same divider that already sits between the Gay Agenda pill and
-   Suggestion Box when closed — so its left edge lands on a boundary
-   that already exists rather than swallowing the whole row. This block
-   has to come after the unconditional .suggestion-box[open] rule above
-   in source order (same specificity, so the later rule wins) even
-   though the *other* mobile-only footer tweaks live in the
-   @media (max-width: 480px) block near the top of this file. */
-@media (max-width: 480px) {
-    /* .footer-separator-right is already covered by the unconditional
-       ~ .footer-separator rule above (shared class) — only .-left needs
-       restoring here. */
-    .suggestion-box[open] ~ .footer-separator-left {
-        display: block;
-    }
-
-    .suggestion-box[open] {
-        /* .suggestion-box-panel and .suggestion-input are already
-           width: 100%/flex: 1 1 100% of *this* element, not the
-           viewport, so they shrink to match whatever width this element
-           ends up with automatically — no override needed there.
-
-           flex-basis: 0 (not auto) — with an auto basis, the flex-wrap
-           line-breaking pass uses this item's *content-based* hypothetical
-           size (shrink-to-fit over the whole panel/input/toggle-row) to
-           decide whether it still fits next to .footer-separator-left,
-           which is wide enough that it wraps onto its own line no matter
-           what flex-shrink/min-width say afterward. A 0 basis makes it
-           start from nothing and grow to fill the space actually left on
-           the row instead. */
-        flex: 1 1 0;
-        /* Without this, the flex item's automatic min-width still defaults
-           to its content's min-content size (same issue .calendar-box[open]
-           already works around, see its comment), capping how far it can
-           actually shrink/grow-from-zero to fit beside the separator. */
-        min-width: 0;
-    }
-}
-
 .utility-box[open] {
     /* Unlike .suggestion-box[open]/.calendar-box[open] (real forms/
        previews that grow to fill the whole footer width), this panel
@@ -571,6 +556,7 @@ summary.footer-pill-btn::-webkit-details-marker {
 }
 
 .utility-box-panel {
+    order: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
