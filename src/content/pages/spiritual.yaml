@@ -103,6 +103,24 @@ items:
         location: Church Art House, 20th and Vinton, South Omaha
         description: Pay What You Can.
         url: https://www.facebook.com/geoff.wertheim.9
+  - name: Kirtan & Bhajans at Yoga Now
+    public: true
+    description: |
+      Queer-friendly kirtan / bhajan (devotional call-and-response chanting) at Yoga Now in Benson on the last Friday of each month @ 6:30–8:00PM.
+    location:
+      neighborhood: Benson
+    links:
+      - label: Event Page
+        url: https://www.doyoganow.com/events/bhajans-march-26--e2yc6-twz4f-pnkcf-8c3yk
+    recurring_events:
+      - summary: Kirtan & Bhajans — Yoga Now
+        rrule: FREQ=MONTHLY;BYDAY=-1FR
+        dtstart: "20260626"
+        time: 18:30
+        end_time: 20:00
+        location: Yoga Now, Benson
+        description: Devotional call-and-response chanting. Last Friday of the month.
+        url: https://www.doyoganow.com/events/bhajans-march-26--e2yc6-twz4f-pnkcf-8c3yk
   - name: Recovering From Religion
     public: false
     description: Resources for processing religious trauma.
