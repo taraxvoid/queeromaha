@@ -58,30 +58,38 @@ export async function GET() {
 
 User-agent: *
 Content-Signal: ai-train=no, search=yes, ai-input=yes
+# Active directive per https://contentsignals.org/ (Cloudflare's
+# Content Signals). Access (Allow/Disallow) and use-permissions
+# (Content-Signal) are independent: these rules grant crawling but
+# reserve training rights via Disallow below + the ai-train=no signal.
 Allow: /
 
+# AI *training* crawlers below are disallowed to actually enforce
+# ai-train=no (these bots honor robots.txt). This does not affect
+# Search: Google Search uses Googlebot, not Google-Extended.
 User-agent: GPTBot
-Allow: /
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
 
 User-agent: Claude-Web
-Allow: /
+Disallow: /
 
 User-agent: Anthropic-AI
-Allow: /
+Disallow: /
 
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+# *Use / search* crawlers: allowed (search=yes, ai-input=yes).
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: CCBot
-Allow: /
-
 User-agent: ChatGPT-User
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: Bytespider
 Allow: /
 
 User-agent: DuckAssistBot

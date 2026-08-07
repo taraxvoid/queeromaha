@@ -1,0 +1,26 @@
+{
+    "ci": {
+        "collect": {
+            "staticDistDir": "./dist",
+            "numberOfRuns": 1,
+            "url": ["/", "/friends", "/friends/o4us"],
+            "settings": {
+                "onlyCategories": ["seo"],
+                "emulatedFormFactor": "desktop"
+            }
+        },
+        "assert": {
+            "assertions": {
+                "categories:seo": ["warn", { "minScore": 0.8 }],
+                "document-title": "error",
+                "meta-description": "warn",
+                "is-crawlable": ["warn", { "minScore": 0.9 }],
+                "crawlable-anchors": ["warn", { "minScore": 0.9 }],
+                "http-status-code": ["warn", { "minScore": 0.9 }],
+                "link-text": ["warn", { "minScore": 0.9 }],
+                "hreflang": ["warn", { "minScore": 0.9 }],
+                "canonical": ["warn", { "minScore": 0.9 }]
+            }
+        }
+    }
+}

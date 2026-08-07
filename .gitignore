@@ -40,6 +40,9 @@ test-results/
 .playwright/
 .last-run.json
 
+# Lighthouse CI
+.lighthouseci/
+
 # Logs
 *.log
 npm-debug.log*
