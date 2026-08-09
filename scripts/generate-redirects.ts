@@ -156,4 +156,7 @@ function main() {
     )
 }
 
-main()
+// Only run when invoked directly, not when imported by tests
+if (import.meta.main) {
+    main()
+}
