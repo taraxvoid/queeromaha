@@ -29,7 +29,7 @@ if (!existsSync(DIST)) {
 }
 
 // Reuse Playwright's Chromium so we don't pull a second Chrome.
-function findPlaywrightChromium() {
+function findPlaywrightChromium(): string | null {
     const base = join(homedir(), '.cache', 'ms-playwright')
     if (!existsSync(base)) return null
     for (const entry of readdirSync(base, { withFileTypes: true })) {
@@ -43,7 +43,7 @@ function findPlaywrightChromium() {
 }
 
 const chrome = findPlaywrightChromium()
-const env = { ...process.env }
+const env: Record<string, string | undefined> = { ...process.env }
 if (chrome) {
     env.CHROME_PATH = chrome
     env.PUPPETEER_EXECUTABLE_PATH = chrome
@@ -54,7 +54,7 @@ if (chrome) {
     )
 }
 
-function runLhci(args) {
+function runLhci(args: string[]): Promise<void> {
     return new Promise((resolve, reject) => {
         const child = spawn('bunx', ['lhci', ...args, '--config', CONFIG], {
             cwd: ROOT,
@@ -81,7 +81,8 @@ function runLhci(args) {
         await runLhci(['assert', '--includePassedAssertions'])
         console.log('\n✅ Lighthouse CI checks passed')
     } catch (err) {
-        console.error('\n✖ Lighthouse CI failed:', err.message)
+        const msg = err instanceof Error ? err.message : String(err)
+        console.error('\n✖ Lighthouse CI failed:', msg)
         process.exit(1)
     }
 })()
