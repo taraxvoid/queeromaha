@@ -223,8 +223,11 @@ function resolveLink(link: { url: string; label: string }) {
   )}
   {item.links && item.links.length > 0 && (
     <ul class="entry-links" slot="footer">
-      {[...item.links].sort((a, b) => resolveLink(a).rank - resolveLink(b).rank).map(link => {
-        const pillIcon = resolveLink(link).icon
+      {[...item.links]
+        .map((link) => ({ link, resolved: resolveLink(link) }))
+        .sort((a, b) => a.resolved.rank - b.resolved.rank)
+        .map(({ link, resolved }) => {
+        const pillIcon = resolved.icon
         return (
           <li>
             <a href={link.url} rel="noopener noreferrer" target="_blank" aria-label={`${link.label} (opens in new tab)`}

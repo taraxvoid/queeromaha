@@ -5,8 +5,8 @@
             "numberOfRuns": 1,
             "url": ["/", "/friends", "/friends/o4us"],
             "settings": {
-                "onlyCategories": ["seo"],
-                "emulatedFormFactor": "desktop"
+                "onlyCategories": ["seo", "performance"],
+                "emulatedFormFactor": "mobile"
             }
         },
         "assert": {
@@ -19,7 +19,15 @@
                 "http-status-code": ["warn", { "minScore": 0.9 }],
                 "link-text": ["warn", { "minScore": 0.9 }],
                 "hreflang": ["warn", { "minScore": 0.9 }],
-                "canonical": ["warn", { "minScore": 0.9 }]
+                "canonical": ["warn", { "minScore": 0.9 }],
+                "categories:performance": ["warn", { "minScore": 0.9 }],
+                "largest-contentful-paint": [
+                    "warn",
+                    { "maxNumericValue": 2500 }
+                ],
+                "cumulative-layout-shift": ["warn", { "maxNumericValue": 0.1 }],
+                "total-blocking-time": ["warn", { "maxNumericValue": 200 }],
+                "first-contentful-paint": ["warn", { "maxNumericValue": 1800 }]
             }
         }
     }
