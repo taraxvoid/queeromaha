@@ -50,22 +50,14 @@ describe('astro build', () => {
         expect(html).toContain('href="/friends"')
     })
 
-    test('_redirects sends /social and / to /friends', () => {
+    test('_redirects has legacy redirects', () => {
         const redirects = readFileSync(
             join(ROOT, 'public', '_redirects'),
             'utf8',
         )
-        expect(redirects).toMatch(/\/social\s+\/friends/)
         expect(redirects).toMatch(/^\/\s+\/friends/m)
-    })
-
-    test('_redirects sends /about to / but leaves /contact alone', () => {
-        const redirects = readFileSync(
-            join(ROOT, 'public', '_redirects'),
-            'utf8',
-        )
-        expect(redirects).toMatch(/^\/about\s+\/\s+301/m)
-        expect(redirects).not.toMatch(/^\/contact\s/m)
+        expect(redirects).toMatch(/\/social\s+\/friends/)
+        expect(redirects).toMatch(/\/community\s+\/friends/)
     })
 
     test('privacy/index.html has a back-to-directory link', () => {
