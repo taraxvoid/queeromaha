@@ -39,4 +39,8 @@ if [ ! -d node_modules ]; then
   exit 1
 fi
 
-bun run test
+# Fast local push gate: build + type-check + unit + a mobile smoke test.
+# a11y (axe) and the full multi-viewport e2e run in CI only
+# (pr-checks.yml: test:a11y; e2e.yml: test:e2e:all). Run `bun run test:*`
+# manually to exercise the full local suite.
+bun run test:push

@@ -34,10 +34,7 @@ export function parseRedirectLine(line: string): RedirectEntry | null {
     const trimmed = line.trim()
     if (trimmed === '' || trimmed.startsWith('#')) return null
     const match = trimmed.match(REDIRECT_LINE_RE)
-    if (!match) {
-        console.warn(`generate-redirects: skipping malformed line: ${line}`)
-        return null
-    }
+    if (!match) return null
     const [, from, to, status] = match
     if (
         from === '' ||
@@ -47,7 +44,6 @@ export function parseRedirectLine(line: string): RedirectEntry | null {
             from.startsWith('https://')
         )
     ) {
-        console.warn(`generate-redirects: skipping invalid source: ${from}`)
         return null
     }
     if (
@@ -58,7 +54,6 @@ export function parseRedirectLine(line: string): RedirectEntry | null {
             to.startsWith('https://')
         )
     ) {
-        console.warn(`generate-redirects: skipping invalid destination: ${to}`)
         return null
     }
     return [from, to, status]
