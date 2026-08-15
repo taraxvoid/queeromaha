@@ -1,15 +1,7 @@
-# .lycheeignore — regex patterns (one per line). A URL is skipped if any line
-# matches it as a regular expression. Mirrors the SKIP_DOMAINS + bot-handling
-# intent of the old scripts/check-links.js (which skipped these hosts entirely
-# because of 403 bot-blocks / 200-body shadow-bans).
-#
-# NOTE: lychee cannot inspect response *bodies*, so shadow-ban detection (a 200
-# with "this page isn't available") is lost for x.com/twitter — a deleted
-# account there will just pass instead of being flagged. 404s are still caught.
-# Keep host patterns anchored to the host + path-boundary so 'x.com' can't match
-# unrelated hosts like 'fix.com'.
 
-# Social / bot-hosts that don't reliably respond to automated requests
+# NOTE: lychee cannot inspect response bodies, no "private/ deleted account" detection
+
+# loginwalled junk
 https?://([^/]+\.)*facebook\.com(/|$)
 https?://([^/]+\.)*fb\.com(/|$)
 https?://([^/]+\.)*linkedin\.com(/|$)
@@ -17,7 +9,5 @@ https?://([^/]+\.)*instagram\.com(/|$)
 https?://([^/]+\.)*x\.com(/|$)
 https?://([^/]+\.)*twitter\.com(/|$)
 
-# Small/local orgs the old script also skipped (flaky or bot-blocked)
-https?://([^/]+\.)*synthomaha\.net(/|$)
-https?://([^/]+\.)*soundryomaha\.org(/|$)
+ flakes
 https?://([^/]+\.)*fifthhouseomaha\.com(/|$)
