@@ -1,11 +1,4 @@
-name: PR Checks
-
-# Lightweight "is this PR mergable" gate: lint + type-check + unit + a11y
-# (mobile-chrome only). a11y/e2e live on CI so the local pre-push hook stays fast.
-# GitHub-hosted runner (public repo). Chromium is fetched via `playwright install`
-# and PERSISTED across runs by caching ~/.cache/ms-playwright — that removes the
-# per-run ~2-minute browser download (the official Playwright GH Action is archived;
-# the CLI install + actions/cache is the supported, cheaper path).
+name: Ensure PR mergable
 on:
   pull_request:
     branches: [main]
