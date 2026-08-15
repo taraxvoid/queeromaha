@@ -1,10 +1,9 @@
 name: Check Links
 
-# Dead-link checker powered by Lychee (replaces the custom scripts/check-links.js).
+# Dead-link checker powered by Lychee
 # Validates external URLs + internal anchors against the built dist/ HTML, so it
 # checks what is actually published. Weekly all-links scan (cron) + PR gate that
 # posts failures as a PR comment via peter-evans/create-or-update-comment@v5
-# (default GITHUB_TOKEN + pull-requests:write — no PAT needed for same-repo PRs).
 on:
   schedule:
     - cron: "0 9 * * 1" # Every Monday 9am UTC — full scan to catch stale/dead links
