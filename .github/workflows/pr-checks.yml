@@ -2,6 +2,7 @@ name: Ensure PR mergable
 on:
   pull_request:
     branches: [main]
+  workflow_dispatch:
 
 concurrency:
   group: pr-checks-${{ github.ref }}
@@ -38,6 +39,8 @@ jobs:
 
       - run: bun install --frozen-lockfile
       - run: bunx playwright install --with-deps chromium
+      # Validate workflow files before running expensive checks.
+      - run: bun run lint:actions
       # Advisory only: reports high/critical vulns without blocking the gate.
       # Currently flags tmp(high) + uuid(moderate) via @lhci/cli. Set
       # continue-on-error: false once transitive deps are clean.
