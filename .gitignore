@@ -1,6 +1,7 @@
 # generated docs
 posthog*.md
 TRANSWRONGS-REPORT.md
+.lycheecache
 
 # Build output
 dist/
