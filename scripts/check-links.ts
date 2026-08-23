@@ -1,13 +1,17 @@
 #!/usr/bin/env bun
+
 /**
  * Local link checker — parses dist/ HTML and markdown for external links,
  * tests them against the live web, and reports failures.
  *
- * Mirrors .lychee.toml policy: only 404/410 are "dead". 401/403/405/429 and
- * 5xx are treated as OK. .lycheeignore patterns are skipped.
+ * Policy: 404/410 = gone (dead), 401/403 = private/restricted (inaccessible),
+ * DNS resolution failure = dns-failed. 405/429 and 5xx are treated as OK
+ * (temporary/method). Redirects are not followed (SSRF guard). .lycheeignore
+ * patterns are skipped. Private/internal addresses are blocked.
  */
 
-import { readdirSync, readFileSync, statSync } from 'node:fs'
+import { lookup } from 'node:dns/promises'
+import { readdirSync, readFileSync } from 'node:fs'
 import { join, relative } from 'node:path'
 
 const DIST_DIR = 'dist'
@@ -15,11 +19,8 @@ const MD_LINK_RE = /\[[^\]]*\]\((https?:\/\/[^)]+)\)/g
 const HTML_HREF_RE = /href="(https?:\/\/[^"]+)"/g
 const IGNORE_RE: RegExp[] = loadIgnorePatterns()
 
-const ACCEPTED_STATUS = new Set([
-    200, 201, 202, 203, 204, 205, 206, 207, 208, 226, 299, 401, 403, 405, 429,
-    500, 502, 503, 504,
-])
 const DEAD_STATUS = new Set([404, 410])
+const INACCESSIBLE_STATUS = new Set([401, 403])
 
 const CONCURRENCY = 16
 const TIMEOUT_MS = 15_000
@@ -34,7 +35,7 @@ interface LinkResult {
 
 function loadIgnorePatterns(): RegExp[] {
     try {
-        const content = readFileSync('.lycheeignore', 'utf8')
+        const content = readFileSync('.linkcheckignore', 'utf8')
         return content
             .split('\n')
             .map((l) => l.trim())
@@ -58,12 +59,12 @@ function shouldIgnore(url: string): boolean {
 }
 
 function* walkDir(dir: string): Generator<string> {
-    for (const entry of readdirSync(dir)) {
-        const full = join(dir, entry)
-        const stat = statSync(full)
-        if (stat.isDirectory()) {
+    for (const entry of readdirSync(dir, { withFileTypes: true })) {
+        if (entry.isSymbolicLink()) continue
+        const full = join(dir, entry.name)
+        if (entry.isDirectory()) {
             yield* walkDir(full)
-        } else if (entry.endsWith('.html') || entry.endsWith('.md')) {
+        } else if (entry.name.endsWith('.html') || entry.name.endsWith('.md')) {
             yield full
         }
     }
@@ -106,9 +107,45 @@ function getExternalLinks(): Map<string, Set<string>> {
     return urls
 }
 
+const PRIVATE_NETS = [
+    /^127\./,
+    /^10\./,
+    /^172\.(1[6-9]|2\d|3[01])\./,
+    /^192\.168\./,
+    /^169\.254\./,
+    /^::1$/,
+    /^fc00:/i,
+    /^fe80:/i,
+    /^0\.0\.0\.0$/,
+]
+
+function isPrivateIP(ip: string): boolean {
+    return PRIVATE_NETS.some((re) => re.test(ip))
+}
+
+async function isInternalURL(url: string): Promise<boolean> {
+    try {
+        const { hostname } = new URL(url)
+        if (hostname === 'localhost' || hostname.endsWith('.local')) {
+            return true
+        }
+        if (/^\d+\.\d+\.\d+\.\d+$/.test(hostname)) {
+            return isPrivateIP(hostname)
+        }
+        const addresses = await lookup(hostname, { all: true })
+        return addresses.some((a) => isPrivateIP(a.address))
+    } catch {
+        return false
+    }
+}
+
 async function checkUrl(
     url: string,
 ): Promise<{ status: number | null; error: string | null }> {
+    if (await isInternalURL(url)) {
+        return { status: null, error: 'skipped: private/internal address' }
+    }
+
     let lastError: string | null = null
 
     for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
@@ -125,7 +162,7 @@ async function checkUrl(
                     Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
                     'Accept-Language': 'en-US,en;q=0.5',
                 },
-                redirect: 'follow',
+                redirect: 'manual',
             })
 
             clearTimeout(timer)
@@ -183,33 +220,46 @@ async function main() {
 
     const results = await checkAllLinks(links)
 
+    const isDNSError = (error: string | null): boolean => {
+        return error?.includes('ENOTFOUND') ?? false
+    }
+
     const failures = results.filter((r) => {
         if (r.error?.includes('abort')) return false
-        if (r.status === null) return false
-        return (
-            DEAD_STATUS.has(r.status) ||
-            (!ACCEPTED_STATUS.has(r.status) && r.status >= 400)
-        )
+        if (r.error?.includes('skipped:')) return false
+        if (r.status === null) return isDNSError(r.error)
+        return DEAD_STATUS.has(r.status) || INACCESSIBLE_STATUS.has(r.status)
     })
 
     const networkErrors = results.filter(
         (r) =>
-            r.error !== null && !r.error.includes('abort') && r.status === null,
+            r.error !== null &&
+            !r.error.includes('abort') &&
+            !isDNSError(r.error) &&
+            r.status === null,
     )
 
     // Group by URL so one dead link showing up on N pages lists once with N sources
     const failureMap = new Map<
         string,
-        { status: number; sources: Set<string> }
+        { status: number | null; label: string; sources: Set<string> }
     >()
     for (const f of failures) {
-        if (!f.status) continue
+        let label: string
+        if (isDNSError(f.error)) {
+            label = 'dns-failed'
+        } else if (DEAD_STATUS.has(f.status!)) {
+            label = 'dead'
+        } else {
+            label = 'inaccessible'
+        }
         const existing = failureMap.get(f.url)
         if (existing) {
             existing.sources.add(f.source)
         } else {
             failureMap.set(f.url, {
                 status: f.status,
+                label,
                 sources: new Set([f.source]),
             })
         }
@@ -230,18 +280,20 @@ async function main() {
     }
 
     const uniqueFailures = [...failureMap.entries()].map(
-        ([url, { status, sources }]) => ({
+        ([url, { status, label, sources }]) => ({
             url,
             status,
+            label,
             sourceCount: sources.size,
         }),
     )
 
     if (uniqueFailures.length > 0) {
-        console.log(`\n${uniqueFailures.length} dead link(s) found:\n`)
+        console.log(`\n${uniqueFailures.length} failed link(s) found:\n`)
         for (const f of uniqueFailures) {
+            const code = f.status ?? 'DNS'
             console.log(
-                `  [${f.status}] ${f.url} (${f.sourceCount} page${f.sourceCount === 1 ? '' : 's'})`,
+                `  [${code} ${f.label}] ${f.url} (${f.sourceCount} page${f.sourceCount === 1 ? '' : 's'})`,
             )
         }
     }
