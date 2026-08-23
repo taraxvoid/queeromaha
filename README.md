@@ -82,3 +82,22 @@ bun run test:e2e # Playwright mobile/ desktop browsers
 bun run test:a11y # Accessibility via axe
 bun run test:lighthouse # Lighthouse audit (SEO, perf)
 ```
+
+#### Link Checker
+
+[Lychee](https://github.com/lycheeverse/lychee) validates external URLs and internal anchors against the built site. It runs in CI on every PR and weekly via the [Check Links workflow](.github/workflows/check-links.yml).
+
+Install it locally to run the same check before pushing:
+
+```
+brew install lychee   # macOS
+cargo install lychee  # any platform with Rust
+```
+
+Then run:
+
+```
+bun run build && bun run check:links
+```
+
+If `lychee` is not installed, the script prints install instructions and skips (exit 0) so it doesn't block other tests.
