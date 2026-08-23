@@ -16,7 +16,7 @@ import { join, relative } from 'node:path'
 
 const DIST_DIR = 'dist'
 const MD_LINK_RE = /\[[^\]]*\]\((https?:\/\/[^)]+)\)/g
-const HTML_HREF_RE = /href="(https?:\/\/[^"]+)"/g
+const HTML_HREF_RE = /<a\s[^>]*href="(https?:\/\/[^"]+)"/g
 const IGNORE_RE: RegExp[] = loadIgnorePatterns()
 
 const DEAD_STATUS = new Set([404, 410])
