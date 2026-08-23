@@ -245,10 +245,11 @@ async function main() {
         { status: number | null; label: string; sources: Set<string> }
     >()
     for (const f of failures) {
+        if (f.status === null) continue
         let label: string
         if (isDNSError(f.error)) {
             label = 'dns-failed'
-        } else if (DEAD_STATUS.has(f.status!)) {
+        } else if (DEAD_STATUS.has(f.status)) {
             label = 'dead'
         } else {
             label = 'inaccessible'
