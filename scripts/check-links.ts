@@ -6,7 +6,7 @@
  *
  * Policy: 404/410 = gone (dead), 401/403 = private/restricted (inaccessible),
  * DNS resolution failure = dns-failed. 405/429 and 5xx are treated as OK
- * (temporary/method). Redirects are not followed (SSRF guard). .lycheeignore
+ * (temporary/method). Redirects are not followed (SSRF guard). .linkcheckignore
  * patterns are skipped. Private/internal addresses are blocked.
  */
 
@@ -149,10 +149,9 @@ async function checkUrl(
     let lastError: string | null = null
 
     for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+        const controller = new AbortController()
+        const timer = setTimeout(() => controller.abort(), TIMEOUT_MS)
         try {
-            const controller = new AbortController()
-            const timer = setTimeout(() => controller.abort(), TIMEOUT_MS)
-
             const res = await fetch(url, {
                 method: 'GET',
                 signal: controller.signal,
@@ -165,13 +164,14 @@ async function checkUrl(
                 redirect: 'manual',
             })
 
-            clearTimeout(timer)
             return { status: res.status, error: null }
         } catch (e) {
             lastError = e instanceof Error ? e.message : String(e)
             if (attempt < MAX_RETRIES) {
                 await new Promise((r) => setTimeout(r, 1000 * (attempt + 1)))
             }
+        } finally {
+            clearTimeout(timer)
         }
     }
 
@@ -236,7 +236,7 @@ async function main() {
     const networkErrors = results.filter(
         (r) =>
             r.error !== null &&
-            !r.error.includes('abort') &&
+            !r.error.includes('skipped:') &&
             !isDNSError(r.error) &&
             r.status === null,
     )

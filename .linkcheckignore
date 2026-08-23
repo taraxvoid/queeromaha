@@ -11,4 +11,4 @@ https?://([^/]+\.)*substack\.com(/|$)
 # flakes
 https?://([^/]+\.)*fifthhouseomaha\.com(/|$)
 https?://([^/]+\.)*threadless\.com(/|$)
-https?://([^/]+\.)*inprnt.com\.com(/|$)
+https?://([^/]+\.)*inprnt\.com(/|$)
