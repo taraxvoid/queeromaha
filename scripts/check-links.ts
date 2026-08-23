@@ -208,6 +208,8 @@ async function checkAllLinks(
 }
 
 async function main() {
+    const start = Date.now()
+
     console.log('Scanning dist/ for external links...\n')
 
     const links = getExternalLinks()
@@ -239,43 +241,39 @@ async function main() {
             r.status === null,
     )
 
-    // Group by URL so one dead link showing up on N pages lists once with N sources
     const failureMap = new Map<
         string,
-        { status: number | null; label: string; sources: Set<string> }
+        { status: number | null; label: string; sources: string[] }
     >()
     for (const f of failures) {
-        if (f.status === null) continue
-        let label: string
-        if (isDNSError(f.error)) {
-            label = 'dns-failed'
-        } else if (DEAD_STATUS.has(f.status)) {
-            label = 'dead'
-        } else {
-            label = 'inaccessible'
-        }
+        if (f.status === null && !isDNSError(f.error)) continue
+        const label = isDNSError(f.error)
+            ? 'dns-failed'
+            : f.status !== null && DEAD_STATUS.has(f.status)
+              ? 'dead'
+              : 'inaccessible'
         const existing = failureMap.get(f.url)
         if (existing) {
-            existing.sources.add(f.source)
+            existing.sources.push(f.source)
         } else {
             failureMap.set(f.url, {
                 status: f.status,
                 label,
-                sources: new Set([f.source]),
+                sources: [f.source],
             })
         }
     }
 
-    const errorMap = new Map<string, { error: string; sources: Set<string> }>()
+    const errorMap = new Map<string, { error: string; sources: string[] }>()
     for (const f of networkErrors) {
         if (!f.error) continue
         const existing = errorMap.get(f.url)
         if (existing) {
-            existing.sources.add(f.source)
+            existing.sources.push(f.source)
         } else {
             errorMap.set(f.url, {
                 error: f.error,
-                sources: new Set([f.source]),
+                sources: [f.source],
             })
         }
     }
@@ -285,40 +283,103 @@ async function main() {
             url,
             status,
             label,
-            sourceCount: sources.size,
+            sources: [...new Set(sources)],
         }),
     )
 
-    if (uniqueFailures.length > 0) {
-        console.log(`\n${uniqueFailures.length} failed link(s) found:\n`)
-        for (const f of uniqueFailures) {
-            const code = f.status ?? 'DNS'
+    const skippedUrls = new Set(
+        results.filter((r) => r.error?.includes('skipped:')).map((r) => r.url),
+    )
+
+    const elapsed = ((Date.now() - start) / 1000).toFixed(1)
+
+    const RED = '\x1b[31m'
+    const YELLOW = '\x1b[33m'
+    const DIM = '\x1b[2m'
+    const BOLD = '\x1b[1m'
+    const RESET = '\x1b[0m'
+
+    const labelColor: Record<string, string> = {
+        dead: RED,
+        inaccessible: YELLOW,
+        'dns-failed': RED,
+    }
+
+    const printSources = (sources: string[]) => {
+        const shown = sources.slice(0, 8)
+        for (const s of shown) {
+            console.log(`      ${DIM}${s}${RESET}`)
+        }
+        if (sources.length > shown.length) {
             console.log(
-                `  [${code} ${f.label}] ${f.url} (${f.sourceCount} page${f.sourceCount === 1 ? '' : 's'})`,
+                `      ${DIM}...and ${sources.length - shown.length} more${RESET}`,
             )
+        }
+    }
+
+    if (uniqueFailures.length > 0) {
+        const byLabel: Record<string, typeof uniqueFailures> = {}
+        for (const f of uniqueFailures) {
+            if (!byLabel[f.label]) byLabel[f.label] = []
+            byLabel[f.label].push(f)
+        }
+
+        console.log(`${BOLD}Failed links:${RESET}\n`)
+
+        for (const label of ['dead', 'inaccessible', 'dns-failed']) {
+            const items = byLabel[label]
+            if (!items || items.length === 0) continue
+            const color = labelColor[label] ?? ''
+            console.log(`  ${color}${BOLD}${items.length} ${label}${RESET}`)
+            for (const f of items) {
+                const code = f.status ?? 'DNS'
+                console.log(
+                    `\n    ${color}[${code}]${RESET} ${BOLD}${f.url}${RESET}`,
+                )
+                console.log(
+                    `    ${DIM}${f.sources.length} page${f.sources.length === 1 ? '' : 's'}:${RESET}`,
+                )
+                printSources(f.sources)
+            }
+            console.log()
         }
     }
 
     if (errorMap.size > 0) {
-        console.log(
-            `\n${errorMap.size} link(s) could not be reached (skipped):\n`,
-        )
+        console.log(`${BOLD}Unreachable (skipped):${RESET}\n`)
         for (const [url, { error, sources }] of errorMap) {
+            console.log(`  ${DIM}${url}${RESET}`)
+            console.log(`    ${error}`)
             console.log(
-                `  ${url} — ${error} (${sources.size} page${sources.size === 1 ? '' : 's'})`,
+                `    ${DIM}${sources.length} page${sources.length === 1 ? '' : 's'}:${RESET}`,
             )
+            printSources(sources)
+            console.log()
         }
     }
 
-    if (uniqueFailures.length === 0 && errorMap.size === 0) {
-        console.log(`\nAll ${links.size} links passed.`)
-    } else if (uniqueFailures.length === 0) {
-        console.log(`\nNo dead links detected.`)
-    }
+    const deadCount = uniqueFailures.filter((f) => f.label === 'dead').length
+    const inaccessibleCount = uniqueFailures.filter(
+        (f) => f.label === 'inaccessible',
+    ).length
+    const dnsCount = uniqueFailures.filter(
+        (f) => f.label === 'dns-failed',
+    ).length
 
+    console.log(`${BOLD}Summary${RESET}`)
     console.log(
-        `\n  Tested: ${links.size} unique URLs | Dead: ${uniqueFailures.length} | Network errors: ${errorMap.size}`,
+        `  ${DIM}Tested:${RESET} ${links.size} unique URLs in ${elapsed}s`,
     )
+    if (deadCount > 0) console.log(`  ${RED}Dead:${RESET} ${deadCount}`)
+    if (inaccessibleCount > 0)
+        console.log(`  ${YELLOW}Inaccessible:${RESET} ${inaccessibleCount}`)
+    if (dnsCount > 0) console.log(`  ${RED}DNS failed:${RESET} ${dnsCount}`)
+    if (errorMap.size > 0)
+        console.log(`  ${DIM}Unreachable:${RESET} ${errorMap.size}`)
+    if (skippedUrls.size > 0)
+        console.log(`  ${DIM}Blocked (private IP):${RESET} ${skippedUrls.size}`)
+    if (uniqueFailures.length === 0 && errorMap.size === 0)
+        console.log(`  ${DIM}All links passed.${RESET}`)
 
     process.exit(uniqueFailures.length > 0 ? 1 : 0)
 }
