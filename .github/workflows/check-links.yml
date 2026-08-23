@@ -1,9 +1,8 @@
 name: Check Links
 
-# Dead-link checker powered by Lychee
-# Validates external URLs + internal anchors against the built dist/ HTML, so it
-# checks what is actually published. Weekly all-links scan (cron) + PR gate that
-# posts failures as a PR comment via peter-evans/create-or-update-comment@v5
+# Dead-link checker — runs scripts/check-links.ts against the built dist/
+# HTML and markdown. Weekly all-links scan (cron) + PR gate that posts
+# failures as a comment via peter-evans/create-or-update-comment@v5.
 on:
   schedule:
     - cron: "0 9 * * 1" # Every Monday 9am UTC — full scan to catch stale/dead links
@@ -42,37 +41,15 @@ jobs:
       - run: bun install --frozen-lockfile
       - run: bun run build
 
-      # Persist Lychee's result cache across cold starts. With max_cache_age = 1d,
-      # the weekly run re-checks everything; PR runs only re-check URLs older than
-      # 1 day (approximating "only new links").
-      - name: Cache lychee results
-        uses: actions/cache@v4
-        with:
-          path: .lycheecache
-          key: ${{ runner.os }}-lychee-${{ hashFiles('src/content/pages/*.yaml') }}
-          restore-keys: ${{ runner.os }}-lychee-
-
-      - name: Check links with Lychee
-        uses: lycheeverse/lychee-action@v2
-        with:
-          # fail: true is REQUIRED — the action defaults to false (would NOT block)
-          fail: true
-          failIfEmpty: true
-          format: markdown
-          output: lychee-report.md
-          jobSummary: true
-          args: "--config .lychee.toml --verbose --root-dir dist \"**/*.html\""
-
-      - name: Upload link-check report
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: link-report
-          path: lychee-report.md
+      - name: Check links
+        run: bun run check:links
 
       - name: Comment on PR
         if: failure() && github.event_name == 'pull_request'
         uses: peter-evans/create-or-update-comment@v5
         with:
           issue-number: ${{ github.event.pull_request.number }}
-          body-path: lychee-report.md
+          body: |
+            ## Link Check Failed
+
+            `bun run check:links` found dead links. Check the workflow log for details.
