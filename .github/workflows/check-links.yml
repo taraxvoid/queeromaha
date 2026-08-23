@@ -1,14 +1,11 @@
 name: Check Links
 
 # Dead-link checker — runs scripts/check-links.ts against the built dist/
-# HTML and markdown. Weekly all-links scan (cron) + PR gate that posts
-# failures as a comment via peter-evans/create-or-update-comment@v5.
+# HTML and markdown. Weekly all-links scan (cron) + manual dispatch.
 on:
   schedule:
     - cron: "0 9 * * 1" # Every Monday 9am UTC — full scan to catch stale/dead links
   workflow_dispatch:
-  pull_request:
-    branches: [main]
 
 concurrency:
   group: check-links-${{ github.ref }}
@@ -16,13 +13,9 @@ concurrency:
 
 permissions:
   contents: read
-  pull-requests: write   # to post the PR comment
 
 jobs:
   link-check:
-    # schedule / workflow_dispatch have no pull_request context; the guard is a
-    # no-op for those and correctly skips draft PRs.
-    if: "!github.event.pull_request.draft"
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -43,13 +36,3 @@ jobs:
 
       - name: Check links
         run: bun run check:links
-
-      - name: Comment on PR
-        if: failure() && github.event_name == 'pull_request'
-        uses: peter-evans/create-or-update-comment@v5
-        with:
-          issue-number: ${{ github.event.pull_request.number }}
-          body: |
-            ## Link Check Failed
-
-            `bun run check:links` found dead links. Check the workflow log for details.
