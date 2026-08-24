@@ -1,15 +1,15 @@
 #!/usr/bin/env bun
 
-import { execSync, spawnSync } from 'child_process'
-import { readFileSync, writeFileSync } from 'fs'
+import { execSync, spawnSync } from 'node:child_process'
+import { readFileSync, writeFileSync } from 'node:fs'
 import semver from 'semver'
 
-const fail = (msg: string) => {
+const fail = (msg: string): never => {
     console.error(`\n❌ ${msg}`)
     process.exit(1)
 }
 
-const run = (cmd: string, opts?: { silent?: boolean }) => {
+const run = (cmd: string, opts?: { silent?: boolean }): string => {
     try {
         const result = execSync(cmd, {
             encoding: 'utf8',
@@ -18,6 +18,7 @@ const run = (cmd: string, opts?: { silent?: boolean }) => {
         return result.trim()
     } catch {
         fail(`Command failed: ${cmd}`)
+        return ''
     }
 }
 
@@ -69,7 +70,7 @@ process.stdout.write(`\nBumping to ${newVersion}...\n`)
 
 // Edit package.json directly (avoid npm version's unwanted git commit)
 pkg.version = newVersion
-writeFileSync('package.json', JSON.stringify(pkg, null, 2) + '\n')
+writeFileSync('package.json', `${JSON.stringify(pkg, null, 2)}\n`)
 
 // ─── Changelog ───────────────────────────────────────────────────────────────
 
@@ -102,14 +103,14 @@ for (const [section, items] of Object.entries(groups)) {
         lines.push(`\n### ${section}\n${items.map((i) => `- ${i}`).join('\n')}`)
 }
 
-const changelog = lines.join('\n') + '\n'
+const changelog = `${lines.join('\n')}\n`
 
 let existing = ''
 try {
     existing = readFileSync('CHANGELOG.md', 'utf8')
 } catch {}
 
-const newChangelog = changelog + '\n' + existing
+const newChangelog = `${changelog}\n${existing}`
 writeFileSync('CHANGELOG.md', newChangelog)
 
 process.stdout.write(
