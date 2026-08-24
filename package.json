@@ -35,7 +35,8 @@
         "lint:actions": "bun run scripts/lint-actions.js",
         "format": "biome check --write . && bun scripts/format-yaml.ts",
         "generate:favicons": "bun run scripts/generate-favicons.ts",
-        "postinstall": "bunx @biomejs/biome migrate --write"
+        "postinstall": "bunx @biomejs/biome migrate --write",
+        "release": "bun scripts/do-release.ts"
     },
     "keywords": [],
     "author": "Tara <1711810+taraxvoid@users.noreply.github.com>",
@@ -70,6 +71,7 @@
         "happy-dom": "^20.11.6",
         "husky": "^9.1.7",
         "npm-run-all2": "^9.0.3",
+        "semver": "^7.8.5",
         "typescript": "^6.0.3",
         "vitest": "^4.1.11",
         "yaml": "^2.9.0"
