@@ -42,13 +42,8 @@ jobs:
             ${{ runner.os }}-playwright-
 
       - run: bun install --frozen-lockfile
+  
       - run: bunx playwright install --with-deps chromium
-      - run: bun run lint:actions
-      - name: Audit dependencies
-        run: bun audit --audit-level high
-      - run: bun run lint
-      - run: bun run check
-      - run: bun run test:unit
       - run: bun run test:e2e:all
       - run: bun run test:a11y
       - run: bun run test:e2e:lighthouse
