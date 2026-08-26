@@ -22,7 +22,7 @@
         "test:a11y": "bun run build && playwright test a11y.spec --project=mobile-chrome",
         "test:e2e:lighthouse": "bun run build && bun scripts/run-lhci.ts",
         "dev": "astro dev",
-        "audit": "bun audit --prod",
+        "audit": "bun audit --audit-level high --production",
         "start": "astro dev",
         "stop": "astro dev stop",
         "check": "astro check",
