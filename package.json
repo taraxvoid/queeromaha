@@ -36,7 +36,8 @@
         "lint:actions": "bun run scripts/lint-actions.js",
         "format": "biome check --write . && bun scripts/format-yaml.ts",
         "generate:favicons": "bun run scripts/generate-favicons.ts",
-        "postinstall": "bunx @biomejs/biome migrate --write"
+        "postinstall": "bunx @biomejs/biome migrate --write",
+        "check:licenses": "license-checker-rseidelsohn --production --failOn 'GPL-1.0;GPL-1.0-only;GPL-1.0-or-later;GPL-2.0;GPL-2.0-only;GPL-2.0-or-later;GPL-3.0;GPL-3.0-only;GPL-3.0-or-later;AGPL-1.0;AGPL-1.0-only;AGPL-1.0-or-later;AGPL-3.0;AGPL-3.0-only;AGPL-3.0-or-later;SSPL-1.0;OSL-2.1;OSL-3.0;CPAL-1.0;EUPL-1.1;EUPL-1.2;CECILL-2.1'"
     },
     "keywords": [],
     "author": "Tara <1711810+taraxvoid@users.noreply.github.com>",
@@ -71,6 +72,7 @@
         "favicons": "^7.3.1",
         "happy-dom": "^20.11.6",
         "husky": "^9.1.7",
+        "license-checker-rseidelsohn": "^5.0.1",
         "npm-run-all2": "^9.0.3",
         "semver": "^7.8.5",
         "typescript": "^6.0.3",

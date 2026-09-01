@@ -44,6 +44,7 @@ jobs:
       - run: bun run lint
       - run: bun run check
       - run: bun run test:unit
+      - run: bun run check:licenses
 
       - name: Install Playwright browsers
         run: bunx playwright install --with-deps chromium
