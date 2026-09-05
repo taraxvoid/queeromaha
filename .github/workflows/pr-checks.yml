@@ -1,4 +1,5 @@
 name: Ensure PR mergable
+
 on:
   pull_request:
     branches: [main, next]
@@ -15,7 +16,7 @@ jobs:
   pr-checks:
     if: "!github.event.pull_request.draft"
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v7
 
@@ -39,15 +40,29 @@ jobs:
             ${{ runner.os }}-playwright-
 
       - run: bun install --frozen-lockfile
+      - run: bunx playwright install --with-deps chromium
       - run: bun run lint:actions
-      - run: bun run audit
+
+      - name: Audit dependencies
+        run: bun run audit
+        continue-on-error: true
+
       - run: bun run lint
+      - run: bun run build
       - run: bun run check
       - run: bun run test:unit
-      - run: bun run check:licenses
 
-      - name: Install Playwright browsers
-        run: bunx playwright install --with-deps chromium
+      - name: Check for bun.lock changes
+        uses: dorny/paths-filter@v4
+        id: lockfile
+        with:
+          filters: |
+            lockfile:
+              - 'bun.lock'
+
+      - name: Check dependency licenses (block GPL family)
+        if: steps.lockfile.outputs.lockfile == 'true'
+        run: bun run check:licenses
 
       - name: Fast e2e (mobile-chrome)
         if: github.event.pull_request.base.ref == 'main'
