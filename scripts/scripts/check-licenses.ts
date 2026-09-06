@@ -23,10 +23,10 @@
 
 import { spawnSync } from "node:child_process";
 import { existsSync, readdirSync } from "node:fs";
-import { join } from "node:path";
+import { fileURLToPath } from "node:url";
+import { join, dirname } from "node:path";
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
-const BIN = join(ROOT, "node_modules", ".bin", "license-checker");
 
 const FAIL_ON = [
   "GPL-1.0",
@@ -78,7 +78,7 @@ let failed = false;
 for (const dir of workspaceDirs()) {
   const relDir = dir.replace(`${ROOT}/`, "");
   console.log(`\n> Checking licenses: ${relDir}`);
-  const result = spawnSync(BIN, ["--production", "--summary", "--failOn", FAIL_ON], {
+  const result = spawnSync("bunx", ["license-checker", "--production", "--summary", "--failOn", FAIL_ON], {
     cwd: dir,
     stdio: "inherit",
   });
