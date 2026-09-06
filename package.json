@@ -72,6 +72,7 @@
         "favicons": "^7.3.1",
         "happy-dom": "^20.11.6",
         "husky": "^9.1.7",
+        "@lizenz/checker": "^0.0.2",
         "npm-run-all2": "^9.0.3",
         "semver": "^7.8.5",
         "typescript": "^6.0.3",
