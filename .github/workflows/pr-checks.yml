@@ -54,14 +54,17 @@ jobs:
 
       - name: Check for bun.lock changes
         uses: dorny/paths-filter@vceb8a2b8f2d89434be7ff52d3de7ec3738c5cc9d # v4.0.3
-        id: lockfile
+        id: changes
         with:
           filters: |
             lockfile:
               - 'bun.lock'
+            checker_script:
+              - 'scripts/check-licenses.ts'
+
 
       - name: Check dependency licenses (block GPL family)
-        if: steps.lockfile.outputs.lockfile == 'true'
+        if: steps.changes.outputs.lockfile == 'true' || steps.changes.outputs.checker_script == 'true'
         run: bun run check:licenses
 
       - name: Fast e2e (mobile-chrome)
