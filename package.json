@@ -27,6 +27,7 @@
         "stop": "astro dev stop",
         "check": "astro check",
         "check:content": "astro sync",
+        "check:licenses": "bun scripts/scripts/check-licenses.ts",
         "check:links": "bun scripts/check-links.ts",
         "serve": "astro dev",
         "build": "astro build && bun scripts/generate-redirects.ts",
@@ -36,8 +37,7 @@
         "lint:actions": "bun run scripts/lint-actions.js",
         "format": "biome check --write . && bun scripts/format-yaml.ts",
         "generate:favicons": "bun run scripts/generate-favicons.ts",
-        "postinstall": "bunx @biomejs/biome migrate --write",
-        "check:licenses": "bun scripts/check-licenses.ts"
+        "postinstall": "bunx @biomejs/biome migrate --write"
     },
     "keywords": [],
     "author": "Tara <1711810+taraxvoid@users.noreply.github.com>",
