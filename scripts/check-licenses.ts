@@ -6,11 +6,10 @@
  */
 
 import { spawnSync } from 'node:child_process'
-import { existsSync, readdirSync } from 'node:fs'
-import { dirname, join } from 'node:path'
+import { dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-const ROOT = dirname(fileURLToPath(import.meta.url))
+const ROOT = dirname(dirname(fileURLToPath(import.meta.url)))
 
 const FAIL_ON = [
     'GPL-1.0',
@@ -42,9 +41,6 @@ const FAIL_ON = [
     // modifying/statically linking the library, not on depending on it as-is.
 ].join(';')
 
-let failed = false
-
-console.log(`\n> Checking licenses: ${relDir}`)
 const result = spawnSync(
     'bunx',
     ['license-checker', '--production', '--summary', '--failOn', FAIL_ON],
@@ -52,6 +48,13 @@ const result = spawnSync(
         cwd: ROOT,
         stdio: 'inherit',
     },
+)
+
+if (result.error) {
+    console.error(
+        `\ncheck:licenses failed - could not run license-checker: ${result.error.message}`,
+    )
+    process.exit(1)
 }
 
 if (result.status !== 0) {
