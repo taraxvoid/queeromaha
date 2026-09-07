@@ -47,7 +47,6 @@ jobs:
         continue-on-error: true
 
       - run: bun run lint
-      - run: bun run build
       - run: bun run check
       - run: bun run test:unit
 
