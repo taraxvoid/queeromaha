@@ -2,7 +2,7 @@ import {
     getUpcomingEvents,
     type NextEvent,
     parseEvents,
-} from '../utils/eventsPreview'
+} from '#utils/eventsPreview.ts'
 
 const PREVIEW_COUNT = 3
 
