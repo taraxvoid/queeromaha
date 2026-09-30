@@ -70,3 +70,12 @@ describe('GET /[...filters].md', () => {
         expect(body).toContain('The Queer Collective')
     })
 })
+
+describe('GET /index.md', () => {
+    test('renders the root directory as markdown', async () => {
+        const { GET: rootGET } = await import('../../src/pages/index.md.ts')
+        const res = await rootGET()
+        expect(res.headers.get('content-type')).toMatch(/text\/markdown/)
+        expect(await res.text()).toContain('OmahaForUs')
+    })
+})
