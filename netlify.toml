@@ -1,3 +1,7 @@
 [build]
 publish = "dist"
 command = "bun run build"
+
+[[edge_functions]]
+path = "/*"
+function = "markdown-negotiation"
