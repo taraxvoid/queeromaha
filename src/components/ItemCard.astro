@@ -129,3 +129,35 @@ const jsonLd = {
     )
   }
 </wa-card>
+
+<style>
+  .item-location {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.9rem;
+    font-family: var(--font-mono);
+    color: #7c3aed;
+  }
+
+  .item-location a {
+    text-decoration: dotted underline;
+    &,
+    &:hover,
+    &:focus {
+      color: #7c3aed;
+      border-bottom-color: transparent;
+    }
+    &:hover,
+    &:focus {
+      text-decoration-style: solid;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .item-location,
+    .item-location a {
+      color: var(--dm-glow);
+    }
+  }
+</style>
