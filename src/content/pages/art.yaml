@@ -309,6 +309,8 @@ items:
       - label: FB
         url: https://www.facebook.com/MaMOgallery/
     location:
+      street: 2725 N 62nd St
+      city: Omaha
       neighborhood: Benson
   - name: Trudy's
     public: true
