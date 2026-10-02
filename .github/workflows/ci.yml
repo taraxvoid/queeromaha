@@ -1,6 +1,8 @@
 name: CI
 
 on:
+  push:
+    branches: [main, next, live]
   pull_request:
     branches: [main, next, live]
     types: [opened, synchronize, reopened, ready_for_review]
