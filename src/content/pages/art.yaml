@@ -237,6 +237,24 @@ items:
       street: 2423 N 24th St
       city: Omaha
       neighborhood: North Omaha
+  - name: Benson First Friday
+    vanity_slug: benson-first-friday
+    public: true
+    description: Monthly art walk through the Benson Creative District with galleries, studios and pop-ups open late. Petshop, BFF Gallery, Ming Toy and more.
+    links:
+      - label: Website
+        url: https://www.bffomaha.org/firstfriday
+    location:
+      neighborhood: Benson
+    recurring_events:
+      - summary: Benson First Friday
+        rrule: FREQ=MONTHLY;BYDAY=1FR
+        dtstart: "20260102"
+        time: 19:00
+        end_time: 23:00
+        location: Benson Creative District
+        description: Monthly art walk in Benson with galleries and studios open late.
+        url: https://www.bffomaha.org/firstfriday
   - name: Petshop
     public: true
     description: Punk/queer space for provocative art and experimental music.

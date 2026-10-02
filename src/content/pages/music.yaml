@@ -397,3 +397,16 @@ items:
       - label: Website
         url: https://sound-wav-sessions.netlify.app/
     notes: Organizer unconfirmed (maybe Alex Jacobsen?). Seems to run a couple times a year.
+  - name: 91.9 KIRA
+    vanity_slug: kira-fm
+    public: true
+    description: Community radio with local DJs and folks from around Omaha.
+    links:
+      - label: Website
+        url: https://www.kirafm.live
+      - label: Instagram
+        url: https://www.instagram.com/kirafm.live/
+      - label: Mixcloud
+        url: https://www.mixcloud.com/kirafm/
+      - label: Facebook
+        url: https://www.facebook.com/profile.php?id=61590345824973
