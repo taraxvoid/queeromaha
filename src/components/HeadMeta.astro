@@ -78,6 +78,7 @@ const { title, description, canonicalUrl, refresh } = Astro.props
   }
   <LD
     data={{
+      "@context": "https://schema.org",
       "@type": "WebSite",
       name: "Queer Omaha",
       url: Astro.site?.href ?? canonicalUrl,

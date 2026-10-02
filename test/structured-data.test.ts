@@ -45,11 +45,13 @@ function walkHtml(dir: string): string[] {
 describe('toJsonLdScript', () => {
     test('produces valid, parseable JSON', () => {
         const out = toJsonLdScript({
+            '@context': 'https://schema.org',
             '@type': 'WebSite',
             name: 'Queer Omaha',
         })
         expect(() => JSON.parse(out)).not.toThrow()
         expect(JSON.parse(out)).toEqual({
+            '@context': 'https://schema.org',
             '@type': 'WebSite',
             name: 'Queer Omaha',
         })
@@ -60,6 +62,7 @@ describe('toJsonLdScript', () => {
         // containing "</script" to terminate the <script type="application/ld+json">
         // block early (a script-injection / JSON-LD breakout vector).
         const payload = {
+            '@context': 'https://schema.org',
             '@type': 'Organization',
             name: '</script><img src=x onerror=alert(1)>',
         }
@@ -122,6 +125,10 @@ describe('structured data (JSON-LD)', () => {
                     typeof b.data === 'object' &&
                     !(b.data instanceof SyntaxError)
                 ) {
+                    expect(
+                        b.data as Record<string, unknown>,
+                        rel,
+                    ).toHaveProperty('@context')
                     expect(
                         b.data as Record<string, unknown>,
                         rel,

@@ -51,6 +51,7 @@ const visibleItemListElements = entries.flatMap((entry) => {
 >
   <LD
     data={{
+      "@context": "https://schema.org",
       "@type": "ItemList",
       itemListElement: visibleItemListElements.map((el, i) => ({
         "@type": "ListItem",
