@@ -11,5 +11,5 @@ const { data } = Astro.props
 <script
   is:inline
   type="application/ld+json"
-  set:html={toJsonLdScript(data)}
+  set:html={toJsonLdScript({ '@context': 'https://schema.org', ...(data as object) })}
 />

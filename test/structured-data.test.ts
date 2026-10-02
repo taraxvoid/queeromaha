@@ -126,6 +126,10 @@ describe('structured data (JSON-LD)', () => {
                         b.data as Record<string, unknown>,
                         rel,
                     ).toHaveProperty('@type')
+                    expect(
+                        b.data as Record<string, unknown>,
+                        rel,
+                    ).toHaveProperty('@context', 'https://schema.org')
                 }
             }
             // Sanity: the homepage at least emits structured data

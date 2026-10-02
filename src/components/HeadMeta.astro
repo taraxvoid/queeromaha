@@ -58,13 +58,15 @@ const { title, description, canonicalUrl, refresh } = Astro.props
     href={spaceGroteskNormalUrl}
     crossorigin
   />
-  <script>
-    const mql = window.matchMedia("(prefers-color-scheme: dark)");
-    function apply() {
-      document.documentElement.classList.toggle("wa-dark", mql.matches);
-    }
-    apply();
-    mql.addEventListener("change", apply);
+  <script is:inline>
+    (function () {
+      var mql = window.matchMedia("(prefers-color-scheme: dark)");
+      var apply = function () {
+        document.documentElement.classList.toggle("wa-dark", mql.matches);
+      };
+      apply();
+      mql.addEventListener("change", apply);
+    })();
   </script>
   {
     refresh && (
