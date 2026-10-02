@@ -6,4 +6,5 @@ export default defineConfig({
     integrations: [sitemap()],
     output: 'static',
     prefetch: true,
+    build: { inlineStylesheets: 'always' },
 })
