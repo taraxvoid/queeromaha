@@ -59,14 +59,14 @@ const { title, description, canonicalUrl, refresh } = Astro.props
     crossorigin
   />
   <script is:inline>
-    (function () {
-      var mql = window.matchMedia("(prefers-color-scheme: dark)");
-      var apply = function () {
+    {
+      const mql = window.matchMedia("(prefers-color-scheme: dark)");
+      const apply = () => {
         document.documentElement.classList.toggle("wa-dark", mql.matches);
       };
       apply();
       mql.addEventListener("change", apply);
-    })();
+    }
   </script>
   {
     refresh && (
