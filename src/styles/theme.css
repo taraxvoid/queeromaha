@@ -1,4 +1,10 @@
-@import url("../../node_modules/@awesome.me/webawesome/dist/styles/webawesome.css");
+/* Web Awesome, minus the utility classes we don't use (the full bundle is
+   styles/webawesome.css: layers, native, all utilities, default theme). */
+@import url("../../node_modules/@awesome.me/webawesome/dist/styles/layers.css");
+@import url("../../node_modules/@awesome.me/webawesome/dist/styles/native.css");
+@import url("../../node_modules/@awesome.me/webawesome/dist/styles/utilities/fouce.css");
+@import url("../../node_modules/@awesome.me/webawesome/dist/styles/utilities/visually-hidden.css");
+@import url("../../node_modules/@awesome.me/webawesome/dist/styles/themes/default.css");
 @import url("../../node_modules/@fontsource-variable/space-grotesk/index.css");
 @import url("../../node_modules/@fontsource-variable/karla/index.css");
 @import url("../../node_modules/@fontsource/space-mono/latin-400.css");
