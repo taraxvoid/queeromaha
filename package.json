@@ -35,7 +35,6 @@
         "prepare": "husky",
         "lint": "biome check .",
         "lint:migrate": "biome migrate --write",
-        "lint:migrate:check": "biome migrate | { ! grep -q \"needs migration\"; }",
         "lint:actions": "./scripts/lint-actions.sh",
         "format": "biome check --write . && bun scripts/format-yaml.ts",
         "generate:favicons": "bun run scripts/generate-favicons.ts",
