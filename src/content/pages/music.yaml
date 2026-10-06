@@ -389,6 +389,20 @@ items:
         url: https://omahablues.com/events/
     location:
       neighborhood: Downtown
+  - name: Kaitei
+    public: true
+    tags:
+      - neutral-bathrooms
+      - seating
+    description: Secret (shhhh) speakeasy under Ika Ramen
+    links:
+      - label: Facebook
+        url: https://www.facebook.com/kaiteibenson/
+    location:
+      street: 6109 1/3 Maple St
+      city: Omaha
+      neighborhood: Benson
+
   - name: Sound.Wav Sessions
     vanity_slug: sound-wav-sessions
     public: true
