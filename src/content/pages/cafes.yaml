@@ -327,19 +327,20 @@ items:
     description: Chill tea shop. Nice place for hanging out.
   - name: Artemis Tea
     public: true
-    description: Women-owned tea shop supporting sustainable and organic farming, with custom blends by owner Andrea. Pastries from Myrtle & Cypress, Hardy Coffee and gluten free / vegan treats from Conscious Comforts. College kids study here.
+    description: Women-owned tea shop supporting sustainable and organic farming, with custom blends by owner Andrea.
     links:
       - label: Website
         url: https://artemistea.com/
     tags:
       - seating
+      - neutral-bathrooms
     location:
       street: 3618 Farnam St
       city: Omaha
       state: NE
       zip: "68131"
       neighborhood: Blackstone
-    notes: Staff said it is chill, men's room is single-stall. Wifi unconfirmed. Not really a remote-work space.
+    notes: Pastries from Myrtle & Cypress, Hardy Coffee and gluten free / vegan treats from Conscious Comforts. men's room is single-stall. Wifi unconfirmed. Not really a remote-work space.
   - name: Green Line Cafe
     public: true
     description: Breakfast, lunch and grab-and-go from the Blue Line Coffee folks, with a big covered patio.
