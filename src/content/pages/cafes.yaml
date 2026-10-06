@@ -371,13 +371,4 @@ items:
       city: Omaha
       neighborhood: Midtown
     notes: Per Eric (co-owner): not queer owned, is chill.
-  - name: Kaitei
-    public: true
-    description: Japanese-inspired sake speakeasy under Ika Ramen. Single-stall bathroom, trans and queer stickers, and info for gig folks. 21+.
-    links:
-      - label: Facebook
-        url: https://www.facebook.com/kaiteibenson/
-    location:
-      street: 6109 1/3 Maple St
-      city: Omaha
-      neighborhood: Benson
+  
