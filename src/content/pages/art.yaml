@@ -494,7 +494,7 @@ items:
   - name: Voices in Alliance (VIA)
     vanity_slug: via-theater
     public: true
-    description: Theater company telling LGBTQ+ stories. Plays like The Inheritance, Significant Other and Last Summer at Bluefish Cove, staged at Bancroft Street Market.
+    description: Looks like the theater kids are the popular ones now!
     links:
       - label: Website
         url: https://www.viaomaha.org/
@@ -502,4 +502,3 @@ items:
       street: 2702 S 10th St
       city: Omaha
       neighborhood: South Omaha
-    notes: Productions at Bancroft Street Market (address shown). Mailing address is PO Box 432.
