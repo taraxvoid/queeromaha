@@ -362,7 +362,7 @@ items:
     notes: Tara hasn't been personally, comfortable adding given recommendations. another in atlas apt complex
   - name: Myrtle & Cypress
     public: true
-    description: Gifford Park coffeehouse and roaster. Everyone welcome, with "human inclusion" marketing copy.
+    description: The only Air Roaster in town.
     links:
       - label: Website
         url: https://www.myrtleandcypresscoffee.com/
@@ -370,7 +370,7 @@ items:
       street: 517 N 33rd St
       city: Omaha
       neighborhood: Midtown
-    notes: Per Eric (co-owner). Not queer owned, anecdotally chill.
+    notes: Per Eric (co-owner): not queer owned, is chill.
   - name: Kaitei
     public: true
     description: Japanese-inspired sake speakeasy under Ika Ramen. Single-stall bathroom, trans and queer stickers, and info for gig folks. 21+.
