@@ -65,7 +65,7 @@ items:
       Free stickers in bowl
   - name: Nodest Home Plants
     public: true
-    description: Queer and trans friendly plant shop. Knowledgeable staff, repotting and plant health help, and a potting station (Soil Bar).
+    description: Keep your houseplants alive (or just buy new ones every few months).
     links:
       - label: Website
         url: https://www.nodesthomeplants.com/
@@ -77,7 +77,7 @@ items:
       neighborhood: Blackstone
   - name: The Book Club Society
     public: true
-    description: Bookstore and gathering space with books, wine and conversation. Co-owner Megan is chill.
+    description: Chill bookstore in the burbs.
     links:
       - label: Website
         url: https://thebookclubsociety.com/
@@ -85,11 +85,14 @@ items:
       street: 2521 S 133rd Plz
       city: Omaha
       neighborhood: West Omaha
+    notes: Co-owner Megan is chill.
   - name: Mazzyco
     public: true
     description: Melissa makes custom collars including trans flag ones, plus goth chokers with o-rings.
     links:
       - label: Instagram
-        url: https://www.instagram.com/mazzerspics/
-    notes: No website. Instagram mazzerspics, Facebook mazzyco.
+        url: https://www.instagram.com/mazzerspics
+      - label: Facebook
+        url: https://www.facebook.com/mazzyco
+    notes: No website.
 notes: ""
