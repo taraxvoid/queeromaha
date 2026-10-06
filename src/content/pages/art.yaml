@@ -4,11 +4,11 @@ public: true
 items:
   - name: Amplify Arts
     public: true
-    description: Omaha arts nonprofit with open calls for artists, public art opportunities, grants and resources. Check here first for ways to get your work seen.
+    description: Get paid for your art.
     links:
-      - label: Open Calls
+      - label: Open Calls for Art
         url: https://www.amplifyarts.org/open-calls
-      - label: Resources
+      - label: Awesome Resources List
         url: https://www.amplifyarts.org/resources
     location:
       street: 950 S 10th St
